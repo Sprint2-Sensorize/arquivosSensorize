@@ -1,0 +1,101 @@
+* { /* Tirar as bordas das telas */
+    margin: 0;
+    padding: 0;
+}
+main {
+    margin: -10;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: auto;
+    background-image: url(https://iotacontabil.com.br/wp-content/uploads/2020/12/academia-1024x683.jpg);
+    background-size: cover;
+}
+.container {
+    text-align: center;
+}
+.quadrado {
+    width: 300px; 
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.quadrado_novo {
+    width: 400px; 
+    height: 420px; 
+    padding: 20px; /* preenchimento */
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 10px; 
+    display: none;
+    margin-top: 50px;
+    margin-left: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+input[type="text"],
+input[type="number"],
+button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0056b3;
+}
+h2 {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+header {
+    background-color: black; 
+    padding: 40px; 
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 96%;
+}
+header a {
+    color: white; 
+    text-decoration: solid; /* Remove sublinhado padrão */
+    margin-left: 10px; /* Espaçamento entre os links */
+    font-weight: bold; 
+    float: center; 
+    line-height: 20px; 
+}
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    background-color: rgb(0, 0, 0, 0.9);
+  }
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #333; /* Cor de fundo da navbar */
+    transition: transform 0.3s; /* Adiciona uma transição suave para o efeito de rolagem */
+    margin-bottom: 100;
+}
+#botao_contato{
+    margin-top: 10%;
+}
