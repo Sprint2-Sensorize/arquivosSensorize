@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sensorize</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="esquerda">
+      <img src="./img/cadastreAcad-removebg-preview (1) 2.png" alt="">
+    </div>
+    <div class="direito">
+      <img class="logo" src="./img/logologo 2.png" alt="">
+      <h1>Cadastre-se</h1>
+      <div class="cadastro">
+        <div class="input-cliente">
+          <h3>Dados da Acadêmia</h3>
+          <span>Nome da Academia</span>
+          <input type="text" id="inp_nome" placeholder="Treino Fit">
+          <span>Representante</span>
+          <input type="text" id="inp_representante" placeholder="Fernando Lima">
+          <span>CNPJ</span>
+          <input type="text" id="inp_cpj" placeholder="12.345.678/0002-00">
+          <span>E-mail</span>
+          <input type="text" id="inp_nome" placeholder="treinofit@gmail.com">
+          <span>Telefone</span>
+          <input type="text" id="inp_email" placeholder="(11)99999-9999">
+        </div>
+        <div class="input-endereco">
+          <h3>Endereço</h3>
+          <span style="margin-left: -72px;">CEP</span>
+          <div class="rua">
+            <input style="width: 150px;" type="text" id="inp_cep_endereco" placeholder="01234-567">
+            <button id="viacep" style="border-radius: 5px;">Buscar</button>
+          </div>
+          <div class="rua">
+            <span style="margin-left: -50px; margin-right: 0px;">Rua</span>
+            <span style="margin-left: 143px; position: absolute;">N°</span>
+          </div>
+          <div class="rua">
+            <input style="width: 240px;" type="text" id="inp_rua_endereco" placeholder="Rua Principal">
+            <input style="width: 50px;" type="text" id="inp_numero_endereco" placeholder="123">
+          </div>
+
+          <span>Bairro</span>
+          <input type="text" id="inp_bairro_endereco" placeholder="Centro">
+          <div class="rua">
+            <span style="margin-left: -50px; margin-right: 0px;">Cidade</span>
+            <span style="margin-left: 125px; position: absolute;">UF</span>
+          </div>
+          <div>
+            <input style="width: 250px;" type="text" id="inp_cidade_endereco" placeholder="São Paulo">
+            <input style="width: 40px;" type="text" id="inp_estado_endereco" placeholder="SP">
+          </div>
+          <span>Complemento</span>
+          <input type="text" id="inp_bairro_endereco" placeholder="bloco, apartamento, casa, sobrado">
+        </div>
+      </div>
+      <button id="cadastrar">
+        Cadastrar
+      </button>
+    </div>
+  </div>
+</body>
+
+</html>
