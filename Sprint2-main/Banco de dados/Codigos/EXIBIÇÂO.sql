@@ -1,17 +1,25 @@
-select aparelhos_cliente.fk_cliente as ID_CLIENTE,
-			cliente.nome_academia as ACADEMIA,
-				grupo_aparelho.nome_grupo as GRUPO_APARELHOS,
-					aparelho.nome_aparelho as NOME_APARELHO,
-						sensor.tempo_livre as TEMPO_LIVRE,
-							sensor.tempo_uso as TEMPO_USO 
-								from aparelhos_cliente join cliente
-									on id_cliente = fk_cliente
-										join grupo_aparelho
-											on id_grupo = fk_grupo
-												join aparelho
-													on id_aparelho = fk_aparelho
-														join sensor
-															on id_sensor = fk_sensor;
+select cliente.id_cliente as ID_CLIENTE,
+			cliente.nome_academia as NOME_ACADEMIA,
+				aparelho.nome_aparelho as NOME_DO_APARELHO,
+					grupo_aparelho.nome_grupo as NOME_DO_GRUPO,
+						sensor.id_sensor as ID_SENSOR,
+							sensor.descricao_sensor as DESCRICAO,
+								historico.tempo_uso as TEMPO_DE_USO,
+									historico.tempo_livre as TEMPO_LIVRE from cliente
+										join aparelho
+											on fk_aparelho = id_aparelho
+												join sensor
+													on fk_sensor = id_sensor
+														join grupo_aparelho
+															on fk_aparelho_grupo = id_aparelho
+																join historico
+																	on fk_historico = id_historico;
+                                                                    
+                                                                    
+
+																		
+                                                            
+
 
 
 
