@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sensorize</title>
   <link rel="stylesheet" href="style.css">
+  <script src="main.js"></script>
 </head>
 
 <body>
@@ -25,44 +26,62 @@
           <input type="text" id="inp_representante" placeholder="Fernando Lima">
           <span>CNPJ</span>
           <input type="text" id="inp_cpj" placeholder="12.345.678/0002-00">
-          <span>E-mail</span>
-          <input type="text" id="inp_nome" placeholder="treinofit@gmail.com">
-          <span>Telefone</span>
-          <input type="text" id="inp_email" placeholder="(11)99999-9999">
+          <div>
+            <span style="margin-left: -80px; ">E-mail</span>
+            <span style="margin-left: 130px; position: absolute;">Telefone</span>
+          </div>
+          <div class="desing">
+            <input style="width: 240px;" type="text" id="inp_email" placeholder="treinofit@gmail.com">
+            <input style="width: 100px;" type="text" id="inp_telefone" placeholder="(11)99999-9999">
+          </div>
+          <div>
+            <span style="margin-left: -112.5px; ">Senha</span>
+            <span style="margin-left: 105px; position: absolute;">Confirme a senha</span>
+          </div>
+          <div class="desing">
+            <input style="width: 170px;" type="password" id="inp_senha" placeholder="aBcd123@">
+            <input style="width: 170px;" type="password" id="inp_confimacao" placeholder="aBcd123@">
+          </div>
         </div>
         <div class="input-endereco">
           <h3>Endereço</h3>
-          <span style="margin-left: -72px;">CEP</span>
-          <div class="rua">
-            <input style="width: 150px;" type="text" id="inp_cep_endereco" placeholder="01234-567">
-            <button id="viacep" style="border-radius: 5px;">Buscar</button>
+          <span style="margin-left: -80px;">CEP</span>
+          <div class="desing">
+            <input style="width: 140px;" type="text" id="inp_cep_endereco" placeholder="01234-567">
+            <button class="busca" onclick="viacep()" style="border-radius: 5px;">Pesquisar</button>
           </div>
-          <div class="rua">
+          <div class="desing">
             <span style="margin-left: -50px; margin-right: 0px;">Rua</span>
-            <span style="margin-left: 143px; position: absolute;">N°</span>
+            <span style="margin-left: 168px; position: absolute;">N°</span>
           </div>
-          <div class="rua">
-            <input style="width: 240px;" type="text" id="inp_rua_endereco" placeholder="Rua Principal">
+          <div class="desing">
+            <input style="width: 290px;" type="text" id="inp_rua_endereco" placeholder="Rua Principal" readonly>
             <input style="width: 50px;" type="text" id="inp_numero_endereco" placeholder="123">
           </div>
 
           <span>Bairro</span>
-          <input type="text" id="inp_bairro_endereco" placeholder="Centro">
-          <div class="rua">
+          <input type="text" id="inp_bairro_endereco" placeholder="Centro" readonly>
+          <div class="desing">
             <span style="margin-left: -50px; margin-right: 0px;">Cidade</span>
-            <span style="margin-left: 125px; position: absolute;">UF</span>
+            <span style="margin-left: 150px; position: absolute;">UF</span>
           </div>
           <div>
-            <input style="width: 250px;" type="text" id="inp_cidade_endereco" placeholder="São Paulo">
-            <input style="width: 40px;" type="text" id="inp_estado_endereco" placeholder="SP">
+            <input style="width: 300px;" type="text" id="inp_cidade_endereco" placeholder="São Paulo" readonly>
+            <input style="width: 40px;" type="text" id="inp_estado_endereco" placeholder="SP" readonly>
           </div>
           <span>Complemento</span>
-          <input type="text" id="inp_bairro_endereco" placeholder="bloco, apartamento, casa, sobrado">
+          <input type="text" id="inp_complemento_endereco" placeholder="bloco, apartamento, casa, sobrado">
         </div>
       </div>
-      <button id="cadastrar">
-        Cadastrar
-      </button>
+      <div style="flex-direction: row; margin-left: auto; margin-right: auto;">
+        <button class="botao" onclick="cadastrar()">
+          Cadastrar
+        </button>
+        <button class="botao">
+          Voltar
+        </button>
+      </div>
+
     </div>
   </div>
 </body>
