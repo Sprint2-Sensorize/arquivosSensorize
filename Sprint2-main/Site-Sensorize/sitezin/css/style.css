@@ -28,6 +28,7 @@ body{
     margin: 0;
     font-family: "raleway";
     background-color: #000000;
+    overflow-x:hidden;
 }
 
 /* CSS NAVBAR E LOGO */
@@ -120,15 +121,19 @@ hr{
 }
 
 /* sobre o prj TechGym*/
+.divMaior{
+  height: 99vh;
+}
+
 .techgym {
-    margin-top: 40px;
+    margin-top: 90px;
     color: #FDF2CD;
     text-align: center;
+    margin-bottom: 60px;
 }
 
 .divTodosClientes{
     align-content: center;
-    border-color: 2px solid red;
 }
 
 .divTechgym{
@@ -182,23 +187,15 @@ hr{
 }
 
 /* CALCULADORA */
-.tituloClientes{
-  margin-top: 40px;
-  color: #FDF2CD;
-  text-align: center;
-  width: 1000px;
-  margin: auto;
-  font-size: 30px;
-  font-weight: bold;
-}
+
 
 .divCalcMaior{
-  margin-top: 100px;
   display: flex;
+  height: 99vh;
+  align-items: center;
 }
 
 .textoCalc{
-/*   border: 2px solid red; */
   color: #FDF2CD;
   text-align: center;
   font-size: 30px;
@@ -206,6 +203,7 @@ hr{
   width: 500px;
   margin-left: 200px;
   margin-top: 3%;
+
 }
 
 .imagemCalc{
@@ -230,6 +228,22 @@ hr{
 }
 
 /* CARROSSEL */
+
+.tituloClientes{
+  margin-top: -60px;
+  color: #FDF2CD;
+  text-align: center;
+  width: 1000px;
+  margin: auto;
+  font-size: 30px;
+  font-weight: bold;
+
+}
+.divMaiorCli{
+  height: 99vh;
+  align-items: center;
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -237,6 +251,7 @@ hr{
 }
 
 .carrosselTudo {
+  align-items: center;
   margin-top: 40px;
   max-width: 1100px;
   width: 100%;
@@ -327,11 +342,11 @@ hr{
 
 /* EMPRESA */
 .divEmpresaMaior{
-  margin-top: 80px;
+  height: 99vh;
 }
 
 .sensorize{
-  margin-top: 40px;
+  margin-top: 60px;
   color: #FDF2CD;
   text-align: center;
   width: 1000px;
@@ -343,7 +358,7 @@ hr{
 }
 
 .divCoisasEmpresas{
-  margin-top: 45px;
+  margin-top: 100px;
   align-items: center;
   text-align: center;
   justify-content: center;
