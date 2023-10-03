@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Raleway:wght@500&display=swap');
+
+.body{
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+.Login {
+    display: flex;
+}
+
+
+.nomeSenha {
+  width: 122px; 
+  height: 25px; 
+  left: 985px; 
+  top: 480px; 
+  position: absolute; 
+  text-align: center; 
+  color: black; 
+  font-size: 20px; 
+  font-family: Raleway;
+  font-weight: 700; 
+  word-wrap: break-word;
+}
+
+.nomeLogin {
+  width: 122px; 
+  height: 25px; 
+  left: 1012px; 
+  top: 328px; 
+  position: absolute; 
+  text-align: start; 
+  color: black; 
+  font-size: 20px; 
+  font-family: Raleway; 
+  font-weight: 700; 
+  word-wrap: break-word;
+}
+
+.forget {
+  left: 1437px; 
+  top: 600px; 
+  position: absolute; 
+  text-align: center; 
+  color: #0500FF; 
+  font-size: 20px; 
+  font-family: Noto Sans; 
+  font-weight: 300; 
+  text-decoration: underline; 
+  word-wrap: break-word;
+}
+
+.cadastro {
+  left: 1150px; 
+  top: 750px; 
+  position: absolute; 
+  text-align: center; 
+  color: black; 
+  font-size: 25px; 
+  font-family: Noto Sans; 
+  font-weight: 300; 
+  text-decoration: underline; 
+  word-wrap: break-word;
+}
+
+
+.ladoEsquerdo {
+  width: 900px; 
+  height: 939px; 
+  left: -8px; 
+  top: -8px; 
+  position: absolute; 
+  background: black;
+}
+
+.input_login {
+  width: 654px; 
+  height: 83.14px; 
+  left: 1012.11px; 
+  top: 350px;
+  position: absolute;
+  text-align: start; 
+  color: black; 
+  font-size: 35px; 
+  font-family: Raleway; 
+  font-weight: 700; 
+  border-radius: 10px;
+  background-color: whitesmoke;
+}
+
+.input_senha {
+   width: 653.74px; 
+  height: 81px; 
+  left: 1012.11px; 
+  top: 508px; 
+  position: absolute; 
+  font-size: 35px; 
+  font-weight: 700; 
+  word-wrap: break-word;
+  border-radius: 8px;
+  background-color: whitesmoke;
+}
+
+.botao {
+  
+  position: absolute; 
+  text-align: center; 
+  background-color: #FFAE34; 
+  font-size: 45px; 
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700; 
+  word-wrap: break-word;
+  border-radius: 10px;
+  width: 462px; 
+  height: 83.39px; 
+  left: 1108.11px; 
+  top: 650px; 
+  position: absolute; 
+  background: #FFAE34; 
+  border-radius: 68px; 
+  border: 2px black solid;
+  transition: 0.4s;
+}
+
+button:hover{
+  transform: scale(1.1);
+
+}
