@@ -1,3 +1,16 @@
+/* NAVBAR */
+const desiredElement = document.getElementById('nav'); // elemento alvo
+const pixelsAmount = '50'; // Quantidade de pixels a contar do TOP até definir a cor
+
+window.addEventListener('scroll', function() {
+    if (window.scrollY > pixelsAmount) {
+    	desiredElement.classList.add('changeStyle'); // adiciona classe "changeColor"
+    } else {
+      desiredElement.classList.remove('changeStyle'); // remove classe "changeColor"
+    }
+});
+
+/* CARROSSEL */
 const carrosselTudo = document.querySelector(".carrosselTudo");
     const carousel = document.querySelector(".carousel");
     const firstCardWidth = carousel.querySelector(".card").offsetWidth;

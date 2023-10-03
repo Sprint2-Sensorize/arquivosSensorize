@@ -33,14 +33,28 @@ body{
 
 /* CSS NAVBAR E LOGO */
 nav {
+    background: transparent;
     display: flex;
     justify-content: space-around;
     align-items: center;
     color: #ffffff;
-    background-color:  #343434;
+    /* background: white;  */
+    /* box-shadow: rgba(31, 38, 135, 0.37) 0px 8px 20px 0px; */
+    /* background-color:  #343434; */
     margin: 0;
-    padding: 0;
+    position: fixed;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    transition: 0.3s ease-in-out;
+    z-index: 2;
 }
+
+.changeStyle {
+  background-color:#343434;
+  box-shadow: 0 0 1em gray;
+}
+
 
 .logo {
     font-weight: 800;
@@ -187,8 +201,6 @@ hr{
 }
 
 /* CALCULADORA */
-
-
 .divCalcMaior{
   display: flex;
   height: 99vh;
@@ -228,7 +240,6 @@ hr{
 }
 
 /* CARROSSEL */
-
 .tituloClientes{
   margin-top: -60px;
   color: #FDF2CD;
@@ -346,7 +357,6 @@ hr{
 }
 
 .sensorize{
-  margin-top: 60px;
   color: #FDF2CD;
   text-align: center;
   width: 1000px;
