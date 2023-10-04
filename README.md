@@ -7,15 +7,17 @@
 
 
 
-<h1>Regras de condução do projeto</h1>
+<h3>Regras de condução do projeto</h3>
 
 
 Teremos reuniões as terças e quintas pela manhã presencialmente na faculdade a partir das 9:30hrs, e na segunda, quarta e sexta pela noite via discord a partir das 19:30hrs.
 
-Em caso de faltas nas reuniões, se não avisadas previamente (mínimo 1 dia antes) será descontado nos indicadores de participação(desconto de pontuação);
+Em caso de faltas nas reuniões, se não avisadas previamente (mínimo 1 dia antes) será descontado nós indicadores de participação(desconto de pontuação);
 
 Os integrantes presentes nas reuniões poderão participar das tomadas de decisão em relação ao projeto;
 
 Ao sentir dificuldade em relação a parte técnica do projeto, notificar os integrantes do grupo com antecedência para solução dos problemas;
+
+
 
 Com o objetivo da maior produtividade das reuniões, a conduta profissional será cobrada de todos durante as reuniões em relação ao comportamento, evitando assuntos paralelos e desnecessários.
