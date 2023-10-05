@@ -47,8 +47,8 @@
   font-size: 20px; 
   font-family: Noto Sans; 
   font-weight: 300; 
-  text-decoration: underline; 
   word-wrap: break-word;
+  text-decoration: none;
 }
 
 .cadastro {
@@ -60,14 +60,15 @@
   font-size: 25px; 
   font-family: Noto Sans; 
   font-weight: 300; 
-  text-decoration: underline; 
   word-wrap: break-word;
+  text-decoration: none;
+  font-style: color blue;
 }
 
 
 .ladoEsquerdo {
   width: 900px; 
-  height: 939px; 
+  height: 110vh; 
   left: -8px; 
   top: -8px; 
   position: absolute; 
