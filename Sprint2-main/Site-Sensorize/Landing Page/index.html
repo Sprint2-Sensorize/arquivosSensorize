@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,26 +8,27 @@
     <link rel="icon" href="img/Logo Sensorize copy.ico" type="image/png">
     <link rel="stylesheet" href="./css/style.css">
     <!-- Fontawesome Link for Icons -->
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 
 </head>
+
 <body>
     <!-- header e banner -->
     <nav id="nav">
         <div class="logo">
-            <img id="idLogo"src="./img/Logo Sensorize copy.ico" alt="logo" class="logo-img">
+            <img id="idLogo" src="./img/Logo Sensorize copy.ico" alt="logo" class="logo-img">
             Sensorize
         </div>
-        
+
 
         <div class="links">
             <ul class="nav-itens">
-               <li><a href="#idPrj" class="itensDaNav">Projeto</a></li>
-               <li><a href="#idCalc" class="itensDaNav">Simulação</a></li>
-               <li><a href="#idCarros" class="itensDaNav">Clientes</a></li>
-               <li><a href="#idEmp" class="itensDaNav">Sobre</a></li>
-               <li><a href="#idForms" class="itensDaNav">Contato</a></li>
-               <li><a href="#Login" class="itensDaNav">Login</a></li>
+                <li><a href="#idPrj" class="itensDaNav">Projeto</a></li>
+                <li><a href="#idCalc" class="itensDaNav">Simulação</a></li>
+                <li><a href="#idCarros" class="itensDaNav">Clientes</a></li>
+                <li><a href="#idEmp" class="itensDaNav">Sobre</a></li>
+                <li><a href="#idForms" class="itensDaNav">Contato</a></li>
+                <li><a href="#Login" class="itensDaNav">Login</a></li>
             </ul>
         </div>
     </nav>
@@ -35,109 +37,129 @@
         <img src="./img/banner.png" alt="banner" class="banner-img">
         <div class="banner-content">
             <h1>A Sensorize apoia você no<br>
-                 processo de tomada de decisão<br> em seu négocio</h1>
+                processo de tomada de decisão<br> em seu négocio</h1>
             <h3>Evite a Superlotação e Aumente a<br>
-                 Fidelidade dos Alunos.<br>
+                Fidelidade dos Alunos.<br>
                 Descubra Como!</h3><br>
-                <div>
-                    <button class="simulacao">FAÇA SUA SIMULAÇÃO</button>
-                </div>
+            <div>
+                <button class="simulacao">FAÇA SUA SIMULAÇÃO</button>
+            </div>
         </div>
         <hr id="idPrj">
     </div>
 
     <!-- projeto TechGym -->
     <div class="divMaior">
-    <div>
-       <h1 class="techgym">Melhore a sua academia utilizando os nossos<br>
-         sensores, conheça a <span style="color: #FFAE34;">TechGym!</span></h1><br>
+        <div>
+            <h1 class="techgym">Melhore a sua academia utilizando os nossos<br>
+                sensores, conheça a <span style="color: #FFAE34;">TechGym!</span></h1><br>
+        </div>
+
+        <!-- caixinhas techgym -->
+        <div class="divTodasCaixas">
+            <div class="divCaixa">
+                <p class="tituloCaixa">Evite superlotação</p>
+                <p class="textoCaixa">Otimização de tempo e espaço utilizando sensores.</p>
+
+            </div>
+
+            <div class="divCaixa">
+                <p class="tituloCaixa">Monitore o fluxo de seus clientes</p>
+                <p class="textoCaixa">Análises Claras e Centralizadas.</p>
+            </div>
+
+            <div class="divCaixa">
+                <p class="tituloCaixa">Tempo</p>
+                <p class="textoCaixa">Faça o tempo correr ao seu favor, Com o projeto TechGym.</p>
+            </div>
+        </div>
     </div>
 
-    <!-- caixinhas techgym -->
-    <div class="divTodasCaixas">
-        <div class="divCaixa">
-            <p class="tituloCaixa">Evite superlotação</p>
-            <p class="textoCaixa">Otimização de tempo e espaço utilizando sensores.</p>
- 
-        </div>
-
-        <div class="divCaixa">
-            <p class="tituloCaixa">Monitore o fluxo de seus clientes</p>
-            <p class="textoCaixa">Análises Claras e Centralizadas.</p>
-        </div>
-
-        <div class="divCaixa">
-            <p class="tituloCaixa">Tempo</p>
-            <p class="textoCaixa">Faça o tempo correr ao seu favor, Com o projeto TechGym.</p>
-        </div>
-    </div>
-</div>
-
-<hr id="idCalc">
+    <hr id="idCalc">
     <!-- calculadora -->
     <div class="divCalcMaior">
         <div class="textoCalc">
-            <p>Você combina com a nossa tecnologia! Se junte com a Sensorize! </p>
-            <div>
-                <button class="simulacao2">FAÇA SUA SIMULAÇÃO</button>
-            </div>
+            <p>As suas perdas provavelmente são mais surpreendentes do que você imagina. Faça já uma simulação e entenda
+                melhor. </p>
         </div>
-        <div class="imagemCalc"> <img class="imgCalc" src="./img/imgCalcLucro.png"></div>
+        <div id="div_inputs" class="quadrado">
+
+            <h2 style=" margin-bottom: 20px; color: white;">Calculadora Financeira</h2>
+            <div class="labels">
+
+                <label class="labels_calc">Nome da academia</label>
+                <input type="text" class="input-linha" id="input_nome_academia" placeholder="Ex: BlueFit"><br>
+                <label class="labels_calc">Nome do Representante</label>
+                <input type="text" class="input-linha" id="input_representante" placeholder="Ex: Jonathan"><br>
+                <label class="labels_calc">N° de clientes</label>
+                <input type="number" class="input-linha" id="input_numero_clientes" placeholder="Ex: 1500"><br>
+                <label class="labels_calc">Valor mensalidade</label>
+                <input type="number" class="input-linha" id="input_mensalidade_clientes" placeholder="Ex: R$100"
+                    placeholder="Valor das mensalidades"><br>
+            </div>
+            <button class="simulacao" onclick="verificar()">Analisar</button>
+        </div>
     </div>
 
     <hr id="idCarros">
     <!-- carrosselClientes -->
     <div class="divMaiorCli">
-    <p class="tituloClientes" style="margin-top:100px; margin-bottom:50px;">Em todo Brasil temos clientes que confiam no nosso sistema.</p>
-    <div class="carrosselTudo" >
-      <i id="left" class="fa-solid fa-angle-left"></i>
-      <ul class="carousel">
-        <li class="card">
-          <div class="img"><img src="./img/cliente1.png" alt="img" ></div>
-        </li>
-        <li class="card">
-          <div class="img"><img src="./img/cliente2.png" alt="img" ></div>
-        </li>
-        <li class="card">
-          <div class="img"><img src="./img/cliente3.png" alt="img" ></div>
-        </li>
-        <li class="card">
-          <div class="img"><img src="./img/bodyCraftersCliente.png" alt="img" ></div>
-        </li>
-        <li class="card">
-          <div class="img"><img src="./img/fitnessCliente.png" alt="img" ></div>
-        </li>
-      </ul>
-      <i id="right" class="fa-solid fa-angle-right"></i>
+        <p class="tituloClientes" style="margin-top:100px; margin-bottom:50px;">Em todo Brasil temos clientes que
+            confiam no nosso sistema.</p>
+        <div class="carrosselTudo">
+            <i id="left" class="fa-solid fa-angle-left"></i>
+            <ul class="carousel">
+                <li class="card">
+                    <div class="img"><img src="./img/cliente1.png" alt="img"></div>
+                </li>
+                <li class="card">
+                    <div class="img"><img src="./img/cliente2.png" alt="img"></div>
+                </li>
+                <li class="card">
+                    <div class="img"><img src="./img/cliente3.png" alt="img"></div>
+                </li>
+                <li class="card">
+                    <div class="img"><img src="./img/bodyCraftersCliente.png" alt="img"></div>
+                </li>
+                <li class="card">
+                    <div class="img"><img src="./img/fitnessCliente.png" alt="img"></div>
+                </li>
+            </ul>
+            <i id="right" class="fa-solid fa-angle-right"></i>
+        </div>
     </div>
-</div>
-</div>
+    </div>
 
-<hr id="idEmp">
+    <hr id="idEmp">
     <!-- Empresa -->
     <div class="divEmpresaMaior">
-            <h1 class="sensorize"style="margin-top: 100px;">A <span class="corPalavra">Sensorize</span> é uma empresa que tem como objetivo solucionar problemas dos nossos clientes, oferecendo soluções tecnológicas, práticas e eficazes.</h1>
-        
-            <div class="divCoisasEmpresas">
-                <div class="visao">
-                    <img class="imgVisao" src="./img/VISAO-foguete.png">
-                    <h3 class="tituloVisao">Visão</h3>
-                    <p class="pVisao">Ser líder na revolução da gestão de espaços e fluxo no meio tecnológico</p>
-                </div>
+        <h1 class="sensorize" style="margin-top: 100px;">A <span class="corPalavra">Sensorize</span> é uma empresa que
+            tem como objetivo solucionar problemas dos nossos clientes, oferecendo soluções tecnológicas, práticas e
+            eficazes.</h1>
 
-                <div class="missao">
-                    <img class="imgMissao" src="./img/MISSAO-mira.png">
-                    <h3 class="tituloMissao">Missão</h3>
-                    <p class="pMissao">Transformar a gestão de espaços para impulsionar a fidelidade e satisfação dos clientes.</p>
-                </div>
-            
-                
-                <div class="valores">
-                    <img class="imgValores" src="./img/VALORES-diamante.png">
-                    <h3 class="tituloValores">Valores</h3>
-                    <p class="pValores">Nos comprometemos em entregar um ótimo resultado visando <span class="corPalavra">honestidade</span>, <span class="corPalavra">ética</span> e <span class="corPalavra">inovação.</span></p>
-                </div>
+        <div class="divCoisasEmpresas">
+            <div class="visao">
+                <img class="imgVisao" src="./img/VISAO-foguete.png">
+                <h3 class="tituloVisao">Visão</h3>
+                <p class="pVisao">Ser líder na revolução da gestão de espaços e fluxo no meio tecnológico</p>
             </div>
+
+            <div class="missao">
+                <img class="imgMissao" src="./img/MISSAO-mira.png">
+                <h3 class="tituloMissao">Missão</h3>
+                <p class="pMissao">Transformar a gestão de espaços para impulsionar a fidelidade e satisfação dos
+                    clientes.</p>
+            </div>
+
+
+            <div class="valores">
+                <img class="imgValores" src="./img/VALORES-diamante.png">
+                <h3 class="tituloValores">Valores</h3>
+                <p class="pValores">Nos comprometemos em entregar um ótimo resultado visando <span
+                        class="corPalavra">honestidade</span>, <span class="corPalavra">ética</span> e <span
+                        class="corPalavra">inovação.</span></p>
+            </div>
+        </div>
     </div>
 
     <hr id="idForms">
@@ -146,7 +168,7 @@
         <form action="" class="forms-contato">
             <div class="form-group">
                 <h1 class="titulo-forms">Fale com alguns de nossos especialistas<br>
-                     em Data & Analytics</h1><br><br>
+                    em Data & Analytics</h1><br><br>
 
                 <div class="input-container">
                     <label for="input_nome">Nome Completo</label><br>
@@ -175,10 +197,11 @@
             <div class="form-group">
                 <div class="mensagem-forms">
                     <label for="input_mensagem">Mensagem</label><br><br>
-                    <textarea id="input_mensagem" class="input-linha-mensagem" rows="5" placeholder="Digite a mensagem"></textarea>
+                    <textarea id="input_mensagem" class="input-linha-mensagem" rows="5"
+                        placeholder="Digite a mensagem"></textarea>
                 </div>
             </div><br>
-            
+
             <div class="button-forms">
                 <button>Enviar</button>
             </div>
@@ -188,17 +211,18 @@
         <div class="chamada-forms">
             <h1>Transforme seus dados em<br> insights</h1><br><br>
             <p>Com uma estrutura de Data & Analytics, decifre oportunidades de negócio,<br>
-            tome decisões mais assertivas e escale os resultados da sua empresa
+                tome decisões mais assertivas e escale os resultados da sua empresa
             </p><br>
             <button>Agende uma reunião</button><br><br>
-            
+
             <div class="wpp">
-            <a href="https://api.whatsapp.com/send?phone=SEUNUMERODOTELEFONE" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-whatsapp fa-beat" style="color: #0ae62e;"></i>
-              </a>
-            <p>Ou converse agora mesmo</p>
+                <a href="https://api.whatsapp.com/send?phone=SEUNUMERODOTELEFONE" target="_blank"
+                    rel="noopener noreferrer">
+                    <i class="fa-brands fa-whatsapp fa-beat" style="color: #0ae62e;"></i>
+                </a>
+                <p>Ou converse agora mesmo</p>
+            </div>
         </div>
-    </div>
     </div>
 
     <!-- rodape -->
@@ -218,4 +242,5 @@
     <!--  -->
     <script src="main.js"></script>
 </body>
+
 </html>
