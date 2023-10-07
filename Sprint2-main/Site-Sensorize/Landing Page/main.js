@@ -1,6 +1,6 @@
 /* NAVBAR */
 const desiredElement = document.getElementById('nav') // elemento alvo
-const pixelsAmount = '50' // Quantidade de pixels a contar do TOP até definir a cor
+const pixelsAmount = '10' // Quantidade de pixels a contar do TOP até definir a cor
 
 window.addEventListener('scroll', function () {
   if (window.scrollY > pixelsAmount) {

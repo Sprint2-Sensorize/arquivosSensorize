@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Poppins:wght@300;400;500;600&family=Raleway:wght@600;800&family=Russo+One&family=Sora:wght@200;500&display=swap');
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffae34;
+  border-radius: 10px;
+}
+
+body {
+  margin: 0;
+  font-family: 'raleway';
+  background-color: #000000;
+  overflow-x: hidden;
+}
+
+/* CSS NAVBAR E LOGO */
+nav {
+  box-shadow: 0 0 1em gray;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #ffffff;
+  /* background: white;  */
+  /* box-shadow: rgba(31, 38, 135, 0.37) 0px 8px 20px 0px; */
+  background-color: #343434;
+  margin: 0;
+  position: fixed;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  transition: 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.nav-itens {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-itens > li > a {
+  padding-left: 50px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.nav-itens > li > a:hover {
+  color: #ffae34;
+}
+
+.logo-img {
+  width: 40px;
+  height: auto;
+  vertical-align: middle;
+  /* vertical no centro. */
+}
