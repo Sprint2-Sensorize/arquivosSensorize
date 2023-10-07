@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sensorize</title>
   <link rel="stylesheet" href="style.css">
-  <script src="../main.js"></script>
+  <script src="../Landing Page/main.js"></script>
 </head>
 
 <body>
@@ -20,13 +20,13 @@
       <div class="cadastro">
         <div class="input-endereco">
           <h3>Endereço</h3>
-          <span style="margin-left: -80px;">CEP</span>
+          <span style="margin-left: -198px;">CEP</span>
           <div class="desing">
-            <input style="width: 140px;" type="text" id="inp_cep_endereco" placeholder="01234-567">
+            <input style="width: 140px;" type="text" id="inp_cep_endereco" placeholder="Ex: 01234-567">
             <button class="busca" onclick="viacep()" style="border-radius: 5px;">Pesquisar</button>
           </div>
           <div class="desing">
-            <span style="margin-left: -50px; margin-right: 0px;">Rua</span>
+            <span style="margin-left: -182px; margin-right: 118px;">Rua</span>
             <span style="margin-left: 160px; position: absolute;">N°</span>
           </div>
           <div class="desing">
@@ -34,17 +34,17 @@
             <input style="width: 50px;" type="text" id="inp_numero_endereco" placeholder="123">
           </div>
 
-          <span>Bairro</span>
+          <span style="margin-left: -320px;">Bairro</span>
           <input type="text" id="inp_bairro_endereco" placeholder="Centro" readonly>
           <div class="desing">
-            <span style="margin-left: -50px; margin-right: 0px;">Cidade</span>
-            <span style="margin-left: 140px; position: absolute;">UF</span>
+            <span style="margin-left: -185px; margin-right: 0px;">Cidade</span>
+            <span style="margin-left: 265px; position: absolute;">UF</span>
           </div>
           <div>
             <input style="width: 300px;" type="text" id="inp_cidade_endereco" placeholder="São Paulo" readonly>
             <input style="width: 40px;" type="text" id="inp_estado_endereco" placeholder="SP" readonly>
           </div>
-          <span>Complemento</span>
+          <span style="margin-left: -260px;">Complemento</span>
           <input type="text" id="inp_complemento_endereco" placeholder="bloco, apartamento, casa, sobrado">
         </div>
       </div>
@@ -52,7 +52,7 @@
         <button class="botao" onclick="cadastrar()">
           Cadastrar
         </button>
-        <a href="../dados_cliente/index_cliente.html"><button class="botao">
+        <a href="../Dados do cliente/index_cliente.html"><button class="botao">
             Voltar
           </button></a>
 

@@ -65,10 +65,9 @@ a {
 }
 input {
   font-family: 'raleway';
-  padding: 0.3rem 0;
+  padding: 0.3rem 5px;
   background-color: rgb(224, 224, 224);
-  width: 350px;
-  text-align: center;
+  width: 357px;
   border-radius: 5px;
   height: 20px;
   margin-bottom: 1rem;

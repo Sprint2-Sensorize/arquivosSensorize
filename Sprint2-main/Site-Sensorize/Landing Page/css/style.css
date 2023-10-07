@@ -19,14 +19,13 @@
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #FFAE34;
+  background: #ffae34;
   border-radius: 10px;
 }
 
-
 body {
   margin: 0;
-  font-family: "raleway";
+  font-family: 'raleway';
   background-color: #000000;
   overflow-x: hidden;
 }
@@ -55,7 +54,6 @@ nav {
   box-shadow: 0 0 1em gray;
 }
 
-
 .logo {
   font-weight: 800;
   font-size: 20px;
@@ -68,15 +66,14 @@ nav {
   height: 100%;
 }
 
-
-.nav-itens>li>a {
+.nav-itens > li > a {
   padding-left: 20px;
   color: #ffffff;
   text-decoration: none;
 }
 
-.nav-itens>li>a:hover {
-  color: #FFAE34;
+.nav-itens > li > a:hover {
+  color: #ffae34;
 }
 
 .logo-img {
@@ -123,17 +120,32 @@ nav {
 }
 
 .simulacao {
-  background-color: #FFAE34;
-  color: #2B2828;
-  padding: 18px 20px;
+  background-color: #ffae34;
+  color: #2b2828;
+  padding: 15px 20px;
   border: none;
   border-radius: 20px;
   font-size: 15px;
   cursor: pointer;
   width: 40%;
   font-weight: bold;
-  ;
-
+}
+.novoQuadrado {
+  background-color: white;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  margin-left: 12%;
+  border-radius: 30px;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  text-align: justify;
+}
+.div_texto2 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .divCalcMaior .quadrado .simulacao {
@@ -145,7 +157,7 @@ nav {
   font-size: 16px;
   font-style: italic;
 }
- .labels_calc{
+.labels_calc {
   color: white;
   text-align: center;
   display: flex;
@@ -184,7 +196,7 @@ hr {
 }
 
 .spanTechgym {
-  color: #FFAE34;
+  color: #ffae34;
 }
 
 .divTodasCaixas {
@@ -196,10 +208,17 @@ hr {
 .divCaixa {
   width: 350px;
   height: 200px;
-  background-image: linear-gradient(to right, #1A1C1C, #434343, rgb(132, 132, 132), #434343, #1A1C1C);
+  background-image: linear-gradient(
+    to right,
+    #1a1c1c,
+    #434343,
+    rgb(132, 132, 132),
+    #434343,
+    #1a1c1c
+  );
   margin-inline-start: 25px;
   border-radius: 5px;
-  transition: .2s;
+  transition: 0.2s;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -253,7 +272,6 @@ hr {
   font-weight: bold;
   width: 500px;
   margin-left: 200px;
-
 }
 
 /* .imagemCalc{
@@ -286,7 +304,6 @@ hr {
   margin: auto;
   font-size: 30px;
   font-weight: bold;
-
 }
 
 .divMaiorCli {
@@ -400,7 +417,7 @@ hr {
 }
 
 .carousel .card span {
-  color: #6A6D78;
+  color: #6a6d78;
   font-size: 1.31rem;
 }
 
@@ -417,7 +434,7 @@ hr {
 }
 
 .corPalavra {
-  color: #FFAE34;
+  color: #ffae34;
 }
 
 .divCoisasEmpresas {
@@ -504,8 +521,7 @@ address {
   /*  verticalmente na metade do banner */
   left: 30%;
   /* banner */
-  transform: translate(-35%,
-      30%);
+  transform: translate(-35%, 30%);
   /* Alinhe ao centro, tanto vertical quanto horizontalmente */
   color: #fff;
   text-align: center;
@@ -516,8 +532,6 @@ address {
   display: flex;
   align-items: center;
 }
-
-
 
 /* FORMS CONTATO */
 .input-linha {
@@ -543,7 +557,6 @@ address {
 .form-group {
   margin-bottom: 20px;
   color: #ffffff;
-
 }
 
 .input-linha-mensagem {
@@ -556,8 +569,7 @@ address {
   /*quebra de linha automática */
 }
 
-
-.button-forms>button {
+.button-forms > button {
   background-color: #ffae34;
   color: #2b2828;
   padding: 15px 20px;
@@ -567,8 +579,7 @@ address {
   cursor: pointer;
   width: 22%;
   margin-top: 10px;
-  transform: translate(150%,
-      -50%)
+  transform: translate(150%, -50%);
 }
 
 .container {
@@ -591,7 +602,7 @@ address {
   margin-top: 90px;
 }
 
-.chamada-forms>button {
+.chamada-forms > button {
   background-color: #ffae34;
   color: #2b2828;
   padding: 15px 20px;
@@ -605,14 +616,12 @@ address {
 
 .wpp {
   display: flex;
-  transform: translate(32%,
-      30%);
+  transform: translate(32%, 30%);
 }
 
-.wpp>p {
+.wpp > p {
   margin-left: 15px;
 }
-
 
 /* FOOTER */
 .rodape {
