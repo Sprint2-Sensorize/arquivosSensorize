@@ -116,19 +116,49 @@ function verificar() {
   var nClientes = Number(input_numero_clientes.value)
   var mensalidade = Number(input_mensalidade_clientes.value)
 
-  document.getElementById('quadradoBranco').style.display = 'flex'
+  if (nomeAcademia == '') {
+    input_nome_academia.style.borderBottom = '1px solid red'
+    input_nome_academia.style.transition = 'border-bottom 0.5s ease'
+  } else {
+    input_nome_academia.style.borderColor = 'white'
+  }
+  if (nomeRepresentante == '') {
+    input_representante.style.borderBottom = '1px solid red'
+    input_representante.style.transition = 'border-bottom 0.5s ease'
+  } else {
+    input_representante.style.borderColor = 'white'
+  }
+  if (nClientes == 0) {
+    input_numero_clientes.style.borderBottom = '1px solid red'
+    input_numero_clientes.style.transition = 'border-bottom 0.5s ease'
+  } else {
+    input_numero_clientes.style.borderColor = 'white'
+  }
+  if (mensalidade == 0) {
+    input_mensalidade_clientes.style.borderBottom = '1px solid red'
+    input_mensalidade_clientes.style.transition = 'border-bottom 0.5s ease'
+  } else {
+    input_mensalidade_clientes.style.borderColor = 'white'
+  }
+  if (
+    nomeAcademia != '' &&
+    nomeRepresentante != '' &&
+    nClientes != 0 &&
+    mensalidade != 0
+  ) {
+    document.getElementById('quadradoBranco').style.display = 'flex'
+    document.getElementById('div_inputs').style.display = 'none'
 
-  document.getElementById('div_inputs').style.display = 'none'
-
-  quadradoBranco.innerHTML = `<div class = "div_texto2"> <h2>Olá! ${nomeRepresentante}!!</h2><br> <p class = "texto2">Vejo que você se importa muito com a ${nomeAcademia} e com seus clientes. Isso é muito importante para o crescimento do seu estabelecimento.<br>
-Mas você sabia que <b>25%</b> das pessoas desistem de fazer academia por conta da falta de tempo e outros <b>16%</b> desistem devido à lotação das academias?
-<br><br> Isso significa a possibilidade de a sua empresa perder <b>${(
-    nClientes * 0.41
-  ).toFixed(0)} clientes</b> nos próximos meses. <br>
-Pensando nisso, nós da <b>Sensorize</b> criamos um projeto chamado <b>TechGym</b> que vai solucionar esse problema<br><br>
-<br> Utilizando dados que serão obtidos por meio de sensores colocados nos equipamentos garantiremos uma melhor rotatividade
- para a sua academia, para que todos os seus clientes consigam treinar sem sofrer com esses problemas.</p><br>
-<div style= justify-content: space-between; "display: flex;"> <button class = "simulacao" style = "width: 150px" "margin: 40px" onclick="voltar()" >Voltar</button> <a href="#idForms"><button class = "simulacao" style = "width: 150px" "margin: 40px" onclick="vontrate()" >Contrate-nos</button></a></div></div>`
+    quadradoBranco.innerHTML = `<div class = "div_texto2"> <h2>Olá! ${nomeRepresentante}!!</h2><br> <p class = "texto2">Vejo que você se importa muito com a ${nomeAcademia} e com seus clientes. Isso é muito importante para o crescimento do seu estabelecimento.<br>
+    Mas você sabia que <b>25%</b> das pessoas desistem de fazer academia por conta da falta de tempo e outros <b>16%</b> desistem devido à lotação das academias?
+    <br><br> Isso significa a possibilidade de a sua empresa perder <b>${(
+      nClientes * 0.41
+    ).toFixed(0)} clientes</b> nos próximos meses. <br>
+    Pensando nisso, nós da <b>Sensorize</b> criamos um projeto chamado <b>TechGym</b> que vai solucionar esse problema<br><br>
+    <br> Utilizando dados que serão obtidos por meio de sensores colocados nos equipamentos garantiremos uma melhor rotatividade
+     para a sua academia, para que todos os seus clientes consigam treinar sem sofrer com esses problemas.</p><br>
+    <div style= justify-content: space-between; "display: flex;"> <button class = "simulacao" style = "width: 150px" "margin: 40px" onclick="voltar()" >Voltar</button> <a href="#idForms"><button class = "simulacao" style = "width: 150px" "margin: 40px" onclick="vontrate()" >Contrate-nos</button></a></div></div>`
+  }
 }
 
 function voltar() {
@@ -198,11 +228,34 @@ function cadastrar() {
     senha.indexOf('!') > 0 ||
     senha.indexOf('%') > 0
   ) {
+    window.location.href = '../Dados Endereço/index_endereco.html'
     inp_senha.style.borderColor = '#000000'
     inp_confimacao.style.borderColor = '#000000'
   } else {
     inp_senha.style.borderColor = '#ff0000'
     inp_confimacao.style.borderColor = '#ff0000'
     alert(`É nescessario que a senha tenha @,!,#,%`)
+  }
+}
+function login() {
+  var login = inp_login.value
+  var senha = inp_senha.value
+
+  if (login == 'teste@gmail.com' && senha == 123) {
+    alert('Login Realizado com sucesso!')
+    window.location.href = '#'
+  } else {
+    alert('Tente novamente')
+  }
+}
+
+function cadastro_endereco() {
+  var numero = inp_numero_endereco.value
+
+  if (numero == '') {
+    inp_numero_endereco.style.borderColor = '#ff0000'
+  } else {
+    alert('Cadastro realizado com sucesso')
+    window.location.href = '../Tela de Login/Login.html'
   }
 }
