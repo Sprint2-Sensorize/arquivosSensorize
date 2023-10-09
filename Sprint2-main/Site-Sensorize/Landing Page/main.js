@@ -99,37 +99,34 @@ const autoPlay = () => {
 }
 autoPlay()
 
-<<<<<<< HEAD
-carousel.addEventListener("mousedown", dragStart);
-carousel.addEventListener("mousemove", dragging);
-document.addEventListener("mouseup", dragStop);
-carousel.addEventListener("scroll", infiniteScroll);
-carrosselTudo.addEventListener("mouseenter", () => clearTimeout(timeoutId));
-carrosselTudo.addEventListener("mouseleave", autoPlay);
+carousel.addEventListener('mousedown', dragStart)
+carousel.addEventListener('mousemove', dragging)
+document.addEventListener('mouseup', dragStop)
+carousel.addEventListener('scroll', infiniteScroll)
+carrosselTudo.addEventListener('mouseenter', () => clearTimeout(timeoutId))
+carrosselTudo.addEventListener('mouseleave', autoPlay)
 
 // Calculadora
 
+document.getElementById('quadradoBranco').style.display = 'none'
 
-document.getElementById('quadradoBranco').style.display = 'none';
+function verificar() {
+  var nomeAcademia = input_nome_academia.value
+  var nomeRepresentante = input_representante.value
+  var nClientes = Number(input_numero_clientes.value)
+  var mensalidade = Number(input_mensalidade_clientes.value)
 
+  document.getElementById('quadradoBranco').style.display = 'flex'
 
-function verificar(){
+  document.getElementById('div_inputs').style.display = 'none'
 
-    var nomeAcademia = input_nome_academia.value
-    var nomeRepresentante = input_representante.value
-    var nClientes = Number(input_numero_clientes.value);
-    var mensalidade = Number(input_mensalidade_clientes.value);
-    
-    
-    document.getElementById('quadradoBranco').style.display = 'flex';
-
-    document.getElementById('div_inputs').style.display = 'none';
-
-quadradoBranco.innerHTML = `<div class = "div_texto2"> <h2>Olá ${nomeRepresentante}!!</h2><br> <p class = "texto2">Vejo que você se importa
+  quadradoBranco.innerHTML = `<div class = "div_texto2"> <h2>Olá ${nomeRepresentante}!!</h2><br> <p class = "texto2">Vejo que você se importa
  muito com a ${nomeAcademia} e com seus clientes. Isso é muito importante para o crescimento do seu estabelecimento.<br><br>
 Mas você sabia que <b class = "bold">25%</b> das pessoas desistem de fazer academia por conta da falta de tempo e outros <b class = "bold">16%</b> desistem devido à lotação
- das academias? 
-<br><br> Isso significa a possibilidade de a sua empresa perder <b class = "bold">${(nClientes * 0.21).toFixed(0)} clientes</b> nos próximos meses. <br>
+ das academias?
+<br><br> Isso significa a possibilidade de a sua empresa perder <b class = "bold">${(
+    nClientes * 0.21
+  ).toFixed(0)} clientes</b> nos próximos meses. <br>
 Pensando nisso, nós da <b class = "bold">Sensorize</b> criamos um projeto chamado <b class = "bold">TechGym</b> que vai solucionar esse problema<br><br>
 <br> </p><br>
 <div style= justify-content: space-between; "display: flex;"> <button class = "simulacao" style = "width: 150px" "margin: 40px" onclick="voltar()"
@@ -137,18 +134,15 @@ Pensando nisso, nós da <b class = "bold">Sensorize</b> criamos um projeto chama
  </a></div></div>`
 }
 
-function voltar(){
-    document.getElementById('quadradoBranco').style.display = 'none';  
-    document.getElementById('div_inputs').style.display = 'flex';
-     input_nome_academia.value = "";
-     input_representante.value = "";
-     input_numero_clientes.value = "";
-    input_mensalidade_clientes.value = "";
+function voltar() {
+  document.getElementById('quadradoBranco').style.display = 'none'
+  document.getElementById('div_inputs').style.display = 'flex'
+  input_nome_academia.value = ''
+  input_representante.value = ''
+  input_numero_clientes.value = ''
+  input_mensalidade_clientes.value = ''
+}
 
-    
-}   
-
-=======
 carousel.addEventListener('mousedown', dragStart)
 carousel.addEventListener('mousemove', dragging)
 document.addEventListener('mouseup', dragStop)
@@ -200,14 +194,14 @@ function verificar() {
     document.getElementById('div_inputs').style.display = 'none'
 
     quadradoBranco.innerHTML = `<div class = "div_texto2"> <h2>Olá! ${nomeRepresentante}!!</h2><br> <p class = "texto2">Vejo que você se importa muito com a ${nomeAcademia} e com seus clientes. Isso é muito importante para o crescimento do seu estabelecimento.<br>
-    Mas você sabia que <b>25%</b> das pessoas desistem de fazer academia por conta da falta de tempo e outros <b>16%</b> desistem devido à lotação das academias?
-    <br><br> Isso significa a possibilidade de a sua empresa perder <b>${(
+    Mas você sabia que <b class = "bold">25%</b> das pessoas desistem de fazer academia por conta da falta de tempo e outros <b class = "bold">16%</b> desistem devido à lotação das academias?
+    <br><br> Isso significa a possibilidade de a sua empresa perder <b class = "bold">${(
       nClientes * 0.41
     ).toFixed(0)} clientes</b> nos próximos meses. <br>
-    Pensando nisso, nós da <b>Sensorize</b> criamos um projeto chamado <b>TechGym</b> que vai solucionar esse problema<br><br>
+    Pensando nisso, nós da <b class = "bold">Sensorize</b> criamos um projeto chamado <b class = "bold">TechGym</b> que vai solucionar esse problema<br><br>
     <br> Utilizando dados que serão obtidos por meio de sensores colocados nos equipamentos garantiremos uma melhor rotatividade
      para a sua academia, para que todos os seus clientes consigam treinar sem sofrer com esses problemas.</p><br>
-    <div style= justify-content: space-between; "display: flex;"> <button class = "simulacao" style = "width: 150px" "margin: 40px" onclick="voltar()" >Voltar</button> <a href="#idForms"><button class = "simulacao" style = "width: 150px" "margin: 40px" onclick="vontrate()" >Contrate-nos</button></a></div></div>`
+    <div class = "botao_amostra"> <button class = "simulacao"onclick="voltar()" >Voltar</button> <a href="#idForms"><button class = "simulacao" onclick="vontrate()" >Contrate-nos</button></a></div></div>`
   }
 }
 
@@ -293,7 +287,7 @@ function login() {
 
   if (login == 'teste@gmail.com' && senha == 123) {
     alert('Login Realizado com sucesso!')
-    window.location.href = '#'
+    window.location.href = '../Dashboard/index_dashboard.html'
   } else {
     alert('Tente novamente')
   }
@@ -309,4 +303,3 @@ function cadastro_endereco() {
     window.location.href = '../Tela de Login/Login.html'
   }
 }
->>>>>>> b40e9a7a08e2621c22cbb0aee333d2950c4362b4

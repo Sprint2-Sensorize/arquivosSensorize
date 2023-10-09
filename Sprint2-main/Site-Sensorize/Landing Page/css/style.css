@@ -3,8 +3,11 @@
 /* SCROLLBAR */
 /* width */
 
-
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -70,13 +73,13 @@ nav {
   height: 100%;
 }
 
-.nav-itens > li > a {
+.nav-itens li a {
   padding-left: 20px;
   color: #ffffff;
   text-decoration: none;
 }
 
-.nav-itens > li > a:hover {
+.nav-itens li a:hover {
   color: #ffae34;
 }
 
@@ -124,47 +127,28 @@ nav {
 }
 
 .simulacao {
-<<<<<<< HEAD
-  background-color: #FFAE34;
-  color: #2B2828;
-=======
-  background-color: #ffae34;
+  background-color: #fdb13f;
   color: #2b2828;
->>>>>>> b40e9a7a08e2621c22cbb0aee333d2950c4362b4
-  padding: 15px 20px;
+  padding: 15px 15px;
   border: none;
   border-radius: 20px;
   font-size: 15px;
   cursor: pointer;
   width: 40%;
   font-weight: bold;
-<<<<<<< HEAD
-=======
+  transition: 0.5s;
 }
+
+.simulacao:hover {
+  background-color: #ff9900;
+}
+
 .novoQuadrado {
-  background-color: white;
-  width: 500px;
-  height: 500px;
-  display: flex;
-  margin-left: 12%;
-  border-radius: 30px;
-  align-items: center;
-  justify-content: center;
-  padding: 30px;
-  text-align: justify;
-}
-.div_texto2 {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
->>>>>>> b40e9a7a08e2621c22cbb0aee333d2950c4362b4
-}
-.novoQuadrado{
   background-color: rgb(0, 0, 0);
-  width: 500px;
-  height: 500px;
+  width: 35%;
+  height: 95%;
   display: flex;
-  margin-left: 20.5%;
+  margin-left: 16.5%;
   border-radius: 30px;
   align-items: center;
   justify-content: center;
@@ -172,22 +156,44 @@ nav {
   text-align: justify;
   border: solid gray 0.5px;
 }
-.div_texto2{
+
+.novoQuadrado .simulacao {
+  flex-direction: row;
+  font-size: 90%;
+}
+
+.novoQuadrado button {
+  display: flex;
+  width: 140px;
+  margin: 25px;
+  height: 10px;
+  align-items: center;
+  justify-content: center;
+}
+a {
+  text-decoration: none;
+}
+.botao_amostra {
+  display: flex;
+}
+
+.div_texto2 {
   display: flex;
   align-items: center;
-flex-direction: column;
-color: white;
-}
-.texto2{
-  font-size: 18px;
-}
-.bold{
-  color: #FFAE34;
+  flex-direction: column;
+  color: white;
 }
 
+.bold {
+  color: #ffae34;
+}
 
 .divCalcMaior .quadrado .simulacao {
-  width: 150px;
+  height: 10px;
+  width: 110px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 
 .quadrado .input-linha {
@@ -296,7 +302,7 @@ hr {
   background-color: #000000;
   /* border: 2px solid #000; */
   border-radius: 10px;
-  margin-left: 60%;
+  margin-left: 70%;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -347,12 +353,6 @@ hr {
 .divMaiorCli {
   height: 99vh;
   align-items: center;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 .carrosselTudo {
@@ -607,7 +607,7 @@ address {
   /*quebra de linha automática */
 }
 
-.button-forms > button {
+.button-forms button {
   background-color: #ffae34;
   color: #2b2828;
   padding: 15px 20px;
@@ -640,7 +640,7 @@ address {
   margin-top: 90px;
 }
 
-.chamada-forms > button {
+.chamada-forms button {
   background-color: #ffae34;
   color: #2b2828;
   padding: 15px 20px;
@@ -657,7 +657,7 @@ address {
   transform: translate(32%, 30%);
 }
 
-.wpp > p {
+.wpp p {
   margin-left: 15px;
 }
 
