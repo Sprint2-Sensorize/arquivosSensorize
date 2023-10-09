@@ -243,7 +243,7 @@ function login() {
 
   if (login == 'teste@gmail.com' && senha == 123) {
     alert('Login Realizado com sucesso!')
-    window.location.href = '#'
+    window.location.href = '../Dashboard/index_dashboard.html'
   } else {
     alert('Tente novamente')
   }

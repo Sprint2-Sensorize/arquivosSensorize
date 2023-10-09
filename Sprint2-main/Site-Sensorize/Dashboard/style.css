@@ -8,24 +8,23 @@
 body {
   margin: 0;
   font-family: 'raleway';
-  background-color: #000000;
+  background-color: #ffffff;
   overflow-x: hidden;
 }
 
 /* CSS NAVBAR E LOGO */
 nav {
-  box-shadow: 0 0 1em gray;
   display: flex;
   justify-content: space-around;
   align-items: center;
   color: #ffffff;
   /* background: white;  */
   /* box-shadow: rgba(31, 38, 135, 0.37) 0px 8px 20px 0px; */
-  background-color: #343434;
+  background-color: #000000;
   margin: 0;
   position: fixed;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   width: 100%;
   transition: 0.3s ease-in-out;
   z-index: 2;
@@ -58,4 +57,38 @@ nav {
   height: auto;
   vertical-align: middle;
   /* vertical no centro. */
+}
+
+.itensDaNav {
+  color: white;
+  display: flex;
+  text-decoration: none;
+  gap: 10px;
+  font-size: 1.5rem;
+  align-items: center;
+  margin: 0;
+}
+
+.menuLateral {
+  background-color: black;
+  height: 89vh;
+  width: 20vw;
+  margin-top: 11vh;
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  align-items: center;
+  justify-content: center;
+}
+
+.amostragem {
+  display: flex;
+  position: absolute;
+  margin-left: 20vw;
+  width: 80vw;
+  background-color: aqua;
+  height: 89vh;
+  margin-top: 11vh;
 }

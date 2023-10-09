@@ -120,7 +120,7 @@ nav {
 }
 
 .simulacao {
-  background-color: #ffae34;
+  background-color: #ffaf37;
   color: #2b2828;
   padding: 15px 20px;
   border: none;
@@ -129,7 +129,14 @@ nav {
   cursor: pointer;
   width: 40%;
   font-weight: bold;
+  cursor: pointer;
+  transition: 1s;
 }
+
+.simulacao:hover {
+  background-color: #ff9500;
+}
+
 .novoQuadrado {
   background-color: white;
   width: 500px;
