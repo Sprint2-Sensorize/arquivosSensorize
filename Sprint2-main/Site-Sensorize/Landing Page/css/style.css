@@ -683,4 +683,40 @@ address {
 .img-rodape {
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+.rodape {
+  background-color: #343434;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* / Adicione flex-wrap para que os elementos quebrem para a próxima linha quando necessário / */
+  height: auto; /* / Remova a altura fixa para acomodar o conteúdo confo */ /* rme necessário / */
+  margin: auto;
+  color: white;
+  padding: 15px;
+  font-family: 'raleway';
+}
+
+.localizacao {
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+}
+
+.img-rodape {
+  width: 10%;
+}
+
+.centro {
+  text-align: center;
+}
+
+.direita {
+  text-align: center; /* / Centralize o texto no lado direito / */
+}
+.icone-rede {
+  width: 10%;
+  margin: 5px; /* / Adicione um espaçamento entre as imagens */
 }
