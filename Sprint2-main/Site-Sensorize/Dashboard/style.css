@@ -15,19 +15,32 @@ body {
 /* CSS NAVBAR E LOGO */
 nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   color: #ffffff;
   /* background: white;  */
   /* box-shadow: rgba(31, 38, 135, 0.37) 0px 8px 20px 0px; */
   background-color: #000000;
-  margin: 0;
   position: fixed;
   padding-top: 40px;
   padding-bottom: 40px;
   width: 100%;
   transition: 0.3s ease-in-out;
   z-index: 2;
+}
+.nave {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 5%;
+  width: 90%;
+  height: 100%;
+}
+.nave h1 {
+  margin: 0;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .logo {
@@ -43,7 +56,6 @@ nav {
 }
 
 .nav-itens > li > a {
-  padding-left: 50px;
   color: #ffffff;
   text-decoration: none;
 }

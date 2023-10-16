@@ -11,7 +11,7 @@ window.addEventListener('scroll', function () {
 })
 
 /* CARROSSEL */
-const carrosselTudo = document.querySelector('.carrosselTudo')
+/* const carrosselTudo = document.querySelector('.carrosselTudo')
 const carousel = document.querySelector('.carousel')
 const firstCardWidth = carousel.querySelector('.card').offsetWidth
 const arrowBtns = document.querySelectorAll('.carrosselTudo i')
@@ -90,21 +90,25 @@ const infiniteScroll = () => {
   // Clear existing timeout & start autoplay if mouse is not hovering over carousel
   clearTimeout(timeoutId)
   /* if(!wrapper.matches(":hover")) autoPlay(); */
-}
-
-const autoPlay = () => {
+/* }
+ */
+/* const autoPlay = () => {
   if (window.innerWidth < 800 || !isAutoPlay) return // Return if window is smaller than 800 or isAutoPlay is false
   // Autoplay the carousel after every 2500 ms
   timeoutId = setTimeout(() => (carousel.scrollLeft += firstCardWidth), 2500)
 }
-autoPlay()
+autoPlay() */
 
-carousel.addEventListener('mousedown', dragStart)
+/* carousel.addEventListener('mousedown', dragStart)
 carousel.addEventListener('mousemove', dragging)
 document.addEventListener('mouseup', dragStop)
 carousel.addEventListener('scroll', infiniteScroll)
 carrosselTudo.addEventListener('mouseenter', () => clearTimeout(timeoutId))
-carrosselTudo.addEventListener('mouseleave', autoPlay)
+carrosselTudo.addEventListener('mouseleave', autoPlay) */
+
+// Calculadora
+
+document.getElementById('quadradoBranco').style.display = 'none'
 
 // Calculadora
 
@@ -115,50 +119,7 @@ function verificar() {
   var nomeRepresentante = input_representante.value
   var nClientes = Number(input_numero_clientes.value)
   var mensalidade = Number(input_mensalidade_clientes.value)
-
-  document.getElementById('quadradoBranco').style.display = 'flex'
-
-  document.getElementById('div_inputs').style.display = 'none'
-
-  quadradoBranco.innerHTML = `<div class = "div_texto2"> <h2>Olá ${nomeRepresentante}!!</h2><br> <p class = "texto2">Vejo que você se importa
- muito com a ${nomeAcademia} e com seus clientes. Isso é muito importante para o crescimento do seu estabelecimento.<br><br>
-Mas você sabia que <b class = "bold">25%</b> das pessoas desistem de fazer academia por conta da falta de tempo e outros <b class = "bold">16%</b> desistem devido à lotação
- das academias?
-<br><br> Isso significa a possibilidade de a sua empresa perder <b class = "bold">${(
-    nClientes * 0.21
-  ).toFixed(0)} clientes</b> nos próximos meses. <br>
-Pensando nisso, nós da <b class = "bold">Sensorize</b> criamos um projeto chamado <b class = "bold">TechGym</b> que vai solucionar esse problema<br><br>
-<br> </p><br>
-<div style= justify-content: space-between; "display: flex;"> <button class = "simulacao" style = "width: 150px" "margin: 40px" onclick="voltar()"
- >Voltar</button> <a href="#idForms"><button class = "simulacao" style = "width: 150px" "margin: 40px" onclick="vontrate()" >Contrate-nos</button>
- </a></div></div>`
-}
-
-function voltar() {
-  document.getElementById('quadradoBranco').style.display = 'none'
-  document.getElementById('div_inputs').style.display = 'flex'
-  input_nome_academia.value = ''
-  input_representante.value = ''
-  input_numero_clientes.value = ''
-  input_mensalidade_clientes.value = ''
-}
-
-carousel.addEventListener('mousedown', dragStart)
-carousel.addEventListener('mousemove', dragging)
-document.addEventListener('mouseup', dragStop)
-carousel.addEventListener('scroll', infiniteScroll)
-carrosselTudo.addEventListener('mouseenter', () => clearTimeout(timeoutId))
-carrosselTudo.addEventListener('mouseleave', autoPlay)
-
-// Calculadora
-
-document.getElementById('quadradoBranco').style.display = 'none'
-
-function verificar() {
-  var nomeAcademia = input_nome_academia.value
-  var nomeRepresentante = input_representante.value
-  var nClientes = Number(input_numero_clientes.value)
-  var mensalidade = Number(input_mensalidade_clientes.value)
+  var perda = nClientes * 0.26
 
   if (nomeAcademia == '') {
     input_nome_academia.style.borderBottom = '1px solid red'
@@ -193,15 +154,17 @@ function verificar() {
     document.getElementById('quadradoBranco').style.display = 'flex'
     document.getElementById('div_inputs').style.display = 'none'
 
-    quadradoBranco.innerHTML = `<div class = "div_texto2"> <h2>Olá! ${nomeRepresentante}!!</h2><br> <p class = "texto2">Vejo que você se importa muito com a ${nomeAcademia} e com seus clientes. Isso é muito importante para o crescimento do seu estabelecimento.<br>
-    Mas você sabia que <b class = "bold">25%</b> das pessoas desistem de fazer academia por conta da falta de tempo e outros <b class = "bold">16%</b> desistem devido à lotação das academias?
-    <br><br> Isso significa a possibilidade de a sua empresa perder <b class = "bold">${(
-      nClientes * 0.41
-    ).toFixed(0)} clientes</b> nos próximos meses. <br>
-    Pensando nisso, nós da <b class = "bold">Sensorize</b> criamos um projeto chamado <b class = "bold">TechGym</b> que vai solucionar esse problema<br><br>
-    <br> Utilizando dados que serão obtidos por meio de sensores colocados nos equipamentos garantiremos uma melhor rotatividade
-     para a sua academia, para que todos os seus clientes consigam treinar sem sofrer com esses problemas.</p><br>
-    <div class = "botao_amostra"> <button class = "simulacao"onclick="voltar()" >Voltar</button> <a href="#idForms"><button class = "simulacao" onclick="vontrate()" >Contrate-nos</button></a></div></div>`
+    quadradoBranco.innerHTML = `<div class = "div_texto2"> <h2>Olá ${nomeRepresentante}!!</h2><br> <p class = "texto2">Vejo que você se importa
+    muito com a ${nomeAcademia} e com seus clientes. Isso é muito importante para o crescimento do seu estabelecimento.<br><br>
+    Mas você sabia que <b class = "bold">26%</b> das pessoas desistem de fazer academia nos 3 primeiros meses por conta da superlotação e falta de tempo?
+   <br><br> Isso significa a possibilidade de a sua empresa perder <b class = "bold">
+   ${perda.toFixed(
+     0
+   )} clientes</b> nos próximos meses, representando cerca de <b class = "bold">R$${
+      mensalidade * perda
+    }</b>. <br><br>
+   Pensando nisso, nós da <b class = "bold">Sensorize</b> criamos um projeto chamado <b class = "bold">TechGym</b> que vai solucionar esse problema
+    <div class = "botao_amostra"><button class = "simulacao"onclick="voltar()" >Voltar</button> <a href="#idForms"><button class = "simulacao" onclick="vontrate()" >Contrate-nos</button></a></div></div>`
   }
 }
 
@@ -301,5 +264,19 @@ function cadastro_endereco() {
   } else {
     alert('Cadastro realizado com sucesso')
     window.location.href = '../Tela de Login/Login.html'
+  }
+}
+
+function girarCard(card) {
+  card.classList.toggle('rotated')
+
+  var mensagemOculta = card.querySelector('.mensagemOculta')
+  var tituloCaixa = card.querySelector('.tituloCaixa')
+  if (card.classList.contains('rotated')) {
+    mensagemOculta.style.display = 'flex'
+    tituloCaixa.style.display = 'none'
+  } else {
+    mensagemOculta.style.display = 'none'
+    tituloCaixa.style.display = 'flex'
   }
 }

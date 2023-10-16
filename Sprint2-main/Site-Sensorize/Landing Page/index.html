@@ -33,14 +33,16 @@
 
     <div class="banner">
         <img src="./img/banner.png" alt="banner" class="banner-img">
-        <div class="banner-content">
-            <h1>A Sensorize apoia você no<br>
-                processo de tomada de decisão<br> em seu négocio</h1>
-            <h3>Evite a Superlotação e Aumente a<br>
-                Fidelidade dos Alunos.<br>
-                Descubra Como!</h3><br>
-            <div>
-                <button class="simulacao">Faça sua simulação</button>
+        <div id="home">
+            <div class="banner-content">
+                <h2>Melhore a sua academia utilizando os nossos<br>
+                    sensores, conheça a <span style="color: #FFAE34;">TechGym!</span></h2><br>
+                <p>Evite a Superlotação e Aumente a<br>
+                    Fidelidade dos Alunos.<br>
+                    Descubra Como!</p><br>
+                <div>
+                    <button class="simulacao">Faça sua simulação</button>
+                </div>
             </div>
         </div>
         <hr id="idPrj">
@@ -48,29 +50,75 @@
 
     <!-- projeto TechGym -->
     <div class="divMaior">
-        <div>
-            <h1 class="techgym">Melhore a sua academia utilizando os nossos<br>
-                sensores, conheça a <span style="color: #FFAE34;">TechGym!</span></h1><br>
+        <div class="text_services">
+            <h2 class="techgym">Traga inovação à sua academia e transforme<br> a experiência de treino dos seus
+                clientes!</h2>
+            <p style="color: white;"> <br>
+                Propomos a instalação de sensores de presença em todos os equipamentos, elevando a gestão do seu espaço
+                fitness a
+                um nível superior. Imagine uma academia onde cada aparelho está conectado, fornecendo dados precisos
+                sobre a frequência de uso em tempo real.
+
+                Vamos além da simples instalação de sensores; oferecemos uma solução completa com uma dashboard
+                personalizada. Visualize métricas cruciais, desde a frequência de uso por horário até a popularidade de
+                cada equipamento. Essa integração tecnológica permite que os gestores tomem decisões mais precisas para
+                otimizar a disposição dos equipamentos e sugerir rotinas de treino mais adequadas aos clientes, evitando
+                superlotação e proporcionando uma experiência mais eficiente.
+
+                Chegou o momento de impulsionar sua academia com inovação e inteligência. Conte conosco para transformar
+                dados em ação, criando um ambiente de treino conectado e personalizado para todos os seus clientes</p>
         </div>
 
         <!-- caixinhas techgym -->
         <div class="divTodasCaixas">
-            <div class="divCaixa">
-                <p class="tituloCaixa">Evite superlotação</p>
-                <p class="textoCaixa">Otimização de tempo e espaço utilizando sensores.</p>
-
+            <div>
+                <div class="divCaixa" onclick="girarCard(this)">
+                    <div class="tituloCaixa">
+                        <p>Evite superlotação</p>
+                        <img style="width: 85px;" src="./img/5365543.png" alt="">
+                    </div>
+                    <p class="mensagemOculta">
+                        Sabemos que superlotação é um desafio para qualquer academia, por isso
+                        estamos aqui para das um fim a esse problema</p>
+                </div>
+                <div class="divCaixa" onclick="girarCard(this)">
+                    <div class="tituloCaixa">
+                        <p style="margin-bottom:-0.7rem ;">
+                            Instalação de sensores
+                        </p>
+                        <img style="width: 85px;" src="./img/3887847.png" alt="">
+                    </div>
+                    <p class="mensagemOculta">
+                        Instalamos sensores de presença em cada aparelho da academia para fornecer
+                        dados precisos sobre o tempo de uso e a frequência de cada equipamento
+                    </p>
+                </div>
             </div>
+            <div>
+                <div class="divCaixa" onclick="girarCard(this)">
+                    <div class="tituloCaixa">
+                        <p class="tituloCaixa">Monitore o aparelho</p>
+                        <img style="width: 85px;" src="./img/8773303.png" alt="">
+                    </div>
+                    <p class="mensagemOculta">
+                        Através de um painel de controle, você pode visualizar em tempo real a
+                        frequência de uso de cada aparelho!
+                    </p>
+                </div>
+                <div class="divCaixa" onclick="girarCard(this)">
+                    <div class="tituloCaixa">
+                        <p>Tempo</p>
+                        <img style="width: 85px;" src="./img/time.png" alt="">
+                    </div>
+                    <p class="mensagemOculta">
+                        Aprimore a gestão do tempo do seu cliente ao sugerir uma rotina de treinos mais eficiente e
+                        inteligente, proporcionando conforto e fortalecendo a fidelidade desse cliente!
+                    </p>
+                </div>
 
-            <div class="divCaixa">
-                <p class="tituloCaixa">Monitore o fluxo de seus clientes</p>
-                <p class="textoCaixa">Análises Claras e Centralizadas.</p>
-            </div>
-
-            <div class="divCaixa">
-                <p class="tituloCaixa">Tempo</p>
-                <p class="textoCaixa">Faça o tempo correr ao seu favor, Com o projeto TechGym.</p>
             </div>
         </div>
+    </div>
     </div>
 
     <hr id="idCalc">
@@ -103,9 +151,9 @@
 
     </div>
 
-    <hr id="idCarros">
+    <!--  <hr id="idCarros"> -->
     <!-- carrosselClientes -->
-    <div class="divMaiorCli">
+    <!--     <div class="divMaiorCli">
         <p class="tituloClientes" style="margin-top:100px; margin-bottom:50px;">Em todo Brasil temos clientes que
             confiam no nosso sistema.</p>
         <div class="carrosselTudo">
@@ -129,9 +177,8 @@
             </ul>
             <i id="right" class="fa-solid fa-angle-right"></i>
         </div>
-        <<<<<<< HEAD=======>>>>>>> b40e9a7a08e2621c22cbb0aee333d2950c4362b4
     </div>
-    </div>
+    </div> -->
 
     <hr id="idEmp">
     <!-- Empresa -->
@@ -179,7 +226,7 @@
                 </div>
 
                 <div class="input-container">
-                    <label for="">E-mail corporativo</label><br>
+                    <span>E-mail corporativo</span><br>
                     <input type="email" class="input-linha">
                 </div>
 
@@ -187,12 +234,12 @@
 
             <div class="form-group">
                 <div class="input-container">
-                    <label for="">Telefone com DDD</label><br>
+                    <span>Telefone com DDD</span><br>
                     <input type="number" class="input-linha">
                 </div>
 
                 <div class="input-container">
-                    <label for="">Empresa</label><br>
+                    <span>Empresa</span><br>
                     <input type="text" class="input-linha">
                 </div>
             </div>
@@ -254,6 +301,7 @@
     </footer>
 
     <script src="main.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
 </body>
 
 </html>

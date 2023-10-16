@@ -106,7 +106,7 @@ nav {
 .banner-content {
   position: absolute;
   /*elementos dentro do banner */
-  top: 50%;
+  top: 60%;
   /*  verticalmente na metade do banner */
   left: 30%;
   /* banner */
@@ -146,7 +146,7 @@ nav {
 .novoQuadrado {
   background-color: rgb(0, 0, 0);
   width: 35%;
-  height: 95%;
+  height: 60%;
   display: flex;
   margin-left: 16.5%;
   border-radius: 30px;
@@ -182,6 +182,7 @@ a {
   align-items: center;
   flex-direction: column;
   color: white;
+  font-size: 14px;
 }
 
 .bold {
@@ -217,13 +218,27 @@ hr {
 /* sobre o prj TechGym*/
 .divMaior {
   height: 99vh;
+  display: flex;
+}
+
+.text_services {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.text_services p {
+  max-width: 600px;
+  text-align: justify;
 }
 
 .techgym {
-  margin-top: 90px;
   color: #ffffff;
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 5%;
 }
 
 .divTodosClientes {
@@ -231,12 +246,8 @@ hr {
 }
 
 .divTechgym {
-  width: 35%;
   font-family: Georgia;
   color: #ffffff;
-  font-weight: bold;
-  text-align: center;
-  margin: auto;
 }
 
 .spanTechgym {
@@ -244,54 +255,71 @@ hr {
 }
 
 .divTodasCaixas {
+  margin-top: 2rem;
+  height: 100%;
+  width: 50%;
   display: flex;
-  justify-content: center;
-  margin-top: 40px;
-}
-
-.divCaixa {
-  width: 350px;
-  height: 200px;
-  background-image: linear-gradient(
-    to right,
-    #1a1c1c,
-    #434343,
-    rgb(132, 132, 132),
-    #434343,
-    #1a1c1c
-  );
-  margin-inline-start: 25px;
-  border-radius: 5px;
-  transition: 0.2s;
-  text-align: center;
   align-items: center;
   justify-content: center;
 }
 
-.divCaixa:hover {
+.divCaixa {
+  margin: 0 2rem 2.5rem 2rem;
+  display: flex;
+  width: 275px;
+  height: 150px;
+  padding: 50px;
+  background-image: linear-gradient(
+    to right,
+    #2c2c2c,
+    #4f4f4f,
+    #7a7a7a,
+    #4f4f4f,
+    #2c2c2c
+  );
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.2s;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border: 1px solid #555;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+/* .divCaixa:hover {
   transform: scale(1.05);
+} */
+
+.rotated {
+  transform: scale(1.2) rotateY(180deg);
+}
+.rotated .mensagemOculta {
+  transform: rotateY(180deg);
+}
+.mensagemOculta {
+  display: none;
+  text-align: justify;
+  font-size: 10px;
 }
 
 .tituloCaixa {
-  font-weight: bold;
-  text-decoration: underline;
-  font-size: 20px;
+  font-size: 17px;
   color: white;
-  text-transform: uppercase;
-  margin-top: 20px;
-}
-
-.textoCaixa {
-  font-size: 20px;
-  margin-top: 50px;
-  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
 /* CALCULADORA*/
 
 .divCalcMaior {
   display: flex;
-  height: 75vh;
+  height: 95vh;
   align-items: center;
 }
 
@@ -302,7 +330,7 @@ hr {
   background-color: #000000;
   /* border: 2px solid #000; */
   border-radius: 10px;
-  margin-left: 70%;
+  margin-left: 60%;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -341,11 +369,9 @@ hr {
 
 /* CARROSSEL */
 .tituloClientes {
-  margin-top: -60px;
+  margin-top: 1000px;
   color: #ffffff;
   text-align: center;
-  width: 1000px;
-  margin: auto;
   font-size: 30px;
   font-weight: bold;
 }
@@ -353,11 +379,11 @@ hr {
 .divMaiorCli {
   height: 99vh;
   align-items: center;
+  justify-content: center;
 }
 
 .carrosselTudo {
   align-items: center;
-  margin-top: 40px;
   max-width: 1100px;
   width: 100%;
   position: relative;
@@ -548,19 +574,9 @@ hr {
   color: white;
 }
 
-* FOOTER */ .rodape {
-  background-color: #343434;
-  position: static;
-  height: 120px;
-}
-
 address {
-  top: 50%;
-  /*  verticalmente na metade do banner */
-  left: 30%;
-  /* banner */
-  transform: translate(-35%, 30%);
-  /* Alinhe ao centro, tanto vertical quanto horizontalmente */
+  display: flex;
+  height: 100%;
   color: #fff;
   text-align: center;
   font-size: 14px;
@@ -638,6 +654,7 @@ address {
   color: #ffffff;
   text-align: center;
   margin-top: 90px;
+  height: 65vh;
 }
 
 .chamada-forms button {
@@ -662,41 +679,23 @@ address {
 }
 
 /* FOOTER */
-.rodape {
-  background-color: #343434;
-  position: static;
-  height: 120px;
-}
-
-address {
-  top: 50%;
-  /*  verticalmente na metade do banner */
-  left: 30%;
-  /* banner */
-  transform: translate(-35%, 30%);
-  /* Alinhe ao centro, tanto vertical quanto horizontalmente */
-  color: #fff;
-  text-align: center;
-  font-size: 14px;
-}
 
 .img-rodape {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .rodape {
   background-color: #343434;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* / Adicione flex-wrap para que os elementos quebrem para a próxima linha quando necessário / */
-  height: auto; /* / Remova a altura fixa para acomodar o conteúdo confo */ /* rme necessário / */
-  margin: auto;
   color: white;
-  padding: 15px;
-  font-family: 'raleway';
+  justify-content: center;
+  height: 250px;
+  gap: 12%;
 }
 
 .localizacao {
@@ -706,17 +705,27 @@ address {
 }
 
 .img-rodape {
-  width: 10%;
+  width: 15%;
+  align-items: center;
+  justify-content: center;
 }
 
 .centro {
+  height: 100%;
   text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .direita {
-  text-align: center; /* / Centralize o texto no lado direito / */
+  display: flex;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .icone-rede {
   width: 10%;
-  margin: 5px; /* / Adicione um espaçamento entre as imagens */
+  margin: 0 10px; /* / Adicione um espaçamento entre as imagens */
 }
