@@ -12,6 +12,7 @@
 
 </head>
 <!-- NOVO -->
+
 <body>
     <!-- header e banner -->
     <nav id="nav">
@@ -123,10 +124,12 @@
 
     <hr id="idCalc">
     <!-- calculadora -->
-    <div class="divCalcMaior" style="height:600px; background-color: white;">
+    <div class="divCalcMaior" style="height:600px; background-color: #ded9d9f0;">
         <svg xmlns="http://www.w3.org/2000/svg" class="svg" viewBox="0 0 1440 320">
-            <path fill="#000000" fill-opacity="1" d="M0,96L60,122.7C120,149,240,203,360,208C480,213,600,171,720,138.7C840,107,960,85,1080,101.3C1200,117,1320,171,1380,197.3L1440,224L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
-            </path></svg>
+            <path fill="#000000" fill-opacity="1"
+                d="M0,96L60,122.7C120,149,240,203,360,208C480,213,600,171,720,138.7C840,107,960,85,1080,101.3C1200,117,1320,171,1380,197.3L1440,224L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
+            </path>
+        </svg>
         <div class="textoCalc">
             <p>As suas perdas provavelmente são mais surpreendentes do que você imagina. Faça já uma simulação e entenda
                 melhor. </p>
@@ -136,16 +139,15 @@
 
             <h2 style=" margin-bottom: 20px; color: black">Calculadora Financeira</h2>
             <div class="labels">
-
                 <label class="labels_calc">Nome da academia</label>
-                <input type="text" class="input-linha" id="input_nome_academia" placeholder="Ex: BlueFit"><br>
+                <input type="text" class="input-linha-calc" id="input_nome_academia" placeholder="Ex: BlueFit"><br>
                 <label class="labels_calc">Nome do Representante</label>
-                <input type="text" class="input-linha" id="input_representante" placeholder="Ex: Jonathan"><br>
+                <input type="text" class="input-linha-calc" id="input_representante" placeholder="Ex: Jonathan"><br>
                 <label class="labels_calc">N° de clientes</label>
-                <input type="number" class="input-linha" id="input_numero_clientes" placeholder="Ex: 1500"><br>
+                <input type="number" class="input-linha-calc" id="input_numero_clientes" placeholder="Ex: 1500"><br>
                 <label class="labels_calc">Valor mensalidade</label>
-                <input type="number" class="input-linha" id="input_mensalidade_clientes" placeholder="Ex: R$100"
-                    placeholder="Valor das mensalidades"><br>
+                <input style="margin-bottom: 7%;" type="number" class="input-linha-calc" id="input_mensalidade_clientes"
+                    placeholder="Ex: R$100" placeholder="Valor das mensalidades"><br>
             </div>
             <button class="simulacao" onclick="verificar()">Analisar</button>
 
@@ -154,9 +156,9 @@
 
     </div>
 
-      <hr id="idCarros"> 
+    <hr id="idCarros">
     <!-- carrosselClientes -->
-        <div class="divMaiorCli">
+    <div class="divMaiorCli">
         <p class="tituloClientes" style="margin-top:100px; margin-bottom:50px;">Em todo Brasil temos clientes que
             confiam no nosso sistema.</p>
         <div class="carrosselTudo">
@@ -181,7 +183,7 @@
             <i id="right" class="fa-solid fa-angle-right"></i>
         </div>
     </div>
-    
+
 
     <hr id="idEmp">
     <!-- Empresa -->
@@ -194,14 +196,15 @@
             <div class="visao">
                 <img class="imgVisao" src="./img/visaoFoguete.png">
                 <h3 class="tituloVisao">Visão</h3>
-                <p class="pVisao">Ser líder na revolução da gestão de espaços e fluxo no meio tecnológico</p>
+                <p class="pVisao">Buscamos liderar a revolução na gestão de espaços e fluxo, impulsionando eficiência e
+                    inovação através de tecnologias de ponta</p>
             </div>
 
             <div class="missao">
                 <img class="imgMissao" src="./img/missaoAlvo.png">
                 <h3 class="tituloMissao">Missão</h3>
-                <p class="pMissao">Transformar a gestão de espaços para impulsionar a fidelidade e satisfação dos
-                    clientes.</p>
+                <p class="pMissao">Nossa missão é transformar a gestão de espaços, impulsionando a fidelidade e
+                    satisfação dos clientes</p>
             </div>
 
 
@@ -225,12 +228,12 @@
 
                 <div class="input-container">
                     <label for="input_nome">Nome Completo</label><br>
-                    <input type="text" id="input_nome" class="input-linha">
+                    <input style="border-color: white;" type="text" id="input_nome" class="input-linha">
                 </div>
 
                 <div class="input-container">
                     <span>E-mail corporativo</span><br>
-                    <input type="email" class="input-linha">
+                    <input style="border-color: white;" type="email" class="input-linha">
                 </div>
 
             </div>
@@ -238,12 +241,12 @@
             <div class="form-group">
                 <div class="input-container">
                     <span>Telefone com DDD</span><br>
-                    <input type="number" class="input-linha">
+                    <input style="border-color: white;" type="text" class="input-linha">
                 </div>
 
                 <div class="input-container">
                     <span>Empresa</span><br>
-                    <input type="text" class="input-linha">
+                    <input style="border-color: white;" type="text" class="input-linha">
                 </div>
             </div>
 

@@ -7,7 +7,7 @@
 
 body {
   margin: 0;
-  font-family: 'raleway';
+  font-family: 'Raleway', sans-serif;
   background-color: #ffffff;
   overflow-x: hidden;
 }
@@ -18,8 +18,6 @@ nav {
   justify-content: space-between;
   align-items: center;
   color: #ffffff;
-  /* background: white;  */
-  /* box-shadow: rgba(31, 38, 135, 0.37) 0px 8px 20px 0px; */
   background-color: #000000;
   position: fixed;
   padding-top: 40px;
@@ -94,13 +92,60 @@ nav {
   align-items: center;
   justify-content: center;
 }
+.div_dashboar {
+  border-radius: 20px;
+  background-color: white;
+  display: flex;
+  height: 83vh;
+  width: 80vw;
+  margin-left: 20vw;
+  margin-top: 17vh;
+  position: absolute;
+  justify-content: center;
+}
+
+.kpi {
+  margin: 3% 1%;
+  background-color: #3498db;
+  width: 100vw;
+  height: 20vh;
+}
+
+.filtro {
+  width: 95%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.filtro span {
+  display: flex;
+  text-align: end;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
+  margin-top: 1rem;
+}
 
 .amostragem {
+  gap: 2rem;
   display: flex;
+  margin-top: 15rem;
   position: absolute;
-  margin-left: 20vw;
-  width: 80vw;
-  background-color: aqua;
-  height: 89vh;
-  margin-top: 11vh;
+  justify-content: center;
+  text-align: center;
+}
+
+#myChart {
+  width: 37vw;
+  border: 2px solid #3498db;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#myChart2 {
+  width: 37vw;
+  border: 2px solid #3498db;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

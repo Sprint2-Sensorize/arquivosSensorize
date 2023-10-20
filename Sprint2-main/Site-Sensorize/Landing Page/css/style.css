@@ -30,7 +30,7 @@
   border-radius: 10px;
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
@@ -153,7 +153,7 @@ nav {
   width: 35%;
   height: 80%;
   display: flex;
-  margin-left: 1%;
+  margin-left: 10%;
   border-radius: 30px;
   align-items: center;
   justify-content: center;
@@ -213,13 +213,21 @@ a {
   color: black;
   text-align: center;
   display: flex;
-  margin-left: 12px;
+  margin-left: 5px;
+  margin-top: 6%;
 }
 
 hr {
   margin-top: 0;
   border-color: #ffffff;
   opacity: 0.3;
+}
+
+#idCalc {
+  margin-top: -105px;
+  border-color: #ffffff;
+  opacity: 0.3;
+  position: absolute;
 }
 
 /* sobre o prj TechGym*/
@@ -345,7 +353,7 @@ hr {
   align-items: center;
 }
 
-.svg{
+.svg {
   position: absolute;
   width: 100%;
   margin-top: -30%;
@@ -502,11 +510,11 @@ hr {
 /* EMPRESA */
 .divEmpresaMaior {
   height: 99vh;
-  background-color: white;
+  background-color: #ded9d9f0;
 }
 
 .sensorize {
-  color: black;
+  color: rgb(0, 0, 0);
   text-align: center;
   width: 1000px;
   margin: auto;
@@ -514,7 +522,15 @@ hr {
 }
 
 .corPalavra {
-  color: #ffae34;
+  color: #ff8c00;
+  font-weight: bold;
+}
+
+.sensorize .corPalavra {
+  color: #ff8c00;
+  font-weight: bold;
+  -webkit-text-stroke-color: #343434;
+  -webkit-text-stroke-width: 0.7px;
 }
 
 .divCoisasEmpresas {
@@ -539,12 +555,15 @@ hr {
 
 .tituloVisao {
   margin-top: 10px;
-  color:  black;
+  color: rgb(0, 0, 0);
   text-transform: uppercase;
 }
 
 .pVisao {
+  margin-top: 5%;
   color: black;
+  text-align: center;
+  font-size: 15px;
 }
 
 .missao {
@@ -560,12 +579,15 @@ hr {
 
 .tituloMissao {
   margin-top: 10px;
-  color: black;
+  color: rgb(0, 0, 0);
   text-transform: uppercase;
 }
 
 .pMissao {
-  color:  black;
+  margin-top: 5%;
+  color: black;
+  text-align: center;
+  font-size: 15px;
 }
 
 .valores {
@@ -582,12 +604,15 @@ hr {
 
 .tituloValores {
   margin-top: 10px;
-  color:  black;
+  color: rgb(0, 0, 0);
   text-transform: uppercase;
 }
 
 .pValores {
-  color:  black;
+  margin-top: 5%;
+  color: black;
+  text-align: center;
+  font-size: 15px;
 }
 
 address {
@@ -606,14 +631,22 @@ address {
 /* FORMS CONTATO */
 .input-linha {
   border: none;
-  /* Remove todas as bordas */
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid rgb(255, 255, 255);
   height: 30px;
-  /* altura do input */
   padding: 5px;
   width: 300px;
   background-color: transparent;
   color: #ffffff;
+}
+
+.input-linha-calc {
+  border: none;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  height: 30px;
+  padding: 5px;
+  width: 250px;
+  background-color: transparent;
+  color: #000000;
 }
 
 .input-container {
@@ -639,11 +672,11 @@ address {
   /*quebra de linha automática */
 }
 
-.button-forms{
+.button-forms {
   margin-top: -1rem;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 80%;
   display: flex;
   height: 80px;
 }
@@ -657,7 +690,6 @@ address {
   font-size: 12px;
   cursor: pointer;
   width: 22%;
-  
   justify-content: center;
 }
 

@@ -8,9 +8,10 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="../assets/Icones/style.css">
   <script src="./main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body>
+<body style="background-color: black;">
 
 
   <nav id="nav">
@@ -49,9 +50,80 @@
   </div>
 
   <!-- DashBoard -->
-  <div class="amostragem">
+
+
+  <div class="div_dashboar">
+    <div class="kpi">
+      <table border="1">
+        <tr>
+          <td></td>
+          <td>Coluna 2</td>
+          <!-- Adicione mais colunas conforme necessário -->
+        </tr>
+        <tr>
+          <td>Dado 1</td>
+          <td>Dado 2</td>
+          <!-- Adicione mais dados conforme necessário -->
+        </tr>
+        <!-- Adicione mais linhas conforme necessário -->
+      </table>
+    </div>
+    <div class="filtro">
+      <h4>
+        Análise Detalhada
+      </h4>
+
+      <span>Selecione a data:</span>
+      <input style="width: 120px; text-align: center;" type="date" id="dataEvento" name="dataEvento" min="2022-12-31">
+
+      <!--       <span>Selecione a Categoria de Treino:</span>
+      <select style="width: 120px; text-align: center;" id="seletor_categoria">
+        <option value="cardio">Cardio</option>
+        <option value="inferior">Treino Inferior</option>
+        <option value="superior">Treino Superior</option>
+        <option value="superior">Treino Todos</option>
+      </select> -->
+
+    </div>
+    <div class="amostragem">
+
+      <div>
+        <h3>Frequência Diária Total por Categoria de Treino</h3>
+        <canvas id="myChart"></canvas>
+      </div>
+
+      <div>
+        <h3>Categoria de Treino de Maior Frequência</h3>
+        <canvas id="myChart2"></canvas>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Perfil -->
+  <div style="display: none;" class="div_dashboar">
 
   </div>
+
+  <!-- Aparelho -->
+  <div style="display: none;" class="div_dashboar">
+
+  </div>
+
 </body>
 
 </html>
+
+
+<script>
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  )
+
+  const myChart2 = new Chart(
+    document.getElementById('myChart2'),
+    config2
+  )
+</script>
