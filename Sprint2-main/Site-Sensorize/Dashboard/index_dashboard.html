@@ -31,15 +31,15 @@
   <!-- Menu Lateral -->
 
   <div class="menuLateral">
-    <a href="#" class="itensDaNav">
+    <a onclick="mostrar_principal()" class="itensDaNav">
       <div class="icon-home"></div>
       Dashboard
     </a>
-    <a href="#" class="itensDaNav">
+    <a onclick="mostrar_perfil()" class="itensDaNav">
       <div class="icon-user"></div>
       Perfil
     </a>
-    <a href="#" class="itensDaNav">
+    <a onclick="mostrar_aparelhos()" class="itensDaNav">
       <div style="font-size: 2.2rem;" class="icon-weights"></div>
       Aparelhos
     </a>
@@ -52,7 +52,7 @@
   <!-- DashBoard -->
 
 
-  <div class="div_dashboar">
+  <div id="tela_principal" class="div_dashboar">
     <!--     <div class="kpi">
       <table border="1">
         <tr>
@@ -89,7 +89,22 @@
         </tr>
       </table>
     </div> -->
-    <div class="alerta">
+    <div class="alertas">
+      <h3>Análise do Percentual de Utilização dos Equipamentos por Grupo de Treino</h3>
+      <div class="graficos">
+        <div class="alerta">
+          <canvas id="myChart3"></canvas>
+          <h5 id="superior" class="inform">Oi</h5>
+        </div>
+        <div class="alerta">
+          <canvas id="myChart4"></canvas>
+          <h5 id="inferior" class="inform">Oi</h5>
+        </div>
+        <div class="alerta">
+          <canvas id="myChart5"></canvas>
+          <h5 id="cardio" class="inform">Oi</h5>
+        </div>
+      </div>
 
     </div>
     <div class="filtro">
@@ -109,12 +124,12 @@
 
       <div>
         <h3>Frequência Diária Total por Categoria de Treino</h3>
-        <canvas id="myChart"></canvas>
+        <canvas class="estilo" id="myChart"></canvas>
       </div>
 
       <div>
         <h3>Categoria de Treino de Maior Frequência</h3>
-        <canvas id="myChart2"></canvas>
+        <canvas class="estilo" id="myChart2"></canvas>
       </div>
 
     </div>
@@ -122,12 +137,12 @@
 
 
   <!-- Perfil -->
-  <div style="display: none;" class="div_dashboar">
+  <div id="tela_perfil" style="display: none;" class="div_dashboar">
 
   </div>
 
   <!-- Aparelho -->
-  <div style="display: none;" class="div_dashboar">
+  <div id="tela_aparelho" style="display: none;" class="div_dashboar">
 
     <!--       <span>Selecione a Categoria de Treino:</span>
       <select style="width: 120px; text-align: center;" id="seletor_categoria">
@@ -153,21 +168,39 @@
     document.getElementById('myChart2'),
     config2
   )
-  var contador = 0;
-  while (contador <= 3) {
-    var elemento = document.getElementById(`i${contador + 1}`)
-    var elementoS = document.getElementById(`s${contador + 1}`)
-    var elementoC = document.getElementById(`c${contador + 1}`)
-    elemento.innerHTML = `${dado_inferior[contador]}`;
-    elementoS.innerHTML = `${dado_superior[contador]}`;
-    elementoC.innerHTML = `${dado_cardio[contador]}`;
-    if (contador == 3) {
-      c5.innerHTML = Number(soma_cardio).toFixed(2)
-      s5.innerHTML = Number(soma_superior).toFixed(2)
-      i5.innerHTML = Number(soma_inferior).toFixed(2)
-    }
-    contador++
-  }
+
+  const myChart3 = new Chart(
+    document.getElementById('myChart3'),
+    config3
+  )
+  const myChart4 = new Chart(
+    document.getElementById('myChart4'),
+    config4
+  )
+  const myChart5 = new Chart(
+    document.getElementById('myChart5'),
+    config5
+  )
+
+  superior.innerHTML = `${dado5[0]}%`
+  inferior.innerHTML = `${dado6[0]}%`
+  cardio.innerHTML = `${dado7[0]}%`
+
+  /*   var contador = 0;
+    while (contador <= 3) {
+      var elemento = document.getElementById(`i${contador + 1}`)
+      var elementoS = document.getElementById(`s${contador + 1}`)
+      var elementoC = document.getElementById(`c${contador + 1}`)
+      elemento.innerHTML = `${dado_inferior[contador]}`;
+      elementoS.innerHTML = `${dado_superior[contador]}`;
+      elementoC.innerHTML = `${dado_cardio[contador]}`;
+      if (contador == 3) {
+        c5.innerHTML = Number(soma_cardio).toFixed(2)
+        s5.innerHTML = Number(soma_superior).toFixed(2)
+        i5.innerHTML = Number(soma_inferior).toFixed(2)
+      }
+      contador++
+    } */
 
   var inputDate = document.getElementById('dataEvento');
   var dataAtual = new Date();
