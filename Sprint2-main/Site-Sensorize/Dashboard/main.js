@@ -18,9 +18,9 @@ var soma_cardio = 0
 var comp = []
 
 for (var contador = 0; contador < 4; contador++) {
-  soma_inferior += dado_inferior[contador]
-  soma_superior += dado_superior[contador]
-  soma_cardio += dado_cardio[contador]
+  soma_inferior += dado_data[0][contador]
+  soma_superior += dado_data[1][contador]
+  soma_cardio += dado_data[2][contador]
 }
 
 comp = [soma_inferior, soma_superior, soma_cardio]
@@ -44,8 +44,6 @@ if (maiorValor == soma_inferior) {
   dado4 = dado_cardio.slice()
 }
 
-console.log('Dado4:', dado4)
-
 const labels = ['06h as 10h', '10h as 14h', '14h as 18h', '18h as 22h']
 
 const data = {
@@ -55,19 +53,19 @@ const data = {
       label: 'Inferior',
       backgroundColor: 'red',
       borderColor: 'rgb(255,99,132)',
-      data: dado_inferior
+      data: dado_data[0]
     },
     {
       label: 'Superior',
       backgroundColor: 'blue',
       borderColor: 'rgb(255,99,132)',
-      data: dado_superior
+      data: dado_data[1]
     },
     {
       label: 'Cárdio',
       backgroundColor: 'black',
       borderColor: 'rgb(255,99,132)',
-      data: dado_cardio
+      data: dado_data[2]
     }
   ]
 }
@@ -137,5 +135,26 @@ const config2 = {
         }
       }
     }
+  }
+}
+
+const data3 = {
+  labels: ['Red', 'Blue', 'Yellow'],
+  datasets: [
+    {
+      label: 'My First Dataset',
+      data: [50, 50],
+      backgroundColor: ['rgb(255, 99, 132)', 'rgb(54, 162, 235)'],
+      hoverOffset: 4
+    }
+  ]
+}
+
+const config3 = {
+  type: 'doughnut',
+  data: data,
+  options: {
+    circumference: 180,
+    rotation: 270
   }
 }

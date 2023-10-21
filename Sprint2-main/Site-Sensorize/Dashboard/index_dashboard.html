@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
@@ -53,20 +53,44 @@
 
 
   <div class="div_dashboar">
-    <div class="kpi">
+    <!--     <div class="kpi">
       <table border="1">
         <tr>
-          <td></td>
-          <td>Coluna 2</td>
-          <!-- Adicione mais colunas conforme necessário -->
+          <td>Grupo de treino</td>
+          <td>06:00h ás 10:00h</td>
+          <td>10:00h ás 14:00h</td>
+          <td>14:00 ás 18:00h</td>
+          <td>18:00 ás 22:00</td>
+          <td>Total de Horas</td>
         </tr>
         <tr>
-          <td>Dado 1</td>
-          <td>Dado 2</td>
-          <!-- Adicione mais dados conforme necessário -->
+          <td>Inferior</td>
+          <td id="i1">Dado 2</td>
+          <td id="i2">Dado 2</td>
+          <td id="i3">Dado 2</td>
+          <td id="i4">Dado 2</td>
+          <td id="i5">Dado 2</td>
         </tr>
-        <!-- Adicione mais linhas conforme necessário -->
+        <tr>
+          <td>Superior</td>
+          <td id="s1">Dado 2</td>
+          <td id="s2">Dado 2</td>
+          <td id="s3">Dado 2</td>
+          <td id="s4">Dado 2</td>
+          <td id="s5">Dado 2</td>
+        </tr>
+        <tr>
+          <td>Cárdio</td>
+          <td id="c1">Dado 2</td>
+          <td id="c2">Dado 2</td>
+          <td id="c3">Dado 2</td>
+          <td id="c4">Dado 2</td>
+          <td id="c5">Dado 2</td>
+        </tr>
       </table>
+    </div> -->
+    <div class="alerta">
+
     </div>
     <div class="filtro">
       <h4>
@@ -74,15 +98,11 @@
       </h4>
 
       <span>Selecione a data:</span>
-      <input style="width: 120px; text-align: center;" type="date" id="dataEvento" name="dataEvento" min="2022-12-31">
+      <input style="width: 120px; text-align: center;" type="date" id="dataEvento" min="2022-12-31">
 
-      <!--       <span>Selecione a Categoria de Treino:</span>
-      <select style="width: 120px; text-align: center;" id="seletor_categoria">
-        <option value="cardio">Cardio</option>
-        <option value="inferior">Treino Inferior</option>
-        <option value="superior">Treino Superior</option>
-        <option value="superior">Treino Todos</option>
-      </select> -->
+      <button onclick="Pesquisa()" class="busca">
+        Pesquisar
+      </button>
 
     </div>
     <div class="amostragem">
@@ -109,6 +129,13 @@
   <!-- Aparelho -->
   <div style="display: none;" class="div_dashboar">
 
+    <!--       <span>Selecione a Categoria de Treino:</span>
+      <select style="width: 120px; text-align: center;" id="seletor_categoria">
+        <option value="cardio">Cardio</option>
+        <option value="inferior">Treino Inferior</option>
+        <option value="superior">Treino Superior</option>
+        <option value="superior">Treino Todos</option>
+      </select> -->
   </div>
 
 </body>
@@ -126,4 +153,33 @@
     document.getElementById('myChart2'),
     config2
   )
+  var contador = 0;
+  while (contador <= 3) {
+    var elemento = document.getElementById(`i${contador + 1}`)
+    var elementoS = document.getElementById(`s${contador + 1}`)
+    var elementoC = document.getElementById(`c${contador + 1}`)
+    elemento.innerHTML = `${dado_inferior[contador]}`;
+    elementoS.innerHTML = `${dado_superior[contador]}`;
+    elementoC.innerHTML = `${dado_cardio[contador]}`;
+    if (contador == 3) {
+      c5.innerHTML = Number(soma_cardio).toFixed(2)
+      s5.innerHTML = Number(soma_superior).toFixed(2)
+      i5.innerHTML = Number(soma_inferior).toFixed(2)
+    }
+    contador++
+  }
+
+  var inputDate = document.getElementById('dataEvento');
+  var dataAtual = new Date();
+  dataAtual.setDate(dataAtual.getDate() - 1);
+  var dataFormatada = dataAtual.toISOString().split('T')[0];
+
+  inputDate.value = dataFormatada;
+
+  function Pesquisa() {
+    location.reload();
+  }
+
+
+
 </script>

@@ -105,15 +105,38 @@ nav {
 }
 
 .kpi {
-  margin: 3% 1%;
-  background-color: #3498db;
-  width: 100vw;
+  margin: 3% 2.6%;
+  width: 150vw;
   height: 20vh;
+}
+table {
+  width: 110%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: center;
+  width: 200px;
+}
+
+th {
+  background-color: #f2f2f2;
 }
 
 .filtro {
+  margin-top: 3%;
   width: 95%;
-  height: 30%;
+  height: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -124,7 +147,6 @@ nav {
   font-size: 12px;
   font-weight: bold;
   font-family: 'Raleway', sans-serif;
-  margin-top: 1rem;
 }
 
 .amostragem {
@@ -148,4 +170,19 @@ nav {
   border: 2px solid #3498db;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.busca {
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: rgb(0, 27, 205);
+  padding: 0.4rem;
+  font-family: 'raleway';
+  margin-top: 1.3rem;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+
+.busca:hover {
+  background-color: rgb(0, 17, 129);
 }
