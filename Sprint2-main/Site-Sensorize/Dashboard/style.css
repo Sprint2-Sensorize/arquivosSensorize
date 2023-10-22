@@ -100,17 +100,26 @@ nav {
   gap: 50px;
   position: absolute;
   margin-top: 10%;
-  transition: all 0.3s;
+}
+.submenu_perfil {
+  color: white;
+  display: flex;
+  text-decoration: none;
+  font-size: 1rem;
+  align-items: center;
+  margin: 0;
+  text-align: center;
+  justify-content: center;
 }
 
-
-.grupotreino{
-  display: flex; flex-direction: column; align-items: center;
+.grupotreino {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   transition: 2s;
 }
 
-
-.submenu > a{
+.submenu > a {
   color: white;
   display: flex;
   text-decoration: none;
@@ -119,7 +128,6 @@ nav {
   margin: 0;
   text-align: center;
 }
-
 
 .div_dashboar {
   border-radius: 20px;
@@ -134,12 +142,14 @@ nav {
 }
 
 .kpi {
+  text-align: center;
   margin: 3% 2.6%;
   width: 150vw;
   height: 20vh;
+  background-color: #3498db;
 }
 table {
-  width: 110%;
+  width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
   font-size: 12px;
@@ -169,6 +179,21 @@ th {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.filtro_aparelho {
+  display: flex;
+  flex-direction: column;
+  width: 120%;
+  align-items: center;
+  height: 30%;
+  text-align: center;
+}
+
+.filtro_aparelho span {
+  font-size: 12px;
+  font-weight: bold;
+  font-family: 'Roboto Slab', serif;
 }
 .filtro span {
   display: flex;

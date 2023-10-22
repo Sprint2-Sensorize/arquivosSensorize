@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Poppins:wght@300;400;500;600&family=Raleway:wght@600;800&family=Russo+One&family=Sora:wght@200;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,700;1,100&family=Roboto+Slab:wght@100;500;700&display=swap');
 
 /* SCROLLBAR */
 /* width */
@@ -36,7 +36,7 @@ html {
 
 body {
   margin: 0;
-  font-family: 'raleway';
+  font-family: 'Roboto Slab', serif;
   background-color: #000000;
   overflow-x: hidden;
 }
@@ -637,6 +637,7 @@ address {
   width: 300px;
   background-color: transparent;
   color: #ffffff;
+  outline: none;
 }
 
 .input-linha-calc {
@@ -647,14 +648,14 @@ address {
   width: 250px;
   background-color: transparent;
   color: #000000;
+  outline: none;
 }
 
 .input-container {
   display: inline-block;
-  /* Coloque os elementos lado a lado */
   margin-right: 20px;
   vertical-align: top;
-  /* Alinhe os campos ao topo para que as caixas de entrada tenham a mesma altura */
+  outline: none;
 }
 
 .form-group {
@@ -669,7 +670,6 @@ address {
   background-color: #070707;
   color: #ffffff;
   white-space: pre-wrap;
-  /*quebra de linha automática */
 }
 
 .button-forms {

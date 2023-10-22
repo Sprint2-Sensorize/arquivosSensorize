@@ -14,14 +14,48 @@ function mostrar_principal() {
   tela_perfil.style.display = 'none'
 }
 
+function mostrar_superior() {
+  tela_aparelho.style.display = `flex`
+  analise_aparelho.innerHTML = `Filtrar Aparelhos para Treino de Membros Superiores`
+  aparelho_superior.style.display = 'block'
+  aparelho_infeior.style.display = 'none'
+  aparelho_cardio.style.display = 'none'
+  atualizarGrafico(myChart6, gerarDadosAleatorios(8, 4, 0.5))
+  atualizarGrafico(myChart7, gerarDadosAleatorios(8, 4, 0.5))
+}
+function mostrar_inferior() {
+  tela_aparelho.style.display = `flex`
+  analise_aparelho.innerHTML = `Filtrar Aparelhos para Treino de Membros Inferiores`
+  aparelho_infeior.style.display = 'block'
+  aparelho_cardio.style.display = 'none'
+  aparelho_superior.style.display = 'none'
+  atualizarGrafico(myChart6, gerarDadosAleatorios(8, 4, 0.5))
+  atualizarGrafico(myChart7, gerarDadosAleatorios(8, 4, 0.5))
+}
+function mostrar_cardio() {
+  tela_aparelho.style.display = `flex`
+  analise_aparelho.innerHTML = `Filtrar Aparelhos para Treino Cardiovascular`
+  aparelho_cardio.style.display = 'block'
+  aparelho_superior.style.display = 'none'
+  aparelho_infeior.style.display = 'none'
+  atualizarGrafico(myChart6, gerarDadosAleatorios(8, 4, 0.5))
+  atualizarGrafico(myChart7, gerarDadosAleatorios(8, 4, 0.5))
+  myChart6.data.datasets[0].backgroundColor = 'black'
+  myChart6.data.datasets[0].borderColor = 'black'
+}
+
+function atualizarGrafico(chart, newData) {
+  chart.data.datasets[0].data = [0, ...newData]
+  chart.update()
+}
 
 /* submenu function */
 function toggleSublinks() {
-  const submenu = document.querySelector(".submenu");
-  submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+  const submenu = document.querySelector('.submenu')
+  submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block'
 }
 
-
+function mostrar_perfil() {}
 
 function gerarDadosAleatorios(tamanho, comeco, fim) {
   const dados = []
@@ -64,21 +98,21 @@ var cor = ''
 
 var dado4 = []
 if (maiorValor == soma_inferior) {
-  var primeiroNumero = gerarDadosAleatorios(1, 60, 100)[0]
+  var primeiroNumero = gerarDadosAleatorios(1, 60, 90)[0]
   var segundoNumero = 100 - primeiroNumero
   dado5 = [primeiroNumero, segundoNumero]
   categoria = 'Inferior'
   cor = 'red'
   dado4 = dado_inferior.slice()
 } else if (maiorValor == soma_superior) {
-  var primeiroNumero = gerarDadosAleatorios(1, 60, 100)[0]
+  var primeiroNumero = gerarDadosAleatorios(1, 60, 90)[0]
   var segundoNumero = 100 - primeiroNumero
   dado6 = [primeiroNumero, segundoNumero]
   categoria = 'Superior'
   cor = 'blue'
   dado4 = dado_superior.slice()
 } else if (maiorValor == soma_cardio) {
-  var primeiroNumero = gerarDadosAleatorios(1, 60, 100)[0]
+  var primeiroNumero = gerarDadosAleatorios(1, 60, 90)[0]
   var segundoNumero = 100 - primeiroNumero
   dado7 = [primeiroNumero, segundoNumero]
   categoria = 'Cárdio'
@@ -217,7 +251,7 @@ const config2 = {
 }
 
 const data3 = {
-  labels: ['Percentual de Uso'],
+  labels: ['Grupo Superior'],
   datasets: [
     {
       label: 'My First Dataset',
@@ -238,7 +272,7 @@ const config3 = {
 }
 
 const data4 = {
-  labels: ['Percentual de Uso'],
+  labels: ['Grupo Inferior'],
   datasets: [
     {
       label: 'My First Dataset',
@@ -259,7 +293,7 @@ const config4 = {
 }
 
 const data5 = {
-  labels: ['Percentual de Uso'],
+  labels: ['Grupo Cárdio'],
   datasets: [
     {
       label: 'My First Dataset',
@@ -276,5 +310,94 @@ const config5 = {
   options: {
     circumference: 210,
     rotation: 255
+  }
+}
+
+const labels2 = [
+  '06:00',
+  '08:00',
+  '10:00',
+  '12:00',
+  '14:00',
+  '16:00',
+  '18:00',
+  '20:00',
+  '22:00'
+]
+const data6 = {
+  labels: labels2,
+  datasets: [
+    {
+      label: categoria,
+      backgroundColor: cor,
+      borderColor: cor,
+      data: gerarDadosAleatorios(9, 4, 0.5)
+    }
+  ]
+}
+
+const config6 = {
+  type: 'line',
+  data: data6,
+  options: {
+    plugins: {
+      title: {
+        display: true,
+        text: 'Grupo de Treino'
+      }
+    },
+    scales: {
+      x: {
+        title: {
+          display: true,
+          text: 'Horários do Dia'
+        }
+      },
+      y: {
+        title: {
+          display: true,
+          text: 'Total de Horas de Uso'
+        }
+      }
+    }
+  }
+}
+
+const data7 = {
+  labels: labels2,
+  datasets: [
+    {
+      label: categoria,
+      backgroundColor: cor,
+      borderColor: cor,
+      data: gerarDadosAleatorios(9, 4, 0.5)
+    }
+  ]
+}
+
+const config7 = {
+  type: 'line',
+  data: data7,
+  options: {
+    plugins: {
+      title: {
+        display: true,
+        text: 'Grupo de Treino'
+      }
+    },
+    scales: {
+      x: {
+        title: {
+          display: true,
+          text: 'Horários do Dia'
+        }
+      },
+      y: {
+        title: {
+          display: true,
+          text: 'Total de Horas de Uso'
+        }
+      }
+    }
   }
 }
