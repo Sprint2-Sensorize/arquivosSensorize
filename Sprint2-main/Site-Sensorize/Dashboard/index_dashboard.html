@@ -28,26 +28,39 @@
 
   </nav>
 
-  <!-- Menu Lateral -->
-
+  <!-- menu lateral -->
+  <!-- menu lateral -->
   <div class="menuLateral">
-    <a onclick="mostrar_principal()" class="itensDaNav">
+    <a href="#" class="itensDaNav" onclick="mostrar_principal()">
       <div class="icon-home"></div>
       Dashboard
     </a>
-    <a onclick="mostrar_perfil()" class="itensDaNav">
+  
+    <a href="#" class="itensDaNav" onclick="mostrar_perfil()">
       <div class="icon-user"></div>
       Perfil
     </a>
-    <a onclick="mostrar_aparelhos()" class="itensDaNav">
+    
+  
+    <div class="grupotreino" tabindex="1" >
+    <a href="#"  class="itensDaNav" onclick="toggleSublinks(), mostrar_aparelhos()" >
       <div style="font-size: 2.2rem;" class="icon-weights"></div>
-      Aparelhos
+      Grupo de treino
     </a>
+    <div class="submenu" style="gap: 20px;" >
+      <a href="#">Cardio</a>
+      <a href="#">Superior</a>
+      <a href="#">Inferior</a>
+    </div>
+  </div>
+  
     <a href="../Tela de Login/Login.html" class="itensDaNav">
       <div class="icon-cancel-circle"></div>
       Sair
     </a>
   </div>
+  
+  
 
   <!-- DashBoard -->
 

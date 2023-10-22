@@ -14,6 +14,15 @@ function mostrar_principal() {
   tela_perfil.style.display = 'none'
 }
 
+
+/* submenu function */
+function toggleSublinks() {
+  const submenu = document.querySelector(".submenu");
+  submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+}
+
+
+
 function gerarDadosAleatorios(tamanho, comeco, fim) {
   const dados = []
   for (let i = 0; i < tamanho; i++) {

@@ -93,6 +93,34 @@ nav {
   align-items: center;
   justify-content: center;
 }
+
+/* sub menu */
+.submenu {
+  display: none;
+  gap: 50px;
+  position: absolute;
+  margin-top: 10%;
+  transition: all 0.3s;
+}
+
+
+.grupotreino{
+  display: flex; flex-direction: column; align-items: center;
+  transition: 2s;
+}
+
+
+.submenu > a{
+  color: white;
+  display: flex;
+  text-decoration: none;
+  font-size: 1rem;
+  align-items: center;
+  margin: 0;
+  text-align: center;
+}
+
+
 .div_dashboar {
   border-radius: 20px;
   background-color: white;
