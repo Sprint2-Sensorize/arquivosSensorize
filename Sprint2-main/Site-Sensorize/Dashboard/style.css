@@ -133,7 +133,12 @@ nav {
 .kpi {
   text-align: center;
   margin: 3% 2.6%;
-  width: 150vw;
+  height: 20vh;
+  background-color: #3498db;
+}
+.legenda {
+  text-align: center;
+  margin: 3% 2.6%;
   height: 20vh;
   background-color: #3498db;
 }
@@ -162,10 +167,12 @@ th {
 }
 
 .filtro {
+  flex-direction: column;
   height: 100%;
   display: flex;
   align-items: center;
   background-color: #293c48;
+  justify-content: center;
 }
 
 .filtro_aparelho {
@@ -214,16 +221,17 @@ th {
   align-items: center;
   justify-content: center;
   display: flex;
+  margin-top: 5%;
 }
 .alertas {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 60%;
-  height: 30%;
+  width: 70%;
+  height: 40%;
   gap: 5%;
-  background-color: aqua;
+  text-align: center;
 }
 
 .inform {
