@@ -13,15 +13,20 @@ function mostrar_principal() {
   tela_principal.style.display = 'flex'
   tela_perfil.style.display = 'none'
 }
-
 function mostrar_superior() {
   tela_aparelho.style.display = `flex`
   analise_aparelho.innerHTML = `Filtrar Aparelhos para Treino de Membros Superiores`
   aparelho_superior.style.display = 'block'
   aparelho_infeior.style.display = 'none'
   aparelho_cardio.style.display = 'none'
-  atualizarGrafico(myChart6, gerarDadosAleatorios(8, 4, 0.5))
-  atualizarGrafico(myChart7, gerarDadosAleatorios(8, 4, 0.5))
+  atualizarGrafico(myChart6, gerarDadosAleatorios(8, 2, 0.5))
+  atualizarGrafico(myChart7, gerarDadosAleatorios(8, 2, 0.5))
+  myChart6.data.datasets[0].backgroundColor = 'blue'
+  myChart6.data.datasets[0].borderColor = 'blue'
+  myChart7.data.datasets[0].backgroundColor = 'blue'
+  myChart7.data.datasets[0].borderColor = 'blue'
+  myChart6.update()
+  myChart7.update()
 }
 function mostrar_inferior() {
   tela_aparelho.style.display = `flex`
@@ -29,8 +34,14 @@ function mostrar_inferior() {
   aparelho_infeior.style.display = 'block'
   aparelho_cardio.style.display = 'none'
   aparelho_superior.style.display = 'none'
-  atualizarGrafico(myChart6, gerarDadosAleatorios(8, 4, 0.5))
-  atualizarGrafico(myChart7, gerarDadosAleatorios(8, 4, 0.5))
+  atualizarGrafico(myChart6, gerarDadosAleatorios(8, 2, 0.5))
+  atualizarGrafico(myChart7, gerarDadosAleatorios(8, 2, 0.5))
+  myChart6.data.datasets[0].backgroundColor = 'purple'
+  myChart6.data.datasets[0].borderColor = 'purple'
+  myChart7.data.datasets[0].backgroundColor = 'purple'
+  myChart7.data.datasets[0].borderColor = 'purple'
+  myChart6.update()
+  myChart7.update()
 }
 function mostrar_cardio() {
   tela_aparelho.style.display = `flex`
@@ -38,10 +49,14 @@ function mostrar_cardio() {
   aparelho_cardio.style.display = 'block'
   aparelho_superior.style.display = 'none'
   aparelho_infeior.style.display = 'none'
-  atualizarGrafico(myChart6, gerarDadosAleatorios(8, 4, 0.5))
-  atualizarGrafico(myChart7, gerarDadosAleatorios(8, 4, 0.5))
+  atualizarGrafico(myChart6, gerarDadosAleatorios(8, 2, 0.5))
+  atualizarGrafico(myChart7, gerarDadosAleatorios(8, 2, 0.5))
   myChart6.data.datasets[0].backgroundColor = 'black'
   myChart6.data.datasets[0].borderColor = 'black'
+  myChart7.data.datasets[0].backgroundColor = 'black'
+  myChart7.data.datasets[0].borderColor = 'black'
+  myChart6.update()
+  myChart7.update()
 }
 
 function atualizarGrafico(chart, newData) {
@@ -54,8 +69,6 @@ function toggleSublinks() {
   const submenu = document.querySelector('.submenu')
   submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block'
 }
-
-function mostrar_perfil() {}
 
 function gerarDadosAleatorios(tamanho, comeco, fim) {
   const dados = []
@@ -102,7 +115,7 @@ if (maiorValor == soma_inferior) {
   var segundoNumero = 100 - primeiroNumero
   dado5 = [primeiroNumero, segundoNumero]
   categoria = 'Inferior'
-  cor = 'red'
+  cor = 'purple'
   dado4 = dado_inferior.slice()
 } else if (maiorValor == soma_superior) {
   var primeiroNumero = gerarDadosAleatorios(1, 60, 90)[0]
@@ -165,7 +178,7 @@ const data = {
   datasets: [
     {
       label: 'Inferior',
-      backgroundColor: 'red',
+      backgroundColor: 'purple',
       borderColor: 'rgb(255,99,132)',
       data: dado_inferior
     },
@@ -251,7 +264,7 @@ const config2 = {
 }
 
 const data3 = {
-  labels: ['Grupo Superior'],
+  labels: ['Grupo Inferior'],
   datasets: [
     {
       label: 'My First Dataset',
@@ -272,7 +285,7 @@ const config3 = {
 }
 
 const data4 = {
-  labels: ['Grupo Inferior'],
+  labels: ['Grupo Superior'],
   datasets: [
     {
       label: 'My First Dataset',
@@ -331,7 +344,7 @@ const data6 = {
       label: categoria,
       backgroundColor: cor,
       borderColor: cor,
-      data: gerarDadosAleatorios(9, 4, 0.5)
+      data: gerarDadosAleatorios(9, 2, 0.5)
     }
   ]
 }
@@ -370,7 +383,7 @@ const data7 = {
       label: categoria,
       backgroundColor: cor,
       borderColor: cor,
-      data: gerarDadosAleatorios(9, 4, 0.5)
+      data: gerarDadosAleatorios(9, 2, 0.5)
     }
   ]
 }
