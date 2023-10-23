@@ -13,7 +13,6 @@
 
 <body style="background-color: black;">
 
-
   <nav id="nav">
     <div class="nave">
       <div class="logo">
@@ -25,10 +24,8 @@
       </h1>
     </div>
     </div>
-
   </nav>
 
-  <!-- menu lateral -->
   <!-- menu lateral -->
   <div class="menuLateral">
     <a href="#" class="itensDaNav" onclick="mostrar_principal()">
@@ -40,13 +37,7 @@
         <div class="icon-user"></div>
         Perfil
       </a>
-      <div class="submenu_perfil">
-        <a href="#">Dados Pessoais</a>
-        <a href="#">Senha</a>
-      </div>
     </div>
-
-
 
     <div class="grupotreino" tabindex="1">
       <a href="#" class="itensDaNav" onclick="toggleSublinks() ">
@@ -66,15 +57,14 @@
     </a>
   </div>
 
-
-
   <!-- DashBoard -->
-
 
   <div id="tela_principal" class="div_dashboar">
 
     <div class="alertas">
-      <h3>Análise do Percentual de Utilização dos Equipamentos por Grupo de Treino</h3>
+      <h3 style="width: 100%; display: flex;">
+        Análise do Percentual de Utilização dos Equipamentos por Grupo de Treino
+      </h3>
       <div class="graficos">
         <div class="alerta">
           <canvas id="myChart3"></canvas>
@@ -106,12 +96,12 @@
     </div>
     <div class="amostragem">
       <div>
-        <h3>Frequência Diária Total por Categoria de Treino</h3>
+        <h3 style="width: 100%; display: flex;">Frequência Diária Total por Categoria de Treino</h3>
         <canvas class="estilo" id="myChart"></canvas>
       </div>
 
       <div>
-        <h3>Categoria de Treino de Maior Frequência</h3>
+        <h3 style="width: 100%; display: flex;">Categoria de Treino de Maior Frequência</h3>
         <canvas class="estilo" id="myChart2"></canvas>
       </div>
 
@@ -121,12 +111,85 @@
 
   <!-- Perfil -->
   <div id="tela_perfil" style="display: none;" class="div_dashboar">
+    <br>
+    <div class="divTudoPerfil">
 
+      <h3>Dados Pessoais</h3>
+
+      <div class="img">
+        <input type="file" id="inputFile" accept="image/*">
+        <img id="imagem" style="border-radius: 50px;" src="../Landing Page/img/blueAcademia">
+      </div>
+
+      <div class="divButtonPerfil">
+        <button class="buttonPerfil" onclick="trocarImagem()">Editar Foto</button>
+        <button class="buttonPerfil" onclick="editarDados()">Editar Dados</button>
+      </div>
+
+      <div class="divInputsPerfil">
+        <span class="SpanPerfil">Nome da academia</span><br>
+        <input class="inputPerfil" type="text" id="nomePerfilLeitura" value="BlueFit" readonly><br><br>
+
+        <span class="SpanPerfil">Representante</span><br>
+        <input class="inputPerfil" type="text" id="repLeitura" value="Gabriel" readonly><br><br>
+
+        <span class="SpanPerfil">CNPJ</span><br>
+        <input class="inputPerfilCnpj" type="number" id="cnpjLeitura" value="0000000000000" readonly>
+
+        <span class="SpanPerfil">Telefone</span>
+        <input class="inputPerfilTel" type="number" id="telLeitura" value="912345678" readonly><br><br>
+
+        <span class="SpanPerfil">E-mail</span><br>
+        <input class="inputPerfil" type="text" id="emailLeitura" value="bluefit@gmail.com" readonly><br><br>
+      </div>
+
+
+      <div class="divInputsPerfil2">
+        <span class="SpanPerfil">Nome da academia</span><br>
+        <input class="inputPerfil" type="text" id="nomePerfilEditar" value="BlueFit"><br><br>
+
+        <span class="SpanPerfil">Representante</span><br>
+        <input class="inputPerfil" type="text" id="repEditar" value="Gabriel"><br><br>
+
+        <span class="SpanPerfil">CNPJ</span><br>
+        <input class="inputPerfilCnpj" type="number" id="cnpjEditar" value="0000000000000">
+
+        <span class="SpanPerfil">Telefone</span>
+        <input class="inputPerfilTel" type="number" id="telEditar" value="912345678"><br><br>
+
+        <span class="SpanPerfil">E-mail</span><br>
+        <input class="inputPerfil" type="text" id="emailEditar" value="bluefit@gmail.com"><br><br>
+        <button onclick="salvarDados()" id="buttonSalvar" class="buttonSalvar">Salvar</button>
+      </div>
+    </div>
   </div>
+
+  <script>
+    document.getElementById('inputFile').addEventListener('change', function (event) {
+      var imagemElement = document.getElementById('imagem');
+      var file = event.target.files[0];
+
+      if (file) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+          imagemElement.src = e.target.result;
+        };
+
+        reader.readAsDataURL(file);
+      }
+    });
+
+    function trocarImagem() {
+      document.getElementById('inputFile').click();
+    }
+  </script>
+
+
+
 
   <!-- Aparelho -->
   <div style="display: none;" id="tela_aparelho" class="div_dashboar">
-
     <div class="kpi">
       <h4>Analise detalhada dos aparelhos</h4>
       <table border="1">
@@ -266,11 +329,37 @@
     location.reload();
   }
 
+
   function pesquisa_aparelho() {
     atualizarGrafico(myChart6, gerarDadosAleatorios(9, 4, 0.5))
     atualizarGrafico(myChart7, gerarDadosAleatorios(9, 4, 0.5))
   }
 
 
+  function editarDados() {
+    var divInputsPerfil = document.querySelector('.divInputsPerfil');
+    var divInputsPerfil2 = document.querySelector('.divInputsPerfil2');
 
+
+    if (divInputsPerfil.style.display === 'none') {
+      divInputsPerfil.style.display = 'block';
+      divInputsPerfil2.style.display = 'none';
+    } else {
+      divInputsPerfil.style.display = 'none';
+      divInputsPerfil2.style.display = 'block';
+    }
+  }
+
+  function salvarDados() {
+    var divInputsPerfil = document.querySelector('.divInputsPerfil');
+    var divInputsPerfil2 = document.querySelector('.divInputsPerfil2');
+
+    if (divInputsPerfil2.style.display === 'none') {
+      divInputsPerfil2.style.display = 'block';
+      divInputsPerfil.style.display = 'none';
+    } else {
+      divInputsPerfil2.style.display = 'none';
+      divInputsPerfil.style.display = 'block';
+    }
+  }
 </script>

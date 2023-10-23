@@ -138,7 +138,6 @@ nav {
   margin-left: 20vw;
   margin-top: 17vh;
   position: absolute;
-  justify-content: center;
 }
 
 .kpi {
@@ -206,10 +205,11 @@ th {
 .amostragem {
   gap: 2rem;
   display: flex;
-  margin-top: 15rem;
+  margin-top: 13.5rem;
   position: absolute;
   justify-content: center;
   text-align: center;
+  width: 100%;
 }
 
 .estilo {
@@ -231,7 +231,7 @@ th {
   justify-content: center;
   flex-direction: column;
   width: 100vw;
-  height: 40%;
+  height: 35%;
   gap: 5%;
 }
 
@@ -244,6 +244,7 @@ th {
   display: flex;
   justify-content: space-around;
   width: 100%;
+  margin-top: -5%;
 }
 
 .busca {
@@ -259,4 +260,113 @@ th {
 
 .busca:hover {
   background-color: rgb(0, 17, 129);
+}
+
+/* Dashboard - perfil */
+h3 {
+  margin-left: 55px;
+  height: 30px;
+  width: 25%;
+}
+
+.img {
+  display: flex;
+  width: 12%;
+  height: 25%;
+  border-radius: 40px;
+  margin-left: 550px;
+  margin-top: 20px;
+}
+
+.divTudoPerfil {
+  align-items: center;
+  justify-content: center;
+}
+
+.divInputsPerfil {
+  margin-top: 40px;
+  font-size: 15px;
+  width: 100%;
+  height: 40%;
+  margin-left: 250px;
+}
+
+.SpanPerfil {
+  color: gray;
+  font-size: 20px;
+}
+
+.inputPerfil {
+  font-size: 20px;
+  width: 90%;
+  outline: none;
+  border-radius: 0;
+  background-color: white;
+  border: none;
+  border-bottom: 2px solid black;
+}
+
+.inputPerfilCnpj {
+  font-size: 20px;
+  width: 40%;
+  outline: none;
+  border-radius: 0;
+  background-color: white;
+  border: none;
+  border-bottom: 2px solid black;
+}
+
+.inputPerfilTel {
+  font-size: 20px;
+  width: 40%;
+  outline: none;
+  border-radius: 0;
+  background-color: white;
+  border: none;
+  border-bottom: 2px solid black;
+}
+
+.divButtonPerfil {
+  display: flex;
+  align-content: space-between;
+  margin-left: 520px;
+  margin-top: 15px;
+}
+
+.buttonPerfil {
+  border: 0px;
+  background: white;
+  text-decoration: underline;
+  color: blue;
+  font-size: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  align-content: space-between;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.divInputsPerfil2 {
+  display: none;
+  margin-top: 40px;
+  font-size: 15px;
+  width: 100%;
+  height: 40%;
+  margin-left: 250px;
+}
+
+.buttonSalvar {
+  background-color: #fdb13f;
+  color: #2b2828;
+  padding: 15px 15px;
+  border: none;
+  border-radius: 20px;
+  font-size: 15px;
+  cursor: pointer;
+  width: 10%;
+  font-weight: bold;
+  margin-left: 35%;
+}
+
+.buttonSalvar:hover {
+  background-color: #ff9900;
 }
