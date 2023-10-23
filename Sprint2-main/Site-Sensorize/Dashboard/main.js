@@ -67,7 +67,7 @@ function atualizarGrafico(chart, newData) {
 /* submenu function */
 function toggleSublinks() {
   const submenu = document.querySelector('.submenu')
-  submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block'
+  submenu.style.display = submenu.style.display === 'flex' ? 'none' : 'flex'
 }
 
 function gerarDadosAleatorios(tamanho, comeco, fim) {

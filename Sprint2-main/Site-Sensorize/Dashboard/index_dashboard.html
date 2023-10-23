@@ -13,7 +13,7 @@
 
 <body style="background-color: black;">
 
-  <nav id="nav">
+  <!--   <nav id="nav">
     <div class="nave">
       <div class="logo">
         <img id="idLogo" src="../Landing Page/img/Logo Sensorize copy.ico" alt="logo" class="logo-img">
@@ -24,10 +24,14 @@
       </h1>
     </div>
     </div>
-  </nav>
+  </nav> -->
 
   <!-- menu lateral -->
   <div class="menuLateral">
+    <div class="logo">
+      <img id="idLogo" src="../Landing Page/img/Logo Sensorize copy.ico" alt="logo" class="logo-img">
+      <span style="color: white;">Sensorize</span>
+    </div>
     <a href="#" class="itensDaNav" onclick="mostrar_principal()">
       <div class="icon-home"></div>
       Dashboard
@@ -44,7 +48,7 @@
         <div style="font-size: 2.2rem;" class="icon-weights"></div>
         Grupo de treino
       </a>
-      <div class="submenu" style="gap: 20px;">
+      <div class="submenu" style="gap: 8px;">
         <a onclick="mostrar_cardio()" href="#">Cardio</a>
         <a onclick="mostrar_superior()" href="#">Superior</a>
         <a onclick="mostrar_inferior()" href="#">Inferior</a>
@@ -78,23 +82,35 @@
           <canvas id="myChart5"></canvas>
           <h5 id="cardio" class="inform"></h5>
         </div>
+
+
       </div>
 
     </div>
-    <div class="filtro">
-      <h4>
-        Análise Detalhada
-      </h4>
 
-      <span>Selecione a data:</span>
-      <input style="width: 120px; text-align: center;" type="date" id="dataEvento" min="2022-12-31">
 
-      <button onclick="pesquisa()" class="busca">
-        Pesquisar
-      </button>
+    <div style="width: 100%; height: 20%; background-color: blue; margin-top: 17%; position: absolute;">
+      <div class="filtro">
+        <h4>
+          Análise Detalhada
+        </h4>
+        <div>
+          <span>Selecione a data:</span>
+          <input style="width: 120px; text-align: center; border-radius: 10px;" type="date" id="dataEvento"
+            min="2022-12-31">
 
+          <button onclick="pesquisa()" class="busca">
+            Pesquisar
+          </button>
+        </div>
+
+      </div>
     </div>
+
+
     <div class="amostragem">
+
+
       <div>
         <h3 style="width: 100%; display: flex;">Frequência Diária Total por Categoria de Treino</h3>
         <canvas class="estilo" id="myChart"></canvas>
@@ -146,19 +162,19 @@
 
       <div class="divInputsPerfil2">
         <span class="SpanPerfil">Nome da academia</span><br>
-        <input class="inputPerfil" type="text" id="nomePerfilEditar" value="BlueFit"><br><br>
+        <input class="inputPerfil2" type="text" id="nomePerfilEditar" value="BlueFit"><br><br>
 
         <span class="SpanPerfil">Representante</span><br>
-        <input class="inputPerfil" type="text" id="repEditar" value="Gabriel"><br><br>
+        <input class="inputPerfil2" type="text" id="repEditar" value="Gabriel"><br><br>
 
         <span class="SpanPerfil">CNPJ</span><br>
-        <input class="inputPerfilCnpj" type="number" id="cnpjEditar" value="0000000000000">
+        <input class="inputPerfilCnpj2" type="number" id="cnpjEditar" value="0000000000000">
 
         <span class="SpanPerfil">Telefone</span>
-        <input class="inputPerfilTel" type="number" id="telEditar" value="912345678"><br><br>
+        <input class="inputPerfilTel2" type="number" id="telEditar" value="912345678"><br><br>
 
         <span class="SpanPerfil">E-mail</span><br>
-        <input class="inputPerfil" type="text" id="emailEditar" value="bluefit@gmail.com"><br><br>
+        <input class="inputPerfil2" type="text" id="emailEditar" value="bluefit@gmail.com"><br><br>
         <button onclick="salvarDados()" id="buttonSalvar" class="buttonSalvar">Salvar</button>
       </div>
     </div>
@@ -210,7 +226,8 @@
         </h4>
         <div>
           <span>Selecione a data: </span>
-          <input style="width: 120px; text-align: center;" type="date" id="dataEvento" min="2022-12-31">
+          <input style="width: 120px; text-align: center; border: 2px solid green;" type="date" id="dataEvento"
+            min="2022-12-31">
         </div>
         <div id="aparelho_infeior" style="display: none;">
           <span>Selecione o aparelho: </span>
@@ -353,13 +370,25 @@
   function salvarDados() {
     var divInputsPerfil = document.querySelector('.divInputsPerfil');
     var divInputsPerfil2 = document.querySelector('.divInputsPerfil2');
+    var nome = nomePerfilEditar.value;
+    var representante = repEditar.value;
+    var cnpj = cnpjEditar.value;
+    var telefone = telEditar.value;
+    var email = emailEditar.value;
+
 
     if (divInputsPerfil2.style.display === 'none') {
       divInputsPerfil2.style.display = 'block';
       divInputsPerfil.style.display = 'none';
+
     } else {
       divInputsPerfil2.style.display = 'none';
       divInputsPerfil.style.display = 'block';
+      nomePerfilLeitura.value = `${nome}`;
+      repLeitura.value = `${representante}`;
+      cnpjLeitura.vaue = `${cnpj}`;
+      telLeitura.value = `${telefone}`;
+      emailLeitura.value = `${email}`;
     }
   }
 </script>
