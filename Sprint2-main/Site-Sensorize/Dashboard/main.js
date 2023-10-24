@@ -14,49 +14,52 @@ function mostrar_principal() {
   tela_perfil.style.display = 'none'
 }
 function mostrar_superior() {
+  table_inf.style.display = 'none'
+  table_card.style.display = 'none'
+  table_sup.style.display = 'flex'
   tela_aparelho.style.display = `flex`
   analise_aparelho.innerHTML = `Filtrar Aparelhos para Treino de Membros Superiores`
   aparelho_superior.style.display = 'block'
   aparelho_infeior.style.display = 'none'
   aparelho_cardio.style.display = 'none'
-  atualizarGrafico(myChart6, gerarDadosAleatorios(8, 2, 0.5))
   atualizarGrafico(myChart7, gerarDadosAleatorios(8, 2, 0.5))
-  myChart6.data.datasets[0].backgroundColor = 'blue'
-  myChart6.data.datasets[0].borderColor = 'blue'
-  myChart7.data.datasets[0].backgroundColor = 'blue'
-  myChart7.data.datasets[0].borderColor = 'blue'
-  myChart6.update()
+  myChart7.data.datasets[0].backgroundColor = 'purple'
+  myChart7.data.datasets[0].borderColor = 'purple'
+  myChart6.data.datasets[0].offset = [30, 0, 0]
   myChart7.update()
+  myChart6.update()
 }
 function mostrar_inferior() {
+  table_inf.style.display = 'flex'
+  table_card.style.display = 'none'
+  table_sup.style.display = 'none'
   tela_aparelho.style.display = `flex`
   analise_aparelho.innerHTML = `Filtrar Aparelhos para Treino de Membros Inferiores`
   aparelho_infeior.style.display = 'block'
   aparelho_cardio.style.display = 'none'
   aparelho_superior.style.display = 'none'
-  atualizarGrafico(myChart6, gerarDadosAleatorios(8, 2, 0.5))
   atualizarGrafico(myChart7, gerarDadosAleatorios(8, 2, 0.5))
-  myChart6.data.datasets[0].backgroundColor = 'purple'
-  myChart6.data.datasets[0].borderColor = 'purple'
-  myChart7.data.datasets[0].backgroundColor = 'purple'
-  myChart7.data.datasets[0].borderColor = 'purple'
-  myChart6.update()
+  myChart7.data.datasets[0].backgroundColor = 'blue'
+  myChart7.data.datasets[0].borderColor = 'blue'
+  myChart6.data.datasets[0].offset = [0, 30, 0]
   myChart7.update()
+  myChart6.update()
 }
 function mostrar_cardio() {
+  table_inf.style.display = 'none'
+  table_card.style.display = 'flex'
+  table_sup.style.display = 'none'
   tela_aparelho.style.display = `flex`
   analise_aparelho.innerHTML = `Filtrar Aparelhos para Treino Cardiovascular`
   aparelho_cardio.style.display = 'block'
   aparelho_superior.style.display = 'none'
   aparelho_infeior.style.display = 'none'
-  atualizarGrafico(myChart6, gerarDadosAleatorios(8, 2, 0.5))
   atualizarGrafico(myChart7, gerarDadosAleatorios(8, 2, 0.5))
-  myChart6.data.datasets[0].backgroundColor = 'black'
-  myChart6.data.datasets[0].borderColor = 'black'
   myChart7.data.datasets[0].backgroundColor = 'black'
   myChart7.data.datasets[0].borderColor = 'black'
-  myChart6.update()
+  myChart6.data.datasets[0].offset = [0, 0, 30]
   myChart7.update()
+  myChart6.update()
 }
 
 function atualizarGrafico(chart, newData) {
@@ -109,6 +112,7 @@ var dado7 = [primeiroNumero, segundoNumero]
 var categoria = ''
 var cor = ''
 
+// VALIDANDO A SOMA DO MAOIR RESULTADO PARA COLOCAR NO GRAFICO A DIREITA
 var dado4 = []
 if (maiorValor == soma_inferior) {
   var primeiroNumero = gerarDadosAleatorios(1, 60, 90)[0]
@@ -146,7 +150,7 @@ if (menorValor == soma_inferior) {
   dado7 = [primeiroNumero, segundoNumero]
 }
 
-var cor1 = ''
+/* var cor1 = ''
 var cor2 = ''
 var cor3 = ''
 if (dado5[0] < 30) {
@@ -169,7 +173,7 @@ if (dado7[0] < 30) {
   cor3 = 'orange'
 } else {
   cor3 = 'red'
-}
+} */
 
 const labels = ['06h as 10h', '10h as 14h', '14h as 18h', '18h as 22h']
 
@@ -268,8 +272,9 @@ const data3 = {
   datasets: [
     {
       label: 'My First Dataset',
-      data: dado5,
-      backgroundColor: [cor1, '#ded9d9f0'],
+      data: [25.6, 75.4],
+      backgroundColor: ['green', '#ded9d9f0'],
+      borderWidth: 0,
       hoverOffset: 4
     }
   ]
@@ -279,6 +284,11 @@ const config3 = {
   type: 'doughnut',
   data: data3,
   options: {
+    plugins: {
+      legend: {
+        display: false
+      }
+    },
     circumference: 210,
     rotation: 255
   }
@@ -289,8 +299,9 @@ const data4 = {
   datasets: [
     {
       label: 'My First Dataset',
-      data: dado6,
-      backgroundColor: [cor2, '#ded9d9f0'],
+      data: [60.8, 39.2],
+      backgroundColor: ['orange', '#ded9d9f0'],
+      borderWidth: 0,
       hoverOffset: 4
     }
   ]
@@ -300,6 +311,11 @@ const config4 = {
   type: 'doughnut',
   data: data4,
   options: {
+    plugins: {
+      legend: {
+        display: false
+      }
+    },
     circumference: 210,
     rotation: 255
   }
@@ -310,8 +326,9 @@ const data5 = {
   datasets: [
     {
       label: 'My First Dataset',
-      data: dado7,
-      backgroundColor: [cor3, '#ded9d9f0'],
+      data: [76.4, 24.6],
+      backgroundColor: ['red', '#ded9d9f0'],
+      borderWidth: 0,
       hoverOffset: 4
     }
   ]
@@ -321,10 +338,17 @@ const config5 = {
   type: 'doughnut',
   data: data5,
   options: {
+    plugins: {
+      legend: {
+        display: false
+      }
+    },
     circumference: 210,
     rotation: 255
   }
 }
+
+const labels3 = ['Superior', 'Inferior', 'Cárdio']
 
 const labels2 = [
   '06:00',
@@ -338,39 +362,28 @@ const labels2 = [
   '22:00'
 ]
 const data6 = {
-  labels: labels2,
+  labels: labels3,
   datasets: [
     {
-      label: categoria,
-      backgroundColor: cor,
-      borderColor: cor,
-      data: gerarDadosAleatorios(9, 2, 0.5)
+      label: ['Superior', 'Inferior', 'Cárdio'],
+      backgroundColor: ['purple', 'blue', 'black'],
+      borderWidth: 0,
+      data: [45, 49, 20],
+      hoverOffset: 4,
+      offset: [0, 0, 0]
     }
   ]
 }
 
 const config6 = {
-  type: 'line',
+  type: 'pie',
   data: data6,
   options: {
     plugins: {
       title: {
         display: true,
-        text: 'Grupo de Treino'
-      }
-    },
-    scales: {
-      x: {
-        title: {
-          display: true,
-          text: 'Horários do Dia'
-        }
-      },
-      y: {
-        title: {
-          display: true,
-          text: 'Total de Horas de Uso'
-        }
+        text: 'Distribuição de Aparelhos por Grupo de Treino',
+        fontSize: 18
       }
     }
   }
@@ -380,7 +393,7 @@ const data7 = {
   labels: labels2,
   datasets: [
     {
-      label: categoria,
+      label: '',
       backgroundColor: cor,
       borderColor: cor,
       data: gerarDadosAleatorios(9, 2, 0.5)
@@ -395,7 +408,7 @@ const config7 = {
     plugins: {
       title: {
         display: true,
-        text: 'Grupo de Treino'
+        text: 'Registro Diário de Utilização do Aparelho'
       }
     },
     scales: {

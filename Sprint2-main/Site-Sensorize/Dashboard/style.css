@@ -132,21 +132,17 @@ nav {
 
 .kpi {
   text-align: center;
-  margin: 3% 2.6%;
+  margin: 3% 2%;
   height: 20vh;
-  background-color: #3498db;
+  width: 50vw;
+  border-radius: 10px;
 }
-.legenda {
-  text-align: center;
-  margin: 3% 2.6%;
-  height: 20vh;
-  background-color: #3498db;
-}
+
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
-  font-size: 12px;
+  margin-top: 10px;
+  font-size: 11px;
 }
 
 table,
@@ -157,31 +153,29 @@ td {
 
 th,
 td {
-  padding: 8px;
+  padding: 5px;
   text-align: center;
   width: 200px;
 }
 
-th {
-  background-color: #ffffff;
-}
-
 .filtro {
+  gap: 1rem;
   flex-direction: column;
   height: 100%;
   display: flex;
   align-items: center;
-  background-color: #293c48;
   justify-content: center;
 }
 
 .filtro_aparelho {
+  margin: 3% 0;
   display: flex;
   flex-direction: column;
-  width: 120%;
+  width: 50vw;
   align-items: center;
   height: 30%;
   text-align: center;
+  gap: 3rem;
 }
 
 .filtro_aparelho span {
@@ -205,15 +199,22 @@ th {
   justify-content: center;
   text-align: center;
   width: 100%;
-  background-color: #3498db;
   height: 51%;
 }
 
 .estilo {
   width: 37vw;
-  border: 2px solid #3498db;
+  height: 40vh;
+  border: 2px solid #77a8c9;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.estilo_pie {
+  width: 37vw;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
 }
 
 .alerta {
@@ -221,7 +222,7 @@ th {
   align-items: center;
   justify-content: center;
   display: flex;
-  margin-top: 5%;
+  margin-top: 2%;
 }
 .alertas {
   display: flex;
@@ -236,7 +237,8 @@ th {
 
 .inform {
   position: absolute;
-  margin-top: 7%;
+  margin-top: 6%;
+  font-size: 20px;
 }
 
 .graficos {
@@ -392,4 +394,40 @@ h3 {
 
 .buttonSalvar:hover {
   background-color: #ff9900;
+}
+
+.indicativo {
+  width: 100%;
+  height: 20px; /* Altura da barra de indicação */
+  border-radius: 5px;
+  margin-top: 10px;
+  background: linear-gradient(to right, green 35%, orange 35% 75%, red 75%);
+}
+
+.legenda {
+  text-align: center;
+  margin: 3% 2.6%;
+  height: 30%;
+  width: 35%;
+}
+
+.legenda span {
+  font-size: 11px;
+}
+
+.apoio {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.leg {
+  width: 200px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.leg span {
+  font-size: 12px;
 }
