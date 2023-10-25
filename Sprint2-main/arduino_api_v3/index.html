@@ -7,6 +7,10 @@
     <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
     <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
     <style>
+        h1 {
+            text-align: center;
+        }
+
         canvas {
             -moz-user-select: none;
             -webkit-user-select: none;
@@ -15,8 +19,8 @@
     </style>
 </head>
 
-<body>
-    <div>
+<body style="display: flex; justify-content: center; align-items: center; height: 98vh; overflow-y:hidden">
+    <div style="justify-content: center; width: 40%; display: flex; flex-direction: column;">
         <!--         <h1>Sensor DHT 11 - Umidade</h1>
         <section style="width:50%">
             <canvas id="dht11Umidade"></canvas>
@@ -25,11 +29,19 @@
         <section style="width: 50%;">
             <canvas id="dht11Temperatura"></canvas>
         </section> -->
-        <h1>Sensor de Bloqueio</h1>
-        <section style="width: 50%;">
-            <canvas id="chave"></canvas>
-        </section>
-        <!-- <h1>Sensor Luminosidade</h1>
+
+        <div>
+            <h1>Sensor de Proximidade(TCRT5000)</h1>
+        </div>
+        <div>
+            <section>
+                <canvas id="chave"></canvas>
+            </section>
+        </div>
+
+
+    </div>
+    <!-- <h1>Sensor Luminosidade</h1>
         <section style="width: 50%;">
             <canvas id="luminosidade"></canvas>
         </section>
@@ -211,7 +223,7 @@
                 type: 'line',
                 data: {
                     datasets: [{
-                        label: 'Bloqueio',
+                        label: '1 = ATIVO, 0 = INATIVO',
                         type: 'line',
                         borderColor: ['#ffd902'],
                         backgroundColor: ['#ffe135'],

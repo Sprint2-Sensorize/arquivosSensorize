@@ -28,10 +28,13 @@
 
   <!-- menu lateral -->
   <div class="menuLateral">
-    <div class="logo">
-      <img id="idLogo" src="../Landing Page/img/Logo Sensorize copy.ico" alt="logo" class="logo-img">
-      <span style="color: white;">Sensorize</span>
-    </div>
+    <a href="tela_principal" style="color: white;">
+      <div class="logo">
+        <img id="idLogo" src="../Landing Page/img/Logo Sensorize copy.ico" alt="logo" class="logo-img">
+        <span style="color: white;">Sensorize</span>
+      </div>
+    </a>
+
     <a href="#" class="itensDaNav" onclick="mostrar_principal()">
       <div class="icon-home"></div>
       Dashboard
@@ -55,7 +58,7 @@
       </div>
     </div>
 
-    <a href="../Tela de Login/Login.html" class="itensDaNav">
+    <a href="../Landing Page/index.html" class="itensDaNav">
       <div class="icon-cancel-circle"></div>
       Sair
     </a>
@@ -67,21 +70,19 @@
 
     <div class="alertas">
       <h3 style="width: 80%; text-align: center; margin-bottom: 10px; margin-left: -2%;">
-        Análise em Tempo Real do Percentual de Utilização dos Equipamentos por Grupo de Treino
+        Análise em Tempo Real do Percentual de Ocupação dos Aparelhos por Grupo de Treino
       </h3><br>
       <div style="width: 100%; display: flex; justify-content: space-around;">
         <div class="leg">
-          <div style="width: 20px; height: 10px; background-color: purple; margin-left: 40px;"></div><span>Grupo
-            Inferior</span>
+          <div style="width: 20px; height: 10px; background-color: purple; margin-left: 60px;"></div>
+          <span>Inferior</span>
         </div>
         <div class="leg">
-          <div style="width: 20px; height: 10px; background-color: blue;  margin-left: 40px;"></div><span>Grupo
-            Superior</span>
-
+          <div style="width: 20px; height: 10px; background-color: blue;  margin-left: 60px;"></div>
+          <span>Superior</span>
         </div>
         <div class="leg">
-          <div style="width: 20px; height: 10px; background-color: black;  margin-left: 24px;"></div><span>Grupo
-            Cardiológico</span>
+          <div style="width: 20px; height: 10px; background-color: black;  margin-left: 65px;"></div><span>Cárdio</span>
         </div>
       </div>
       <div class="graficos">
@@ -127,6 +128,8 @@
         <span>Baixa Lotação</span>
         <span>Moderado</span>
         <span>Lotado</span>
+
+
       </div>
 
       <div class="indicativo">
@@ -135,20 +138,37 @@
       <div style="width: 100%; display: flex;">
         <b style="margin-left: 32.5%;">35%</b><b style="margin-left: 32.5%;">75%</b>
       </div>
+      <div
+        style="margin-top: 10%; display: flex; align-items: center; width: 100%; justify-content: center; gap: 10px;">
+        <p style="font-size: 16px;">Atenção!
+        <div style="font-size: 18px; color: red;" class="icon-caution"></div>
+        </p>
+      </div>
+      <p style=" margin-top: -2%; font-size: 12px;">
+        A taxa de utilização no Grupo Cardio ultrapassou o limite recomendado de 75%. Recomendamos que tome medidas
+        imediatas para reduzir essa taxa e evitar a superlotação.
+      </p>
+
+
+
+
+
     </div>
 
     <div class="amostragem">
 
 
       <div>
-        <h3 style="width: 100%; display: flex; justify-content: center; margin: 5% 0 2% 0;">Frequência Diária Total por
-          Categoria de Treino</h3>
+        <h3 style="width: 100%; display: flex; justify-content: center; margin: 5% 0 2% 0;">
+          Frequência Diária Total por Categoria de Treino
+        </h3>
         <canvas class="estilo" id="myChart"></canvas>
       </div>
 
       <div>
-        <h3 style="width: 100%; display: flex; justify-content: center; margin: 5% 0 2% 0;">Categoria de Treino de Maior
-          Frequência</h3>
+        <h3 style="width: 100%; display: flex; justify-content: center; margin: 5% 0 2% 0;">
+          Categoria de Treino de Maior Frequência
+        </h3>
         <canvas class="estilo" id="myChart2"></canvas>
       </div>
 
@@ -181,10 +201,13 @@
         <input class="inputPerfil" type="text" id="repLeitura" value="Gabriel" readonly><br><br>
 
         <span class="SpanPerfil">CNPJ</span><br>
-        <input class="inputPerfilCnpj" type="number" id="cnpjLeitura" value="0000000000000" readonly>
+        <input class="inputPerfil" type="number" id="cnpjLeitura" value="0000000000000" max="14" readonly><br><br>
 
-        <span class="SpanPerfil">Telefone</span>
-        <input class="inputPerfilTel" type="number" id="telLeitura" value="912345678" readonly><br><br>
+        <span class="SpanPerfil">Telefone</span><br>
+        <input class="inputPerfilTel" type="number" id="telLeitura" value="912345678" readonly>
+
+        <span style="position: absolute; margin-top: -25px;" class="SpanPerfil">Celular</span>
+        <input class="inputPerfilTel" type="number" id="celLeitura" value="912345678" readonly><br><br>
 
         <span class="SpanPerfil">E-mail</span><br>
         <input class="inputPerfil" type="text" id="emailLeitura" value="bluefit@gmail.com" readonly><br><br>
@@ -199,10 +222,13 @@
         <input class="inputPerfil2" type="text" id="repEditar" value="Gabriel"><br><br>
 
         <span class="SpanPerfil">CNPJ</span><br>
-        <input class="inputPerfilCnpj2" type="number" id="cnpjEditar" value="0000000000000">
+        <input class="inputPerfilCnpj2" type="number" id="cnpjEditar" value="0000000000000" max="14"><br><br>
 
-        <span class="SpanPerfil">Telefone</span>
-        <input class="inputPerfilTel2" type="number" id="telEditar" value="912345678"><br><br>
+        <span class="SpanPerfil">Telefone</span><br>
+        <input class="inputPerfilTel2" type="number" id="telEditar" value="912345678">
+
+        <span style="position: absolute; margin-top: -25px;" class="SpanPerfil">Celular</span>
+        <input class="inputPerfilTel2" type="number" id="celEditar" value="912345678"><br><br>
 
         <span class="SpanPerfil">E-mail</span><br>
         <input class="inputPerfil2" type="text" id="emailEditar" value="bluefit@gmail.com"><br><br>
@@ -510,6 +536,7 @@
     var representante = repEditar.value;
     var cnpj = cnpjEditar.value;
     var telefone = telEditar.value;
+    var celular = celEditar.value;
     var email = emailEditar.value;
 
 
@@ -522,8 +549,9 @@
       divInputsPerfil.style.display = 'block';
       nomePerfilLeitura.value = `${nome}`;
       repLeitura.value = `${representante}`;
-      cnpjLeitura.vaue = `${cnpj}`;
+      cnpjLeitura.value = `${cnpj}`;
       telLeitura.value = `${telefone}`;
+      celLeitura.value = `${celular}`;
       emailLeitura.value = `${email}`;
     }
   }

@@ -276,7 +276,7 @@ h3 {
   height: 25%;
   border-radius: 40px;
   margin-left: 475px;
-  margin-top: 40px;
+  margin-top: -20px;
 }
 
 .divTudoPerfil {
@@ -315,19 +315,9 @@ h3 {
   border-radius: 5px;
 }
 
-.inputPerfilCnpj {
-  font-size: 20px;
-  width: 40%;
-  outline: none;
-  border-radius: 0;
-  background-color: white;
-  border: none;
-  border-bottom: 2px solid black;
-}
-
 .inputPerfilTel {
   font-size: 20px;
-  width: 40%;
+  width: 44.5%;
   outline: none;
   border-radius: 0;
   background-color: white;
@@ -336,7 +326,7 @@ h3 {
 }
 .inputPerfilCnpj2 {
   font-size: 20px;
-  width: 40%;
+  width: 90%;
   border-radius: 0;
   background-color: white;
   border-bottom: 2px solid black;
@@ -345,7 +335,7 @@ h3 {
 
 .inputPerfilTel2 {
   font-size: 20px;
-  width: 40%;
+  width: 44.5%;
   border-radius: 0;
   background-color: white;
   border-radius: 5px;

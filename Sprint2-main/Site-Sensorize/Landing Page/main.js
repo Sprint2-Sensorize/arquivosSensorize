@@ -248,11 +248,10 @@ function login() {
   var login = inp_login.value
   var senha = inp_senha.value
 
-  if (login == 'teste@gmail.com' && senha == 123) {
-    alert('Login Realizado com sucesso!')
+  if (login == 'adm@gmail.com' && senha == `@adm123`) {
     window.location.href = '../Dashboard/index_dashboard.html'
   } else {
-    alert('Tente novamente')
+    alert('Email e/ou senha estão incorretos! Tente novamente')
   }
 }
 
@@ -262,7 +261,6 @@ function cadastro_endereco() {
   if (numero == '') {
     inp_numero_endereco.style.borderColor = '#ff0000'
   } else {
-    alert('Cadastro realizado com sucesso')
     window.location.href = '../Tela de Login/Login.html'
   }
 }
