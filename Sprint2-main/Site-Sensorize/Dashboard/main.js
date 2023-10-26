@@ -133,7 +133,7 @@ if (maiorValor == soma_inferior) {
   var segundoNumero = 100 - primeiroNumero
   dado7 = [primeiroNumero, segundoNumero]
   categoria = 'Cárdio'
-  cor = 'black'
+  cor = 'gray'
   dado4 = dado_cardio.slice()
 }
 if (menorValor == soma_inferior) {
@@ -183,19 +183,22 @@ const data = {
     {
       label: 'Inferior',
       backgroundColor: 'purple',
-      borderColor: 'rgb(255,99,132)',
+      borderColor: 'black',
+      borderWidth: 2,
       data: dado_inferior
     },
     {
       label: 'Superior',
       backgroundColor: 'blue',
-      borderColor: 'rgb(255,99,132)',
+      borderColor: 'black',
+      borderWidth: 2,
       data: dado_superior
     },
     {
       label: 'Cárdio',
-      backgroundColor: 'black',
-      borderColor: 'rgb(255,99,132)',
+      backgroundColor: 'gray',
+      borderColor: 'black',
+      borderWidth: 2,
       data: dado_cardio
     }
   ]
@@ -272,7 +275,7 @@ const data3 = {
   datasets: [
     {
       label: 'My First Dataset',
-      data: [25.6, 75.4],
+      data: [40.5, 59.5],
       backgroundColor: ['green', '#ded9d9f0'],
       borderWidth: 0,
       hoverOffset: 4
@@ -299,7 +302,7 @@ const data4 = {
   datasets: [
     {
       label: 'My First Dataset',
-      data: [60.8, 39.2],
+      data: [65.5, 34.5],
       backgroundColor: ['orange', '#ded9d9f0'],
       borderWidth: 0,
       hoverOffset: 4
@@ -329,8 +332,7 @@ const data5 = {
       data: [76.4, 24.6],
       backgroundColor: ['red', '#ded9d9f0'],
       borderWidth: 0,
-      hoverOffset: 4,
-      offset: [0, 0]
+      hoverOffset: 4
     }
   ]
 }
