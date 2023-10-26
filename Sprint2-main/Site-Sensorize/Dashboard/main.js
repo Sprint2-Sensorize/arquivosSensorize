@@ -329,7 +329,8 @@ const data5 = {
       data: [76.4, 24.6],
       backgroundColor: ['red', '#ded9d9f0'],
       borderWidth: 0,
-      hoverOffset: 4
+      hoverOffset: 4,
+      offset: [0, 0]
     }
   ]
 }

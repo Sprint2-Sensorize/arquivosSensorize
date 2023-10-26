@@ -74,15 +74,15 @@
       </h3><br>
       <div style="width: 100%; display: flex; justify-content: space-around;">
         <div class="leg">
-          <div style="width: 20px; height: 10px; background-color: purple; margin-left: 60px;"></div>
-          <span>Inferior</span>
+          <span>Grupo de treino <br> Inferior</span>
         </div>
         <div class="leg">
-          <div style="width: 20px; height: 10px; background-color: blue;  margin-left: 60px;"></div>
-          <span>Superior</span>
+          <div style="font-size: 20px; color: orange;" class="icon-caution"></div>
+          <span>Grupo de treino <br> Superior</span>
         </div>
-        <div class="leg">
-          <div style="width: 20px; height: 10px; background-color: black;  margin-left: 65px;"></div><span>Cárdio</span>
+        <div class="leg alerta_div">
+          <div style="font-size: 20px; color: red;" class="icon-caution"></div>
+          <span class="alerta_div">Grupo de treino<br> Cárdio</span>
         </div>
       </div>
       <div class="graficos">
@@ -95,18 +95,18 @@
           <h4 class="inform">60,8%</h4>
         </div>
         <div class="alerta">
-          <canvas id="myChart5"></canvas>
-          <h4 class="inform">76,4%</h4>
+          <canvas class="alerta_div" id="myChart5"></canvas>
+          <h4 class="inform alerta_div">76,4%</h4>
         </div>
       </div>
     </div>
 
 
-    <div style="width: 100%; height: 10%; margin-top: 20.5%; position: absolute; align-items: center;">
+    <div style="width: 100%; height: 10%; margin-top: 21%; position: absolute; align-items: center;">
       <hr>
       <div class="filtro">
         <h5 style="margin: 0;">
-          Análise Detalhada
+          Análise do Histórico
         </h5>
         <div style="display: flex; align-items: center; gap: 1rem;">
           <span>Selecione a data:</span>
@@ -115,7 +115,9 @@
               min="2022-12-31">
           </div>
 
-          <div onclick="pesquisa()" style="font-size: 20px; cursor: pointer;" class="icon-search"></div>
+          <a onclick="pesquisa()">
+            <div style="font-size: 20px; cursor: pointer;" class="icon-search"></div>
+          </a>
 
         </div>
 
@@ -125,9 +127,26 @@
 
     <div class="legenda">
       <div class="apoio">
-        <span>Baixa Lotação</span>
-        <span>Moderado</span>
-        <span>Lotado</span>
+        <div style="display: flex; align-items: center;">
+          <div class="div_cor" style="background-color: red; margin-right: 5px;"></div>
+          <span>Baixa Lotação</span>
+        </div>
+
+        <div style="display: flex; align-items: center;">
+          <div class="div_cor" style="background-color: orange; margin-right: 5px;"></div>
+          <span>Moderado</span>
+        </div>
+
+        <div style="display: flex; align-items: center;">
+          <div class="div_cor" style="background-color:green; margin-right: 5px;"></div>
+          <span>Ideal</span>
+        </div>
+
+        <div style="display: flex; align-items: center;">
+          <div class="div_cor" style="background-color: red; margin-right: 5px;"></div>
+          <span>Lotado</span>
+        </div>
+
 
 
       </div>
@@ -136,15 +155,14 @@
 
       </div>
       <div style="width: 100%; display: flex;">
-        <b style="margin-left: 32.5%;">35%</b><b style="margin-left: 32.5%;">75%</b>
+        <b style="margin-left: 13%;">15%</b><b style="margin-left: 13%;">35%</b><b style="margin-left: 22%;">65%</b><b
+          style="margin-left: 13%;">75%</b>
       </div>
-      <div
-        style="margin-top: 10%; display: flex; align-items: center; width: 100%; justify-content: center; gap: 10px;">
-        <p style="font-size: 16px;">Atenção!
-        <div style="font-size: 18px; color: red;" class="icon-caution"></div>
+      <div style="margin-top: 3%; display: flex; align-items: center; width: 100%; justify-content: center; gap: 10px;">
+        <p style="font-size: 20px;">Atenção!
         </p>
       </div>
-      <p style=" margin-top: -2%; font-size: 12px;">
+      <p style=" margin-top: -2%; font-size: 15px;">
         A taxa de utilização no Grupo Cardio ultrapassou o limite recomendado de 75%. Recomendamos que tome medidas
         imediatas para reduzir essa taxa e evitar a superlotação.
       </p>
@@ -160,7 +178,7 @@
 
       <div>
         <h3 style="width: 100%; display: flex; justify-content: center; margin: 5% 0 2% 0;">
-          Frequência Diária Total por Categoria de Treino
+          Frequência Diária por Categoria de Treino
         </h3>
         <canvas class="estilo" id="myChart"></canvas>
       </div>

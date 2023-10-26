@@ -391,7 +391,18 @@ h3 {
   height: 20px; /* Altura da barra de indicação */
   border-radius: 5px;
   margin-top: 10px;
-  background: linear-gradient(to right, green 35%, orange 35% 75%, red 75%);
+  background: linear-gradient(
+    to right,
+    red 15%,
+    15%,
+    orange 35%,
+    35%,
+    green 65%,
+    65%,
+    orange 85%,
+    75%,
+    red 100%
+  );
 }
 
 .legenda {
@@ -404,20 +415,36 @@ h3 {
 .legenda span {
   font-size: 11px;
 }
+.div_cor {
+  width: 15px;
+  height: 10px;
+}
 
 .apoio {
+  margin-top: -6%;
+  margin-bottom: 12%;
   display: flex;
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
-.leg {
-  width: 200px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
 .leg span {
   font-size: 12px;
+}
+
+.alerta_div {
+  animation-name: piscarv;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes piscarv {
+  0% {
+    color: red;
+    opacity: 0.2;
+  }
+  100% {
+    color: red;
+    opacity: 1;
+  }
 }
