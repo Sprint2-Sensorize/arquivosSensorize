@@ -432,9 +432,20 @@ h3 {
   font-size: 12px;
 }
 
+.leg {
+  margin-bottom: -2%;
+  margin-top: -3%;
+}
+
 .alerta_div {
   animation-name: piscarv;
   animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+}
+
+.alerta_div2 {
+  animation-name: piscarv2;
+  animation-duration: 1.5s;
   animation-iteration-count: infinite;
 }
 
@@ -445,6 +456,17 @@ h3 {
   }
   100% {
     color: red;
+    opacity: 1;
+  }
+}
+
+@keyframes piscarv2 {
+  0% {
+    color: orange;
+    opacity: 0.2;
+  }
+  100% {
+    color: orange;
     opacity: 1;
   }
 }
