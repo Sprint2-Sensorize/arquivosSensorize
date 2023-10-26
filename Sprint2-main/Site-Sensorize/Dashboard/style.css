@@ -471,13 +471,7 @@ h3 {
   }
 }
 
-<<<<<<< HEAD
-#myChart7{
-width: 40vw;
 
-}
-
-=======
 @keyframes piscarv2 {
   0% {
     color: orange;
@@ -488,4 +482,3 @@ width: 40vw;
     opacity: 1;
   }
 }
->>>>>>> af6412a0ff08f907481e3b1db0f3f25d2d5bb35e
