@@ -98,8 +98,6 @@ for (var contador = 0; contador < 4; contador++) {
   soma_cardio += dado_cardio[contador]
 }
 
-var vetor = [1, 2, 3, 4];
-
 comp = [soma_inferior, soma_superior, soma_cardio]
 var maiorValor = Math.max(...comp)
 var menorValor = Math.min(...comp)
