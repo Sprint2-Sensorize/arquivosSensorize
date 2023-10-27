@@ -212,13 +212,8 @@ td {
 }
 
 .estilo_pie {
-<<<<<<< HEAD
   margin-top: 3%;
   width: 20vw;
-=======
-  
-  width: 25vw;
->>>>>>> 34faea9547ecdb4d42c06527080f05e77f9c80f4
   border-radius: 8px;
   display: flex;
   justify-content: center;
