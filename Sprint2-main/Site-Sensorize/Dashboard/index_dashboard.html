@@ -212,6 +212,7 @@
       <div class="divButtonPerfil">
         <button class="buttonPerfil" onclick="trocarImagem()">Editar Foto</button>
         <button class="buttonPerfil" onclick="editarDados()">Editar Dados</button>
+        <button class="buttonPerfil">Recuperar Senha</button>
       </div>
 
       <div class="divInputsPerfil">
@@ -236,6 +237,26 @@
 
 
       <div class="divInputsPerfil2">
+        <span class="SpanPerfil">Nome da academia</span><br>
+        <input class="inputPerfil2" type="text" id="nomePerfilEditar" value="BlueFit"><br><br>
+
+        <span class="SpanPerfil">Representante</span><br>
+        <input class="inputPerfil2" type="text" id="repEditar" value="Gabriel"><br><br>
+
+        <span class="SpanPerfil">CNPJ</span><br>
+        <input class="inputPerfilCnpj2" type="number" id="cnpjEditar" value="0000000000000" max="14"><br><br>
+
+        <span class="SpanPerfil">Telefone</span><br>
+        <input class="inputPerfilTel2" type="number" id="telEditar" value="912345678">
+
+        <span style="position: absolute; margin-top: -25px;" class="SpanPerfil">Celular</span>
+        <input class="inputPerfilTel2" type="number" id="celEditar" value="912345678"><br><br>
+
+        <span class="SpanPerfil">E-mail</span><br>
+        <input class="inputPerfil2" type="text" id="emailEditar" value="bluefit@gmail.com"><br><br>
+        <button onclick="salvarDados()" id="buttonSalvar" class="buttonSalvar">Salvar</button>
+      </div>
+      <div class="divInputsSenha">
         <span class="SpanPerfil">Nome da academia</span><br>
         <input class="inputPerfil2" type="text" id="nomePerfilEditar" value="BlueFit"><br><br>
 
@@ -284,6 +305,7 @@
 
   <!-- Aparelho -->
   <div style="display: none;" id="tela_aparelho" class="div_dashboar">
+<<<<<<< HEAD
     <div
       style="width: 100%; flex-direction: column; display: flex; align-items: center; justify-content: center; height: 50%;">
 
@@ -328,6 +350,21 @@
             </div>
             <div onclick="pesquisa_aparelho()" style="font-size: 20px; cursor: pointer;" class="icon-search"></div>
           </div>
+=======
+    <div style="margin-top: 1%;" class="estilo2">
+      <canvas id="myChart7"></canvas>
+      <h5 id="" class="inform"></h5>
+    </div>
+
+    <div class="filtro_aparelho">
+      <div style=" display: flex; flex-direction: column; gap: 1rem;">
+        <h4 style="margin: 0;" id="analise_aparelho">
+        </h4>
+        <div>
+          <span>Selecione a data: </span>
+          <input style="width: 120px; text-align: center; border-radius: 10px;" type="date" id="dataEvento2"
+            min="2022-12-31">
+>>>>>>> 34faea9547ecdb4d42c06527080f05e77f9c80f4
         </div>
       </div>
       <div style="width: 110%; height: 100%; display: flex; justify-content: center;">
@@ -336,12 +373,17 @@
 
       <hr style="width: 100%; margin-top: 27rem; position: absolute;">
     </div>
+<<<<<<< HEAD
 
     <div style="margin-top: 23rem;" class="amostragem">
 
+=======
+    <div class="amostragem">
+>>>>>>> 34faea9547ecdb4d42c06527080f05e77f9c80f4
       <div class="estilo_pie">
         <canvas id="myChart6"></canvas>
       </div>
+<<<<<<< HEAD
 
       <div class="kpi">
         <h4 style="margin: 0;">Analise detalhada dos aparelhos</h4>
@@ -469,6 +511,131 @@
       </div>
 
 
+=======
+
+      <div class="kpi">
+        <h4 style="margin: 0;">Analise detalhada dos aparelhos</h4>
+        <!-- Tabela para Categoria Inferior -->
+        <table id="table_inf" style="display: none;" border="1">
+          <tr>
+            <td>Nome do Aparelho</td>
+            <td>Quantidade de Aparelhos</td>
+            <td>Taxa de utilização média</td>
+            <td>Horário de pico</td>
+          </tr>
+          <!-- Dados Categoria Inferior -->
+          <tr>
+            <td>Leg Press</td>
+            <td>15</td>
+            <td>30%</td>
+            <td>17:00 - 18:00</td>
+          </tr>
+          <tr>
+            <td>Agachamento</td>
+            <td>10</td>
+            <td>20%</td>
+            <td>16:00 - 17:00</td>
+          </tr>
+          <tr>
+            <td>Cadeira Adutora</td>
+            <td>8</td>
+            <td>15%</td>
+            <td>18:00 - 19:00</td>
+          </tr>
+          <tr>
+            <td>Cadeira Flexora</td>
+            <td>10</td>
+            <td>20%</td>
+            <td>17:30 - 18:30</td>
+          </tr>
+          <tr>
+            <td>Panturrilha</td>
+            <td>6</td>
+            <td>15%</td>
+            <td>19:00 - 20:00</td>
+          </tr>
+        </table>
+  
+        <!-- Tabela para Categoria Superior -->
+        <table id="table_sup" style="display: none;" border="1">
+          <tr>
+            <td>Nome do Aparelho</td>
+            <td>Quantidade de Aparelhos</td>
+            <td>Taxa de utilização média</td>
+            <td>Horário de pico</td>
+          </tr>
+          <!-- Dados Categoria Superior -->
+          <tr>
+            <td>Supino</td>
+            <td>15</td>
+            <td>33%</td>
+            <td>17:30 - 18:30</td>
+          </tr>
+          <tr>
+            <td>Crucifixo</td>
+            <td>10</td>
+            <td>22%</td>
+            <td>18:00 - 19:00</td>
+          </tr>
+          <tr>
+            <td>Barra Parelela</td>
+            <td>8</td>
+            <td>18%</td>
+            <td>19:00 - 20:00</td>
+          </tr>
+          <tr>
+            <td>Remada</td>
+            <td>7</td>
+            <td>15%</td>
+            <td>16:00 - 17:00</td>
+          </tr>
+          <tr>
+            <td>Pull Down</td>
+            <td>5</td>
+            <td>12%</td>
+            <td>17:00 - 18:00</td>
+          </tr>
+          <tr>
+            <td>Rosca</td>
+            <td>5</td>
+            <td>10%</td>
+            <td>20:00 - 21:00</td>
+          </tr>
+          <!-- Adicione mais linhas conforme necessário -->
+        </table>
+  
+  
+        <!-- Tabela para Categoria Cardio -->
+        <table id="table_card" style="display: none;" border="1">
+          <tr>
+            <td>Nome do Aparelho</td>
+            <td>Quantidade de Aparelhos</td>
+            <td>Taxa de utilização média</td>
+            <td>Horário de pico</td>
+          </tr>
+          <!-- Dados Categoria Cardio -->
+          <tr>
+            <td>Esteira</td>
+            <td>8</td>
+            <td>40%</td>
+            <td>18:30 - 19:30</td>
+          </tr>
+          <tr>
+            <td>Bicicleta</td>
+            <td>6</td>
+            <td>30%</td>
+            <td>19:00 - 20:00</td>
+          </tr>
+          <tr>
+            <td>S. Escadas</td>
+            <td>6</td>
+            <td>30%</td>
+            <td>20:30 - 21:30</td>
+          </tr>
+          <!-- Adicione mais linhas conforme necessário -->
+        </table>
+      </div>
+>>>>>>> 34faea9547ecdb4d42c06527080f05e77f9c80f4
     </div>
   </div>
 
@@ -545,6 +712,7 @@
   function editarDados() {
     var divInputsPerfil = document.querySelector('.divInputsPerfil');
     var divInputsPerfil2 = document.querySelector('.divInputsPerfil2');
+    var divInputsSenha = document.querySelector('.divInputsSenha');
 
 
     if (divInputsPerfil.style.display === 'none') {
@@ -554,6 +722,7 @@
       divInputsPerfil.style.display = 'none';
       divInputsPerfil2.style.display = 'block';
     }
+
   }
 
   function salvarDados() {

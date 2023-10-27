@@ -136,6 +136,7 @@ nav {
   height: 20vh;
   width: 50vw;
   border-radius: 10px;
+
 }
 
 table {
@@ -197,12 +198,13 @@ td {
   position: absolute;
   justify-content: center;
   text-align: center;
+  align-items: center;
   width: 100%;
   height: 48%;
 }
 
 .estilo {
-  width: 37vw;
+  width: 35vw;
   height: 40vh;
   border: 2px solid #77a8c9;
   border-radius: 8px;
@@ -210,11 +212,24 @@ td {
 }
 
 .estilo_pie {
+<<<<<<< HEAD
   margin-top: 3%;
   width: 20vw;
+=======
+  
+  width: 25vw;
+>>>>>>> 34faea9547ecdb4d42c06527080f05e77f9c80f4
   border-radius: 8px;
   display: flex;
   justify-content: center;
+}
+
+.estilo2{
+  width: 60vw;
+  height: 45vh;
+  border: 2px solid #77a8c9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .alerta {
@@ -369,6 +384,14 @@ h3 {
   margin-left: 18%;
 }
 
+.divInputsSenha {
+  display: none;
+  font-size: 15px;
+  width: 100%;
+  height: 40%;
+  margin-left: 18%;
+}
+
 .buttonSalvar {
   background-color: #fdb13f;
   color: #2b2828;
@@ -459,6 +482,7 @@ h3 {
     opacity: 1;
   }
 }
+
 
 @keyframes piscarv2 {
   0% {
