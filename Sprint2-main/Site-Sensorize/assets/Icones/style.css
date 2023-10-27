@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?s95q6v');
-  src:  url('fonts/icomoon.eot?s95q6v#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?s95q6v') format('truetype'),
-    url('fonts/icomoon.woff?s95q6v') format('woff'),
-    url('fonts/icomoon.svg?s95q6v#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?mokuuh');
+  src:  url('fonts/icomoon.eot?mokuuh#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?mokuuh') format('truetype'),
+    url('fonts/icomoon.woff?mokuuh') format('woff'),
+    url('fonts/icomoon.svg?mokuuh#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,14 +25,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-caution:before {
-  content: "\e905";
+.icon-warning:before {
+  content: "\e906";
 }
-.icon-weights:before {
-  content: "\e900";
-}
-.icon-search:before {
-  content: "\e904";
+.icon-check:before {
+  content: "\e907";
 }
 .icon-user:before {
   content: "\e901";
@@ -45,4 +42,13 @@
 }
 .icon-house:before {
   content: "\e903";
+}
+.icon-caution:before {
+  content: "\e905";
+}
+.icon-weights:before {
+  content: "\e900";
+}
+.icon-search:before {
+  content: "\e904";
 }

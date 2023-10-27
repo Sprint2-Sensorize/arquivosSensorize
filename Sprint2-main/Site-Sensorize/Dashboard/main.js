@@ -18,7 +18,7 @@ function mostrar_superior() {
   table_card.style.display = 'none'
   table_sup.style.display = 'flex'
   tela_aparelho.style.display = `flex`
-  analise_aparelho.innerHTML = `Filtrar Aparelhos para Treino de Membros Superiores`
+  analise_aparelho.innerHTML = `Registro Diário de Uso de Aparelhos Superiores`
   aparelho_superior.style.display = 'block'
   aparelho_infeior.style.display = 'none'
   aparelho_cardio.style.display = 'none'
@@ -34,7 +34,7 @@ function mostrar_inferior() {
   table_card.style.display = 'none'
   table_sup.style.display = 'none'
   tela_aparelho.style.display = `flex`
-  analise_aparelho.innerHTML = `Filtrar Aparelhos para Treino de Membros Inferiores`
+  analise_aparelho.innerHTML = `Registro Diário de Uso de Aparelhos Inferiores`
   aparelho_infeior.style.display = 'block'
   aparelho_cardio.style.display = 'none'
   aparelho_superior.style.display = 'none'
@@ -50,13 +50,13 @@ function mostrar_cardio() {
   table_card.style.display = 'flex'
   table_sup.style.display = 'none'
   tela_aparelho.style.display = `flex`
-  analise_aparelho.innerHTML = `Filtrar Aparelhos para Treino Cardiovascular`
+  analise_aparelho.innerHTML = `Registro Diário de Uso de Aparelhos Cardio Inferiores`
   aparelho_cardio.style.display = 'block'
   aparelho_superior.style.display = 'none'
   aparelho_infeior.style.display = 'none'
   atualizarGrafico(myChart7, gerarDadosAleatorios(8, 2, 0.5))
-  myChart7.data.datasets[0].backgroundColor = 'black'
-  myChart7.data.datasets[0].borderColor = 'black'
+  myChart7.data.datasets[0].backgroundColor = 'gray'
+  myChart7.data.datasets[0].borderColor = 'gray'
   myChart6.data.datasets[0].offset = [0, 0, 30]
   myChart7.update()
   myChart6.update()
@@ -369,7 +369,7 @@ const data6 = {
   datasets: [
     {
       label: ['Superior', 'Inferior', 'Cárdio'],
-      backgroundColor: ['purple', 'blue', 'black'],
+      backgroundColor: ['purple', 'blue', 'gray'],
       borderWidth: 0,
       data: [45, 49, 20],
       hoverOffset: 4,
@@ -386,7 +386,8 @@ const config6 = {
       title: {
         display: true,
         text: 'Distribuição de Aparelhos por Grupo de Treino',
-        fontSize: 18
+        fontSize: 25,
+        color: 'black'
       }
     }
   }
@@ -411,7 +412,8 @@ const config7 = {
     plugins: {
       title: {
         display: true,
-        text: 'Registro Diário de Utilização do Aparelho'
+        text: 'Esteira',
+        color: 'black'
       }
     },
     scales: {
