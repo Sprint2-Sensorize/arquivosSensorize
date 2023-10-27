@@ -380,6 +380,14 @@ h3 {
   margin-left: 18%;
 }
 
+.divInputsSenha {
+  display: none;
+  font-size: 15px;
+  width: 100%;
+  height: 40%;
+  margin-left: 18%;
+}
+
 .buttonSalvar {
   background-color: #fdb13f;
   color: #2b2828;

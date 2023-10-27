@@ -212,6 +212,7 @@
       <div class="divButtonPerfil">
         <button class="buttonPerfil" onclick="trocarImagem()">Editar Foto</button>
         <button class="buttonPerfil" onclick="editarDados()">Editar Dados</button>
+        <button class="buttonPerfil">Recuperar Senha</button>
       </div>
 
       <div class="divInputsPerfil">
@@ -236,6 +237,26 @@
 
 
       <div class="divInputsPerfil2">
+        <span class="SpanPerfil">Nome da academia</span><br>
+        <input class="inputPerfil2" type="text" id="nomePerfilEditar" value="BlueFit"><br><br>
+
+        <span class="SpanPerfil">Representante</span><br>
+        <input class="inputPerfil2" type="text" id="repEditar" value="Gabriel"><br><br>
+
+        <span class="SpanPerfil">CNPJ</span><br>
+        <input class="inputPerfilCnpj2" type="number" id="cnpjEditar" value="0000000000000" max="14"><br><br>
+
+        <span class="SpanPerfil">Telefone</span><br>
+        <input class="inputPerfilTel2" type="number" id="telEditar" value="912345678">
+
+        <span style="position: absolute; margin-top: -25px;" class="SpanPerfil">Celular</span>
+        <input class="inputPerfilTel2" type="number" id="celEditar" value="912345678"><br><br>
+
+        <span class="SpanPerfil">E-mail</span><br>
+        <input class="inputPerfil2" type="text" id="emailEditar" value="bluefit@gmail.com"><br><br>
+        <button onclick="salvarDados()" id="buttonSalvar" class="buttonSalvar">Salvar</button>
+      </div>
+      <div class="divInputsSenha">
         <span class="SpanPerfil">Nome da academia</span><br>
         <input class="inputPerfil2" type="text" id="nomePerfilEditar" value="BlueFit"><br><br>
 
@@ -538,7 +559,7 @@
   function editarDados() {
     var divInputsPerfil = document.querySelector('.divInputsPerfil');
     var divInputsPerfil2 = document.querySelector('.divInputsPerfil2');
-    var divInputsSenha = document.querySelector('');
+    var divInputsSenha = document.querySelector('.divInputsSenha');
 
 
     if (divInputsPerfil.style.display === 'none') {
@@ -548,6 +569,7 @@
       divInputsPerfil.style.display = 'none';
       divInputsPerfil2.style.display = 'block';
     }
+
   }
 
   function salvarDados() {
