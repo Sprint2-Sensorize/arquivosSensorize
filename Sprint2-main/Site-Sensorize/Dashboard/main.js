@@ -412,8 +412,8 @@ const config7 = {
     plugins: {
       title: {
         display: true,
-        text: 'Esteira',
-        color: 'black'
+        text: 'Analise de Frequencia diaria do aparelho selecionado',
+        color: cor
       }
     },
     scales: {
