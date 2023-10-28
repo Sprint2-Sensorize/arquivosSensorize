@@ -10,6 +10,7 @@ body {
   font-family: 'Roboto Slab', serif;
   background-color: #ffffff;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 /* CSS NAVBAR E LOGO */
