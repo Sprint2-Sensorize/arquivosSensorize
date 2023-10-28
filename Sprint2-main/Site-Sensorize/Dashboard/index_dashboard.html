@@ -554,8 +554,10 @@
     if (divInputsPerfil.style.display === 'none') {
       divInputsPerfil.style.display = 'block';
       divInputsPerfil2.style.display = 'none';
+      divInputsSenha.style.display = 'none';
     } else {
       divInputsPerfil.style.display = 'none';
+      divInputsSenha.style.display = 'none';
       divInputsPerfil2.style.display = 'block';
     }
 
@@ -569,14 +571,16 @@
     if (divInputsSenha.style.display === 'none') {
       divInputsPerfil.style.display = 'none';
       divInputsSenha.style.display = 'block';
+      divInputsPerfil2.style.display = 'none';
     } else {
-      divInputsPerfil.style.display = 'none';
-      divInputsSenha.style.display = 'block';
+      divInputsPerfil.style.display = 'block';
+      divInputsPerfil2.style.display = 'none';
+      divInputsSenha.style.display = 'none';
     }
   }
 
   function salvarDados() {
-    g
+
     var divInputsPerfil = document.querySelector('.divInputsPerfil');
     var divInputsPerfil2 = document.querySelector('.divInputsPerfil2');
     var nome = nomePerfilEditar.value;
