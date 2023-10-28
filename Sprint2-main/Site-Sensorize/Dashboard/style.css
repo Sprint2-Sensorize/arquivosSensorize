@@ -10,6 +10,7 @@ body {
   font-family: 'Roboto Slab', serif;
   background-color: #ffffff;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 /* CSS NAVBAR E LOGO */
@@ -136,7 +137,6 @@ nav {
   height: 20vh;
   width: 50vw;
   border-radius: 10px;
-
 }
 
 table {
@@ -219,7 +219,7 @@ td {
   justify-content: center;
 }
 
-.estilo2{
+.estilo2 {
   width: 60vw;
   height: 45vh;
   border: 2px solid #77a8c9;
@@ -477,7 +477,6 @@ h3 {
     opacity: 1;
   }
 }
-
 
 @keyframes piscarv2 {
   0% {
