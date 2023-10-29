@@ -98,3 +98,21 @@ input {
   font-family: 'raleway';
   font-size: 14px;
 }
+
+.lnr-eye {
+  position: absolute;
+  margin-left: 20%;
+  margin-top: 11%;
+  cursor: pointer;
+}
+
+.inpMostrarSenha{
+  margin-right: 35%;
+  margin-top: -3%;
+}
+
+.spanMostrarSenha{
+  margin-right: 20%;
+  margin-top: -5.9%;
+  margin-bottom: 5%;
+}
