@@ -423,7 +423,7 @@ const config7 = {
     plugins: {
       title: {
         display: true,
-        text: 'Analise de Frequencia diaria do aparelho selecionado',
+        text: 'Análise de Frequência diária do aparelho selecionado',
         color: "black"
       }
     },
