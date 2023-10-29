@@ -737,6 +737,10 @@ address {
   margin-left: 15px;
 }
 
+.wpp a{
+  color: black;
+}
+
 /* FOOTER */
 
 .img-rodape {
