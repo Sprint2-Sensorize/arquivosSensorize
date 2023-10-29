@@ -284,6 +284,8 @@ h3 {
   display: flex;
   width: 12%;
   height: 25%;
+  justify-content: center; /* Centraliza horizontalmente */
+  /*align-items: center;*/
   border-radius: 40px;
   margin-left: 475px;
   margin-top: -20px;
@@ -355,7 +357,8 @@ h3 {
 .divButtonPerfil {
   display: flex;
   align-content: space-between;
-  margin-left: 450px;
+  /*justify-content: center;*/
+  margin-left: 350px;
   margin-top: 15px;
 }
 
@@ -397,7 +400,8 @@ h3 {
   cursor: pointer;
   width: 10%;
   font-weight: bold;
-  margin-left: 40%;
+  margin-left: 35%;
+  /*justify-content: center;*/
 }
 
 .buttonSalvar:hover {
