@@ -13,14 +13,13 @@ SELECT * FROM academia AS a
 	
 -- -------EXIBIR TODOS OS DADOS DA TABELA SENSORES EM CONJUNTO COM A TABELA HISTÓRICO ONDE O "CAMPO SENSOR_ID" DA TABELA SENSORES REPRESENTA -------------------------
 ----------------------------------------------------------- O CAMPO "FK_SENSOR" DA TABELA HISTÓRICO ------------------------------------------------------------------
+
 SELECT * FROM
 	sensores AS s
 		JOIN historico AS h
 			ON s.sensor_id = h.fk_sensor;
             
-    
 -- ------------------------------------------------------EXIBINDO TODOS OS DADOS DA ACADEMIA ENDERECO-----------------------------------------------------------------
-
 
 SELECT * FROM 
 	academia AS A
@@ -28,6 +27,7 @@ SELECT * FROM
 			on a.academia_id = e.fk_academia;
             
 -- -------------------------------------------EXIBINDO A SOMA DO TOTAL DE TEMPO DE USO DE TODO O HISTORICO DE TODOS OS GRUPOS-----------------------------------
+
 SELECT a.Nome_academia as "NOME DA ACADEMIA",
 		SEC_TO_TIME(SUM(TIMESTAMPDIFF(SECOND,data_historico_ativo, data_historico_inativo))) AS "ACUMULO DE TEMPO DE USO DE TODOS OS APARELHOS (06:00 - 22:00)"
 			FROM academia as a
@@ -40,6 +40,7 @@ SELECT a.Nome_academia as "NOME DA ACADEMIA",
 										where data_historico_ativo BETWEEN '2023-10-24 06:00:00' AND '2023-10-24 22:00:00';
 
 -- -----------------------------------------------------EXIBINDO A SOMA DO TOTAL DE USO DE UM GRUPO ESPECIFICO-------------------------------------------
+
 SELECT  academia.Nome_academia as "Nome da Academia",
 			aparelho.grupo_treino as "Grupo de Treino do Aparelho",
 				SEC_TO_TIME(SUM(TIMESTAMPDIFF(SECOND, data_historico_ativo , data_historico_inativo))) AS "Total de Tempo de Uso"
@@ -54,6 +55,7 @@ SELECT  academia.Nome_academia as "Nome da Academia",
                                                 
                                                 
 -- ---------------------------------------EXIBINDO O MAIOR TEMPO DE USO ININTERRUPTO DE UM GRUPO ESPECIFICO-----------------------
+
 SELECT  academia.Nome_academia as "Nome da Academia",
 			aparelho.nome_aparelho as "Nome Do Aparelho",
 				aparelho.grupo_treino as "Grupo de Treino do Aparelho",
