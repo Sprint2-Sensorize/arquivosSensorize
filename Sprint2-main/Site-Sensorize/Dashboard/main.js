@@ -26,7 +26,6 @@ function mostrar_superior() {
   myChart7.data.datasets[0].backgroundColor = 'purple'
   myChart7.data.datasets[0].borderColor = 'purple'
   myChart6.data.datasets[0].offset = [30, 0, 0]
-  myChart6.options.plugins.title.text = "Representação total dos aparelhos de Superior"
   myChart7.update()
   myChart6.update()
 }
@@ -43,7 +42,6 @@ function mostrar_inferior() {
   myChart7.data.datasets[0].backgroundColor = 'blue'
   myChart7.data.datasets[0].borderColor = 'blue'
   myChart6.data.datasets[0].offset = [0, 30, 0]
-  myChart6.options.plugins.title.text = "Representação total dos aparelhos de Inferior"
   myChart7.update()
   myChart6.update()
 }
@@ -60,7 +58,6 @@ function mostrar_cardio() {
   myChart7.data.datasets[0].backgroundColor = 'gray'
   myChart7.data.datasets[0].borderColor = 'gray'
   myChart6.data.datasets[0].offset = [0, 0, 30]
-  myChart6.options.plugins.title.text = "Representação total dos aparelhos de Cardio"
   myChart7.update()
   myChart6.update()
 }
@@ -424,7 +421,7 @@ const config7 = {
       title: {
         display: true,
         text: 'Analise de Frequencia diaria do aparelho selecionado',
-        color: "black"
+        color: cor
       }
     },
     scales: {
