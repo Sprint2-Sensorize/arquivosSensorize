@@ -207,7 +207,8 @@
 
       <div class="img">
         <input type="file" id="inputFile" accept="image/*">
-        <img id="imagem" style="border-radius: 50px; justify-content: center; align-items: center;" src="../Landing Page/img/blueAcademia"> 
+        <img id="imagem" style="border-radius: 50px; justify-content: center; align-items: center;"
+          src="../Landing Page/img/blueAcademia">
       </div>
 
       <div class="divButtonPerfil">
@@ -260,10 +261,10 @@
 
       <div class="divInputsSenha">
         <span class="SpanPerfil">Nova Senha</span><br>
-        <input class="inputPerfil2" type="text" id="nomePerfilEditar" value="*****"><br><br>
+        <input class="inputPerfil2" type="text" id="senha_id" placeholder="*****"><br><br>
         <span class="SpanPerfil">Confirme a senha</span><br>
-        <input class="inputPerfil2" type="text" id="repEditar" value="*****"><br><br>
-        <button onclick="salvarDados()" id="buttonSalvar" class="buttonSalvar">Salvar</button>
+        <input class="inputPerfil2" type="text" id="senha2_id" placeholder="*****"><br><br>
+        <button onclick="salvarSenha()" id="buttonSalvar" class="buttonSalvar">Salvar</button>
       </div>
     </div>
   </div>
@@ -487,12 +488,16 @@
     document.getElementById('myChart'),
     config
   )
+  setTimeout(() => {
+    myChart.update()
+  }, 1000);
+
 
   const myChart2 = new Chart(
     document.getElementById('myChart2'),
     config2
   )
-
+  myChart2.update()
   const myChart3 = new Chart(
     document.getElementById('myChart3'),
     config3
@@ -546,13 +551,11 @@
     atualizarGrafico(myChart7, gerarDadosAleatorios(9, 2, 0.5))
   }
 
+  var divInputsPerfil = document.querySelector('.divInputsPerfil');
+  var divInputsPerfil2 = document.querySelector('.divInputsPerfil2');
+  var divInputsSenha = document.querySelector('.divInputsSenha');
 
   function editarDados() {
-    var divInputsPerfil = document.querySelector('.divInputsPerfil');
-    var divInputsPerfil2 = document.querySelector('.divInputsPerfil2');
-    var divInputsSenha = document.querySelector('.divInputsSenha');
-
-
     if (divInputsPerfil.style.display === 'none') {
       divInputsPerfil.style.display = 'block';
       divInputsPerfil2.style.display = 'none';
@@ -566,10 +569,6 @@
   }
 
   function recuperarSenha() {
-    var divInputsPerfil = document.querySelector('.divInputsPerfil');
-    var divInputsPerfil2 = document.querySelector('.divInputsPerfil2');
-    var divInputsSenha = document.querySelector('.divInputsSenha');
-
     if (divInputsSenha.style.display === 'none') {
       divInputsPerfil.style.display = 'none';
       divInputsSenha.style.display = 'block';
@@ -581,10 +580,13 @@
     }
   }
 
-  function salvarDados() {
+  function salvarSenha() {
+    divInputsSenha.style.display = 'none'
+    divInputsPerfil2.style.display = 'block'
+    alert("Sua senha foi atualizada com sucesso!")
+  }
 
-    var divInputsPerfil = document.querySelector('.divInputsPerfil');
-    var divInputsPerfil2 = document.querySelector('.divInputsPerfil2');
+  function salvarDados() {
     var nome = nomePerfilEditar.value;
     var representante = repEditar.value;
     var cnpj = cnpjEditar.value;
