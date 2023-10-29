@@ -730,11 +730,15 @@ address {
 
 .wpp {
   display: flex;
-  transform: translate(32%, 30%);
+  transform: translate(39%, 30%);
 }
 
 .wpp p {
-  margin-left: 15px;
+  margin-left: 14px;
+}
+
+.wpp a{
+  color: black;
 }
 
 .wpp a{
@@ -790,6 +794,6 @@ address {
 }
 .icone-rede {
   width: 10%;
-  margin: 0 10px; /* / Adicione um espaçamento entre as imagens */
+  margin: 0 10px; 
   cursor: pointer;
 }
