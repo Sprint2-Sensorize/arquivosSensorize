@@ -787,4 +787,5 @@ address {
 .icone-rede {
   width: 10%;
   margin: 0 10px; /* / Adicione um espaçamento entre as imagens */
+  cursor: pointer;
 }
