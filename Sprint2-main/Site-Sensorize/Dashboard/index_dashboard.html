@@ -270,12 +270,6 @@
   </div>
 
   <script>
-    //para editar imagem no perfil
-    
-    function trocarImagem() {
-      document.getElementById('inputFile').click();
-    }
-
     document.getElementById('inputFile').addEventListener('change', function (event) {
       var imagemElement = document.getElementById('imagem');
       var file = event.target.files[0];
@@ -291,6 +285,9 @@
       }
     });
 
+    function trocarImagem() {
+      document.getElementById('inputFile').click();
+    }
   </script>
 
 
@@ -486,6 +483,7 @@
 
 
 <script>
+
   const myChart = new Chart(
     document.getElementById('myChart'),
     config
@@ -557,9 +555,8 @@
   var divInputsPerfil2 = document.querySelector('.divInputsPerfil2');
   var divInputsSenha = document.querySelector('.divInputsSenha');
 
-  //para editar dados do perfil
   function editarDados() {
-    if (divInputsPerfil.style.display == 'none') {
+    if (divInputsPerfil.style.display === 'none') {
       divInputsPerfil.style.display = 'block';
       divInputsPerfil2.style.display = 'none';
       divInputsSenha.style.display = 'none';
@@ -570,35 +567,9 @@
     }
 
   }
-  
-  function salvarDados() {
-    var nome = nomePerfilEditar.value;
-    var representante = repEditar.value;
-    var cnpj = cnpjEditar.value;
-    var telefone = telEditar.value;
-    var celular = celEditar.value;
-    var email = emailEditar.value;
 
-
-    if (divInputsPerfil2.style.display == 'none') {
-      divInputsPerfil2.style.display = 'block';
-      divInputsPerfil.style.display = 'none';
-
-    } else {
-      divInputsPerfil2.style.display = 'none';
-      divInputsPerfil.style.display = 'block';
-      nomePerfilLeitura.value = `${nome}`;
-      repLeitura.value = `${representante}`;
-      cnpjLeitura.value = `${cnpj}`;
-      telLeitura.value = `${telefone}`;
-      celLeitura.value = `${celular}`;
-      emailLeitura.value = `${email}`;
-    }
-  }
-
-  // para recuperar senha no perfil
   function recuperarSenha() {
-    if (divInputsSenha.style.display == 'none') {
+    if (divInputsSenha.style.display === 'none') {
       divInputsPerfil.style.display = 'none';
       divInputsSenha.style.display = 'block';
       divInputsPerfil2.style.display = 'none';
@@ -615,7 +586,30 @@
     alert("Sua senha foi atualizada com sucesso!")
   }
 
-  
+  function salvarDados() {
+    var nome = nomePerfilEditar.value;
+    var representante = repEditar.value;
+    var cnpj = cnpjEditar.value;
+    var telefone = telEditar.value;
+    var celular = celEditar.value;
+    var email = emailEditar.value;
+
+
+    if (divInputsPerfil2.style.display === 'none') {
+      divInputsPerfil2.style.display = 'block';
+      divInputsPerfil.style.display = 'none';
+
+    } else {
+      divInputsPerfil2.style.display = 'none';
+      divInputsPerfil.style.display = 'block';
+      nomePerfilLeitura.value = `${nome}`;
+      repLeitura.value = `${representante}`;
+      cnpjLeitura.value = `${cnpj}`;
+      telLeitura.value = `${telefone}`;
+      celLeitura.value = `${celular}`;
+      emailLeitura.value = `${email}`;
+    }
+  }
 
 
 </script>
