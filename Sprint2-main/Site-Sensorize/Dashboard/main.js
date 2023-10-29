@@ -50,7 +50,7 @@ function mostrar_cardio() {
   table_card.style.display = 'flex'
   table_sup.style.display = 'none'
   tela_aparelho.style.display = `flex`
-  analise_aparelho.innerHTML = `Registro Diário de Uso de Aparelhos Cardio Inferiores`
+  analise_aparelho.innerHTML = `Registro Diário de Uso de Aparelhos Cardio`
   aparelho_cardio.style.display = 'block'
   aparelho_superior.style.display = 'none'
   aparelho_infeior.style.display = 'none'
