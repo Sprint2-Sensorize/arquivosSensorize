@@ -332,8 +332,7 @@ hr {
   gap: 1rem;
 }
 
-/* CALCULADORA*/
-
+/* calculadora financeira */
 .divCalcMaior {
   display: flex;
   height: 75vh;
@@ -369,27 +368,6 @@ hr {
   width: 500px;
   margin-left: 200px;
 }
-
-/* .imagemCalc{
-  margin-inline-start: 150px;
-  margin-top: -3%;
-}
-
-.imgCalc{
-  width: 60%;
-} */
-
-/* .simulacao2 {
-  background-color: #FFAE34;
-  color: #2B2828;
-  padding: 18px 20px;
-  border: none;
-  border-radius: 20px;
-  font-size: 12px;
-  cursor: pointer;
-  width: 40%;
-  margin-top: 15px;
-} */
 
 /* CARROSSEL */
 .tituloClientes {

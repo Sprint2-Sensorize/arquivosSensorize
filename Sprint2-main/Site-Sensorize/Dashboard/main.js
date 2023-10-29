@@ -208,10 +208,6 @@ const config = {
   type: 'bar',
   data: data,
   options: {
-    animation: {
-      duration: 2000,
-      easing: 'easeInOutQuart'
-    },
     plugins: {
       title: {
         display: true,
@@ -251,10 +247,6 @@ const config2 = {
   type: 'line',
   data: data2,
   options: {
-    animation: {
-      duration: 2000,
-      easing: 'easeInOutQuart'
-    },
     plugins: {
       title: {
         display: true,
@@ -420,8 +412,8 @@ const config7 = {
     plugins: {
       title: {
         display: true,
-        text: 'Analise de Frequencia diaria do aparelho selecionado',
-        color: cor
+        text: 'Análise de Frequência diária do aparelho selecionado',
+        color: 'black'
       }
     },
     scales: {
