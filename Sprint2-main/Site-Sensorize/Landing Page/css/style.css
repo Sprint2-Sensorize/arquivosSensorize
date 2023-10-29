@@ -301,14 +301,14 @@ hr {
   align-items: center;
   justify-content: center;
   color: white;
-  border: 1px solid #555;
   flex-direction: column;
   cursor: pointer;
+  transition: transform 0.3s;
 }
 
-/* .divCaixa:hover {
-  transform: scale(1.05);
-} */
+.divCaixa:hover {
+  border: 1.5px solid #898989;
+}
 
 .rotated {
   transform: scale(1.2) rotateY(180deg);
