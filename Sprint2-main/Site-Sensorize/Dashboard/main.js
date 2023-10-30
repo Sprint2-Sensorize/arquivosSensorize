@@ -400,7 +400,7 @@ const data7 = {
   labels: labels2,
   datasets: [
     {
-      label: '',
+      label: 'Aparelho',
       backgroundColor: cor,
       borderColor: cor,
       data: gerarDadosAleatorios(9, 2, 0.5)
