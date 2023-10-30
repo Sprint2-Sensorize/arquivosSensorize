@@ -26,6 +26,7 @@ function mostrar_superior() {
   myChart7.data.datasets[0].backgroundColor = 'purple'
   myChart7.data.datasets[0].borderColor = 'purple'
   myChart6.data.datasets[0].offset = [30, 0, 0]
+  myChart6.options.plugins.title.text = "Quantidade de aparelhos Superior"
   myChart7.update()
   myChart6.update()
 }
@@ -42,6 +43,7 @@ function mostrar_inferior() {
   myChart7.data.datasets[0].backgroundColor = 'blue'
   myChart7.data.datasets[0].borderColor = 'blue'
   myChart6.data.datasets[0].offset = [0, 30, 0]
+  myChart6.options.plugins.title.text = "Quantidade de aparelhos Inferior"
   myChart7.update()
   myChart6.update()
 }
@@ -50,7 +52,7 @@ function mostrar_cardio() {
   table_card.style.display = 'flex'
   table_sup.style.display = 'none'
   tela_aparelho.style.display = `flex`
-  analise_aparelho.innerHTML = `Registro Diário de Uso de Aparelhos Cardio`
+  analise_aparelho.innerHTML = `Registro Diário de Uso de Aparelhos Cárdio`
   aparelho_cardio.style.display = 'block'
   aparelho_superior.style.display = 'none'
   aparelho_infeior.style.display = 'none'
@@ -58,6 +60,7 @@ function mostrar_cardio() {
   myChart7.data.datasets[0].backgroundColor = 'gray'
   myChart7.data.datasets[0].borderColor = 'gray'
   myChart6.data.datasets[0].offset = [0, 0, 30]
+  myChart6.options.plugins.title.text = "Quantidade de aparelhos Cardio"
   myChart7.update()
   myChart6.update()
 }
