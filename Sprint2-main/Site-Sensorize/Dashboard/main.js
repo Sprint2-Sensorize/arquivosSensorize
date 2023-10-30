@@ -60,7 +60,7 @@ function mostrar_cardio() {
   myChart7.data.datasets[0].backgroundColor = 'gray'
   myChart7.data.datasets[0].borderColor = 'gray'
   myChart6.data.datasets[0].offset = [0, 0, 30]
-  myChart6.options.plugins.title.text = "Quantidade de aparelhos Cardio"
+  myChart6.options.plugins.title.text = "Quantidade de aparelhos Cárdio"
   myChart7.update()
   myChart6.update()
 }
