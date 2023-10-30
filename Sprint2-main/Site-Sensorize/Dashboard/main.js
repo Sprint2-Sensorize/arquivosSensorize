@@ -18,7 +18,7 @@ function mostrar_superior() {
   table_card.style.display = 'none'
   table_sup.style.display = 'flex'
   tela_aparelho.style.display = `flex`
-  analise_aparelho.innerHTML = `Registro Diário de Uso de Aparelhos Superiores`
+  analise_aparelho.innerHTML = `Registro Diário do Uso de Aparelhos Superiores`
   aparelho_superior.style.display = 'block'
   aparelho_infeior.style.display = 'none'
   aparelho_cardio.style.display = 'none'
@@ -35,7 +35,7 @@ function mostrar_inferior() {
   table_card.style.display = 'none'
   table_sup.style.display = 'none'
   tela_aparelho.style.display = `flex`
-  analise_aparelho.innerHTML = `Registro Diário de Uso de Aparelhos Inferiores`
+  analise_aparelho.innerHTML = `Registro Diário do Uso de Aparelhos Inferiores`
   aparelho_infeior.style.display = 'block'
   aparelho_cardio.style.display = 'none'
   aparelho_superior.style.display = 'none'
@@ -52,7 +52,7 @@ function mostrar_cardio() {
   table_card.style.display = 'flex'
   table_sup.style.display = 'none'
   tela_aparelho.style.display = `flex`
-  analise_aparelho.innerHTML = `Registro Diário de Uso de Aparelhos Cárdio`
+  analise_aparelho.innerHTML = `Registro Diário do Uso de Aparelhos Cárdio`
   aparelho_cardio.style.display = 'block'
   aparelho_superior.style.display = 'none'
   aparelho_infeior.style.display = 'none'
