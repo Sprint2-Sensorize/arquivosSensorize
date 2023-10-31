@@ -213,31 +213,37 @@ function cadastrar() {
   var email = inp_email.value.endsWith(`.com`)
   var senha = inp_senha.value
   var confirmacao = inp_confimacao.value
+  var valid = 0
   console.log(email)
   if (cnpj >= 14 && cnpj <= 19) {
     inp_cpj.style.borderColor = '#000000'
   } else {
     inp_cpj.style.borderColor = '#ff0000'
     inp_cpj.style.borderWidth = '2px'
+    valid = 1
   }
   if (email && inp_email.value.indexOf('@') > 0) {
     inp_email.style.borderColor = '#000000'
-    alert(`Email valido!`)
   } else {
     inp_email.style.borderColor = '#ff0000'
+    alert('Email invalido!')
+    valid = 1
   }
   if (senha != confirmacao) {
     alert(`Senhas diferentes`)
     inp_confimacao.style.borderColor = '#ff0000'
+    valid = 1
   } else if (
     senha.indexOf('@') > 0 ||
     senha.indexOf('#') > 0 ||
     senha.indexOf('!') > 0 ||
     senha.indexOf('%') > 0
   ) {
-    window.location.href = '../Dados Endereço/index_endereco.html'
-    inp_senha.style.borderColor = '#000000'
-    inp_confimacao.style.borderColor = '#000000'
+    if (valid == 0) {
+      window.location.href = '../Dados Endereço/index_endereco.html'
+      inp_senha.style.borderColor = '#000000'
+      inp_confimacao.style.borderColor = '#000000'
+    }
   } else {
     inp_senha.style.borderColor = '#ff0000'
     inp_confimacao.style.borderColor = '#ff0000'

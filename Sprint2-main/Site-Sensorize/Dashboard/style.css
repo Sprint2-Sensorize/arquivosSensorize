@@ -415,14 +415,14 @@ h3 {
   margin-top: 10px;
   background: linear-gradient(
     to right,
-    red 15%,
-    15%,
-    orange 35%,
-    35%,
+    rgb(142, 0, 0) 20%,
+    20%,
+    rgb(255, 178, 36) 40%,
+    40%,
     green 65%,
     65%,
-    orange 85%,
-    75%,
+    rgb(255, 178, 36) 85%,
+    85%,
     red 100%
   );
 }

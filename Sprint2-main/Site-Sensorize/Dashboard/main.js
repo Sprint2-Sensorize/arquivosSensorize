@@ -26,7 +26,7 @@ function mostrar_superior() {
   myChart7.data.datasets[0].backgroundColor = 'purple'
   myChart7.data.datasets[0].borderColor = 'purple'
   myChart6.data.datasets[0].offset = [30, 0, 0]
-  myChart6.options.plugins.title.text = "Quantidade de aparelhos Superior"
+  myChart6.options.plugins.title.text = 'Quantidade de aparelhos Superior'
   myChart7.update()
   myChart6.update()
 }
@@ -43,7 +43,7 @@ function mostrar_inferior() {
   myChart7.data.datasets[0].backgroundColor = 'blue'
   myChart7.data.datasets[0].borderColor = 'blue'
   myChart6.data.datasets[0].offset = [0, 30, 0]
-  myChart6.options.plugins.title.text = "Quantidade de aparelhos Inferior"
+  myChart6.options.plugins.title.text = 'Quantidade de aparelhos Inferior'
   myChart7.update()
   myChart6.update()
 }
@@ -60,7 +60,7 @@ function mostrar_cardio() {
   myChart7.data.datasets[0].backgroundColor = 'gray'
   myChart7.data.datasets[0].borderColor = 'gray'
   myChart6.data.datasets[0].offset = [0, 0, 30]
-  myChart6.options.plugins.title.text = "Quantidade de aparelhos Cárdio"
+  myChart6.options.plugins.title.text = 'Quantidade de aparelhos Cárdio'
   myChart7.update()
   myChart6.update()
 }
@@ -332,7 +332,7 @@ const data5 = {
   datasets: [
     {
       label: 'My First Dataset',
-      data: [76.4, 24.6],
+      data: [86.4, 24.6],
       backgroundColor: ['red', '#ded9d9f0'],
       borderWidth: 0,
       hoverOffset: 4
