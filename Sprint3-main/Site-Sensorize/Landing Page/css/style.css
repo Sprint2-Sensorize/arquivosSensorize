@@ -1,0 +1,777 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,700;1,100&family=Roboto+Slab:wght@100;500;700&display=swap');
+
+/* SCROLLBAR */
+/* width */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #fcd861;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ffae34;
+  border-radius: 10px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto Slab', serif;
+  background-color: #000000;
+  overflow-x: hidden;
+}
+
+/* CSS NAVBAR E LOGO */
+nav {
+  background: transparent;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #ffffff;
+  /* background: white;  */
+  /* box-shadow: rgba(31, 38, 135, 0.37) 0px 8px 20px 0px; */
+  /* background-color:  #343434; */
+  margin: 0;
+  position: fixed;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  transition: 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.changeStyle {
+  background-color: #343434;
+  box-shadow: 0 0 1em gray;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.nav-itens {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-itens li a {
+  padding-left: 20px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.nav-itens li a:hover {
+  color: #ffae34;
+}
+
+.logo-img {
+  width: 40px;
+  height: auto;
+  vertical-align: middle;
+  /* vertical no centro. */
+}
+
+/* CSS BANNER E TEXTO NO BANNER */
+
+.banner {
+  text-align: center;
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+  max-height: 800px;
+  background-size: cover;
+}
+
+.banner-content {
+  position: absolute;
+  /*elementos dentro do banner */
+  top: 60%;
+  /*  verticalmente na metade do banner */
+  left: 30%;
+  /* banner */
+  transform: translate(-50%, -50%);
+  /* Alinhe ao centro, tanto vertical quanto horizontalmente */
+  color: #fff;
+  text-align: center;
+}
+
+.banner-content h1 {
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.banner-content h3 {
+  margin-top: 15px;
+  font-size: 17px;
+}
+
+.simulacao {
+  background-color: #fdb13f;
+  color: #2b2828;
+  padding: 15px 15px;
+  border: none;
+  border-radius: 20px;
+  font-size: 15px;
+  cursor: pointer;
+  width: 40%;
+  font-weight: bold;
+}
+
+.simulacao:hover {
+  background-color: #ff9900;
+  transform: scale(1.1);
+  transition: all 0.5s;
+}
+
+.novoQuadrado {
+  background-color: white;
+  width: 35%;
+  height: 80%;
+  display: flex;
+  margin-left: 10%;
+  border-radius: 30px;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  text-align: justify;
+  border: solid black 2px;
+  margin-top: 35px;
+}
+
+.novoQuadrado .simulacao {
+  flex-direction: row;
+  font-size: 90%;
+}
+
+.novoQuadrado button {
+  display: flex;
+  width: 140px;
+  margin: 25px;
+  height: 10px;
+  align-items: center;
+  justify-content: center;
+}
+a {
+  text-decoration: none;
+}
+.botao_amostra {
+  display: flex;
+}
+
+.div_texto2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: black;
+}
+
+.bold {
+  color: black;
+  font-weight: bold;
+}
+
+.divCalcMaior .quadrado .simulacao {
+  height: 10px;
+  width: 110px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.quadrado .input-linha {
+  margin: 10px;
+  font-size: 16px;
+  font-style: italic;
+  color: black;
+}
+
+.labels_calc {
+  color: black;
+  text-align: center;
+  display: flex;
+  margin-left: 5px;
+  margin-top: 6%;
+}
+
+hr {
+  margin-top: 0;
+  border-color: #ffffff;
+  opacity: 0.3;
+}
+
+#idCalc {
+  margin-top: -105px;
+  border-color: #ffffff;
+  opacity: 0.3;
+  position: absolute;
+}
+
+/* sobre o prj TechGym*/
+.divMaior {
+  height: 99vh;
+  display: flex;
+}
+
+.text_services {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.text_services p {
+  max-width: 600px;
+  text-align: justify;
+}
+
+.techgym {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.divTodosClientes {
+  align-content: center;
+}
+
+.divTechgym {
+  font-family: Georgia;
+  color: #ffffff;
+}
+
+.spanTechgym {
+  color: #ffae34;
+}
+
+.divTodasCaixas {
+  margin-top: 2rem;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.divCaixa {
+  margin: 0 2rem 2.5rem 2rem;
+  display: flex;
+  width: 275px;
+  height: 150px;
+  padding: 50px;
+  background-image: linear-gradient(
+    to right,
+    #2c2c2c,
+    #4f4f4f,
+    #7a7a7a,
+    #4f4f4f,
+    #2c2c2c
+  );
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.2s;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.divCaixa:hover {
+  border: 1.5px solid #898989;
+}
+
+.rotated {
+  transform: scale(1.2) rotateY(180deg);
+}
+.rotated .mensagemOculta {
+  transform: rotateY(180deg);
+}
+.mensagemOculta {
+  display: none;
+  text-align: justify;
+  font-size: 10px;
+}
+
+.tituloCaixa {
+  font-size: 17px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* calculadora financeira */
+.divCalcMaior {
+  display: flex;
+  height: 75vh;
+  align-items: center;
+}
+
+.quadrado {
+  width: 400px;
+  height: 400px;
+  padding: 20px;
+  background-color: white;
+  /* border: 2px solid #000; */
+  border-radius: 10px;
+  border: 2px solid black;
+  margin-left: 60%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.svg {
+  position: absolute;
+  width: 100%;
+  margin-top: -30%;
+}
+
+.textoCalc {
+  color: #000000;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  width: 500px;
+  margin-left: 200px;
+}
+
+/* CARROSSEL */
+.tituloClientes {
+  margin-top: 1000px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.divMaiorCli {
+  height: 99vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.carrosselTudo {
+  align-items: center;
+  max-width: 1100px;
+  width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+.carrosselTudo i {
+  top: 50%;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  position: absolute;
+  text-align: center;
+  line-height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+
+.carrosselTudo i:active {
+  transform: translateY(-50%) scale(0.85);
+}
+
+.carrosselTudo i:first-child {
+  left: -22px;
+}
+
+.carrosselTudo i:last-child {
+  right: -22px;
+}
+
+.carrosselTudo .carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 12px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel.no-transition {
+  scroll-behavior: auto;
+}
+
+.carousel.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+
+.carousel.dragging .card {
+  cursor: grab;
+  user-select: none;
+}
+
+.carousel :where(.card, .img) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel .card {
+  scroll-snap-align: start;
+  height: 342px;
+  list-style: none;
+
+  cursor: pointer;
+  padding-bottom: 15px;
+  flex-direction: column;
+}
+
+.carousel .card .img {
+  height: 100%;
+  width: 100%;
+}
+
+.card .img img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+}
+
+.carousel .card h2 {
+  font-weight: 500;
+  font-size: 1.56rem;
+  margin: 30px 0 5px;
+}
+
+.carousel .card span {
+  color: #6a6d78;
+  font-size: 1.31rem;
+}
+
+/* EMPRESA */
+.divEmpresaMaior {
+  height: 99vh;
+  background-color: #ded9d9f0;
+}
+
+.sensorize {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  width: 1000px;
+  margin: auto;
+  padding: 80px;
+}
+
+.corPalavra {
+  color: #ff8c00;
+  font-weight: bold;
+}
+
+.sensorize .corPalavra {
+  color: #ff8c00;
+  font-weight: bold;
+  -webkit-text-stroke-color: #343434;
+  -webkit-text-stroke-width: 0.7px;
+}
+
+.divCoisasEmpresas {
+  margin-top: 30px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  margin-right: 130px;
+}
+
+.visao {
+  text-align: center;
+  margin-inline-start: 150px;
+  width: 215px;
+}
+
+.imgVisao {
+  width: 50%;
+  align-items: center;
+}
+
+.tituloVisao {
+  margin-top: 10px;
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+}
+
+.pVisao {
+  margin-top: 5%;
+  color: black;
+  text-align: center;
+  font-size: 15px;
+}
+
+.missao {
+  text-align: center;
+  margin-inline-start: 150px;
+  width: 215px;
+}
+
+.imgMissao {
+  width: 50%;
+  align-items: center;
+}
+
+.tituloMissao {
+  margin-top: 10px;
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+}
+
+.pMissao {
+  margin-top: 5%;
+  color: black;
+  text-align: center;
+  font-size: 15px;
+}
+
+.valores {
+  text-align: center;
+  margin-inline-start: 150px;
+  width: 215px;
+}
+
+.imgValores {
+  margin-top: 20px;
+  width: 40%;
+  align-items: center;
+}
+
+.tituloValores {
+  margin-top: 10px;
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+}
+
+.pValores {
+  margin-top: 5%;
+  color: black;
+  text-align: center;
+  font-size: 15px;
+}
+
+address {
+  display: flex;
+  height: 100%;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+}
+
+.img-rodape {
+  display: flex;
+  align-items: center;
+}
+
+/* FORMS CONTATO */
+.input-linha {
+  border: none;
+  border-bottom: 2px solid rgb(255, 255, 255);
+  height: 30px;
+  padding: 5px;
+  width: 300px;
+  background-color: transparent;
+  color: #ffffff;
+  outline: none;
+}
+
+.input-linha-calc {
+  border: none;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  height: 30px;
+  padding: 5px;
+  width: 250px;
+  background-color: transparent;
+  color: #000000;
+  outline: none;
+}
+
+.input-container {
+  display: inline-block;
+  margin-right: 20px;
+  vertical-align: top;
+  outline: none;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.input-linha-mensagem {
+  border-bottom: 1px solid white;
+  padding: 5px;
+  width: 625px;
+  background-color: #070707;
+  color: #ffffff;
+  white-space: pre-wrap;
+}
+
+.button-forms {
+  margin-top: -1rem;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  display: flex;
+  height: 80px;
+}
+
+.button-forms button {
+  background-color: #ffae34;
+  color: #2b2828;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 12px;
+  cursor: pointer;
+  width: 22%;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 100px;
+}
+
+.forms-contato {
+  flex: 1;
+  margin-right: 30px;
+  margin-left: 60px;
+}
+
+.chamada-forms {
+  flex: 1;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 90px;
+  height: 65vh;
+}
+
+.chamada-forms button {
+  background-color: #ffae34;
+  color: #2b2828;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  width: 22%;
+  margin-top: 10px;
+}
+
+.wpp {
+  display: flex;
+  transform: translate(39%, 30%);
+}
+
+.wpp p {
+  margin-left: 14px;
+}
+
+.wpp a {
+  color: black;
+}
+
+.wpp a {
+  color: black;
+}
+
+/* FOOTER */
+
+.img-rodape {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rodape {
+  background-color: #343434;
+  display: flex;
+  align-items: center;
+  color: white;
+  justify-content: center;
+  height: 250px;
+  gap: 12%;
+}
+
+.localizacao {
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+}
+
+.img-rodape {
+  width: 15%;
+  align-items: center;
+  justify-content: center;
+}
+
+.centro {
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.direita {
+  display: flex;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.icone-rede {
+  width: 10%;
+  margin: 0 10px;
+  cursor: pointer;
+}

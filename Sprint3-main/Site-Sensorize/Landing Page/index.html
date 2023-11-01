@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensorize</title>
+    <link rel="icon" href="img/Logo Sensorize copy.ico" type="image/png">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Fontawesome Link for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/Icones/style.css">
+
+</head>
+<!-- NOVO -->
+
+<body>
+    <!-- header e banner -->
+    <nav id="nav">
+        <a href="#banner" style="color: white;">
+            <div class="logo">
+                <img id="idLogo" src="./img/Logo Sensorize copy.ico" alt="logo" class="logo-img">
+                Sensorize
+            </div>
+        </a>
+        <div class="links">
+            <ul class="nav-itens">
+                <li><a href="#idPrj" class="itensDaNav">Projeto</a></li>
+                <li><a href="#idCalc" class="itensDaNav">Simulação</a></li>
+                <li><a href="#idCarros" class="itensDaNav">Clientes</a></li>
+                <li><a href="#idEmp" class="itensDaNav">Sobre</a></li>
+                <li><a href="#idForms" class="itensDaNav">Contato</a></li>
+                <li><a href="../Tela de Login/Login.html" class="itensDaNav">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="banner" id="banner">
+        <img src="./img/banner.png" alt="banner" class="banner-img">
+        <div id="home">
+            <div class="banner-content">
+                <h2>Melhore a sua academia utilizando os nossos<br>
+                    sensores, conheça a <span style="color: #FFAE34;">TechGym!</span></h2><br>
+                <p>Evite a Superlotação e Aumente a<br>
+                    Fidelidade dos Alunos.<br>
+                    Descubra Como!</p><br>
+                <div>
+                    <button onclick="location.href='#idCalc'" class="simulacao">Faça sua simulação</button>
+                </div>
+            </div>
+        </div>
+        <hr id="idPrj">
+    </div>
+
+    <!-- projeto TechGym -->
+    <div class="divMaior">
+        <div class="text_services">
+            <h2 class="techgym">Traga inovação à sua academia e transforme<br> a experiência de treino dos seus
+                clientes!</h2>
+            <p style="color: white;"> <br>
+                Propomos a instalação de sensores de presença em todos os equipamentos, elevando a gestão do seu espaço
+                fitness a
+                um nível superior. Imagine uma academia onde cada aparelho está conectado, fornecendo dados precisos
+                sobre a frequência de uso em tempo real.
+
+                Vamos além da simples instalação de sensores; oferecemos uma solução completa com uma dashboard
+                personalizada. Visualize métricas cruciais, desde a frequência de uso por horário até a popularidade de
+                cada equipamento. Essa integração tecnológica permite que os gestores tomem decisões mais precisas para
+                otimizar a disposição dos equipamentos e sugerir rotinas de treino mais adequadas aos clientes, evitando
+                superlotação e proporcionando uma experiência mais eficiente.
+
+                Chegou o momento de impulsionar sua academia com inovação e inteligência. Conte conosco para transformar
+                dados em ação, criando um ambiente de treino conectado e personalizado para todos os seus clientes</p>
+        </div>
+
+        <!-- caixinhas techgym -->
+        <div class="divTodasCaixas">
+            <div>
+                <div class="divCaixa" onclick="girarCard(this)">
+                    <div class="tituloCaixa">
+                        <p>Evite superlotação</p>
+                        <img style="width: 85px;" src="./img/5365543.png" alt="">
+                    </div>
+                    <p class="mensagemOculta">
+                        Sabemos que a superlotação é um desafio para qualquer academia, por isso
+                        estamos aqui para dar um fim a esse problema</p>
+                </div>
+                <div class="divCaixa" onclick="girarCard(this)">
+                    <div class="tituloCaixa">
+                        <p style="margin-bottom:-0.7rem ;">
+                            Instalação de sensores
+                        </p>
+                        <img style="width: 85px;" src="./img/3887847.png" alt="">
+                    </div>
+                    <p class="mensagemOculta">
+                        Instalamos sensores de presença em cada aparelho da academia para fornecer
+                        dados precisos sobre o tempo de uso e a frequência de cada equipamento
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div class="divCaixa" onclick="girarCard(this)">
+                    <div class="tituloCaixa">
+                        <p class="tituloCaixa">Monitore o aparelho</p>
+                        <img style="width: 85px;" src="./img/8773303.png" alt="">
+                    </div>
+                    <p class="mensagemOculta">
+                        Através de um painel de controle, você pode visualizar em tempo real a
+                        frequência de uso de cada aparelho!
+                    </p>
+                </div>
+                <div class="divCaixa" onclick="girarCard(this)">
+                    <div class="tituloCaixa">
+                        <p>Tempo</p>
+                        <img style="width: 85px;" src="./img/time.png" alt="">
+                    </div>
+                    <p class="mensagemOculta">
+                        Aprimore a gestão do tempo do seu cliente ao sugerir uma rotina de treinos mais eficiente e
+                        inteligente, proporcionando conforto e fortalecendo a fidelidade desse cliente!
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <hr id="idCalc">
+    <!-- calculadora -->
+    <div class="divCalcMaior" style="height:600px; background-color: #ded9d9f0;">
+        <svg xmlns="http://www.w3.org/2000/svg" class="svg" viewBox="0 0 1440 320">
+            <path fill="#000000" fill-opacity="1"
+                d="M0,96L60,122.7C120,149,240,203,360,208C480,213,600,171,720,138.7C840,107,960,85,1080,101.3C1200,117,1320,171,1380,197.3L1440,224L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
+            </path>
+        </svg>
+        <div class="textoCalc">
+            <p>As suas perdas provavelmente são mais surpreendentes do que você imagina. Faça já uma simulação e entenda
+                melhor. </p>
+        </div>
+        <p class="novoQuadrado" id="quadradoBranco"></p>
+        <div id="div_inputs" class="quadrado">
+
+            <h2 style=" margin-bottom: 20px; color: black">Calculadora Financeira</h2>
+            <div class="labels">
+                <label class="labels_calc">Nome da academia</label>
+                <input type="text" class="input-linha-calc" id="input_nome_academia" placeholder="Ex: BlueFit"><br>
+                <label class="labels_calc">Nome do Representante</label>
+                <input type="text" class="input-linha-calc" id="input_representante" placeholder="Ex: Fernando"><br>
+                <label class="labels_calc">N° de clientes</label>
+                <input type="number" class="input-linha-calc" id="input_numero_clientes" placeholder="Ex: 1500"><br>
+                <label class="labels_calc">Valor mensalidade</label>
+                <input style="margin-bottom: 7%;" type="number" class="input-linha-calc" id="input_mensalidade_clientes"
+                    placeholder="Ex: R$100" placeholder="Valor das mensalidades"><br>
+            </div>
+            <button class="simulacao" onclick="verificar()">Analisar</button>
+
+        </div>
+
+
+    </div>
+
+    <hr id="idCarros">
+    <!-- carrosselClientes -->
+    <div class="divMaiorCli">
+        <p class="tituloClientes" style="margin-top:100px; margin-bottom:50px;">Em todo Brasil temos clientes que
+            confiam no nosso sistema.</p>
+        <div class="carrosselTudo">
+            <i id="left" class="fa-solid fa-angle-left"></i>
+            <ul class="carousel">
+                <li class="card">
+                    <div class="img"><img src="./img/cliente1.png" alt="img"></div>
+                </li>
+                <li class="card">
+                    <div class="img"><img src="./img/cliente2.png" alt="img"></div>
+                </li>
+                <li class="card">
+                    <div class="img"><img src="./img/cliente3.png" alt="img"></div>
+                </li>
+                <li class="card">
+                    <div class="img"><img src="./img/bodyCraftersCliente.png" alt="img"></div>
+                </li>
+                <li class="card">
+                    <div class="img"><img src="./img/fitnessCliente.png" alt="img"></div>
+                </li>
+            </ul>
+            <i id="right" class="fa-solid fa-angle-right"></i>
+        </div>
+    </div>
+
+
+    <hr id="idEmp">
+    <!-- Empresa -->
+    <div class="divEmpresaMaior">
+        <h1 class="sensorize">A <span class="corPalavra">Sensorize</span> é uma empresa que
+            tem como objetivo solucionar problemas dos nossos clientes, oferecendo soluções tecnológicas, práticas e
+            eficazes.</h1>
+
+        <div class="divCoisasEmpresas">
+            <div class="visao">
+                <img class="imgVisao" src="./img/visaoFoguete.png">
+                <h3 class="tituloVisao">Visão</h3>
+                <p class="pVisao">Buscamos liderar a revolução na gestão de espaços e fluxo, impulsionando eficiência e
+                    inovação através de tecnologias de ponta</p>
+            </div>
+
+            <div class="missao">
+                <img class="imgMissao" src="./img/missaoAlvo.png">
+                <h3 class="tituloMissao">Missão</h3>
+                <p class="pMissao">Nossa missão é transformar a gestão de espaços, impulsionando a fidelidade e
+                    satisfação dos clientes</p>
+            </div>
+
+
+            <div class="valores">
+                <img class="imgValores" src="./img/valoresDiamante.png">
+                <h3 class="tituloValores">Valores</h3>
+                <p class="pValores">Nos comprometemos em entregar um ótimo resultado visando <span
+                        class="corPalavra">honestidade</span>, <span class="corPalavra">ética</span> e <span
+                        class="corPalavra">inovação.</span></p>
+            </div>
+        </div>
+    </div>
+
+    <hr id="idForms">
+    <!-- FORMS -->
+    <div class="container">
+        <form action="" class="forms-contato">
+            <div class="form-group">
+                <h1 class="titulo-forms">Fale com alguns de nossos especialistas<br>
+                    em Data & Analytics</h1><br><br>
+
+                <div class="input-container">
+                    <label for="input_nome">Nome Completo</label><br>
+                    <input style="border-color: white;" type="text" id="input_nome" class="input-linha">
+                </div>
+
+                <div class="input-container">
+                    <span>E-mail corporativo</span><br>
+                    <input style="border-color: white;" type="email" class="input-linha">
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <div class="input-container">
+                    <span>Telefone com DDD</span><br>
+                    <input style="border-color: white;" type="text" class="input-linha">
+                </div>
+
+                <div class="input-container">
+                    <span>Empresa</span><br>
+                    <input style="border-color: white;" type="text" class="input-linha">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="mensagem-forms">
+                    <label for="input_mensagem">Mensagem</label><br><br>
+                    <textarea style="max-width: 620px;
+                    max-height: 150px;" id="input_mensagem" class="input-linha-mensagem" rows="5"
+                        placeholder="Digite a mensagem:"></textarea>
+                </div>
+            </div><br>
+
+            <div class="button-forms">
+                <button class="simulacao">Enviar</button>
+            </div>
+        </form>
+
+        <!-- FORMS ENTRE EM CONTATO -->
+        <div class="chamada-forms">
+            <h1>Transforme seus dados em<br> insights</h1><br><br>
+            <p>Com uma estrutura de Data & Analytics, decifre oportunidades de negócio,<br>
+                tome decisões mais assertivas e escale os resultados da sua empresa
+            </p><br>
+            <div class="wpp">
+                <a href="https://api.whatsapp.com/send?phone=11912345678" target="_blank" rel="noopener noreferrer">
+                    <button class="simulacao">Agende uma reunião
+                        <div class="icon-whatsapp"></div>
+                </a>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- rodape -->
+    <footer class="rodape">
+        <div class="localização">
+            <address>
+                LOCALIZAÇÃO<br><br>
+                Rua Haddock Lobo, 595 - Cerqueira César,<br>
+                São Paulo - SP, 01414-001
+            </address>
+        </div>
+
+        <div class="centro">
+            <img src="../Landing Page/img/logo.png" alt="logo" class="img-rodape">
+            <p>&copy; Copyright Sensorize - 2023</p>
+        </div>
+
+        <div class="direita">
+            <span>NOS PROCURE NAS REDES SOCIAIS</span><br>
+            <div class="imgs-redes"><br>
+                <img src="../Landing Page/img/wppFooter.png" alt="wpp logo" class="icone-rede"
+                    onclick="location.href='#banner'">
+                <img src="../Landing Page/img/instaFooter.png" alt="insta logo" class="icone-rede"
+                    onclick="location.href='#banner'">
+                <img src="../Landing Page/img/linkedln-footer.png" alt="link-logo" class="icone-rede"
+                    onclick="location.href='#banner'">
+
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+</body>
+
+</html>

@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sensorize</title>
+  <link rel="icon" href="../Landing Page/img/Logo Sensorize copy.ico" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../assets/Icones/style.css">
+  <script src="./main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body style="background-color: black;">
+
+  <!--   <nav id="nav">
+    <div class="nave">
+      <div class="logo">
+        <img id="idLogo" src="../Landing Page/img/Logo Sensorize copy.ico" alt="logo" class="logo-img">
+        Sensorize
+      </div>
+      <h1>
+        Bem vindo Jonathan!
+      </h1>
+    </div>
+    </div>
+  </nav> -->
+
+  <!-- menu lateral -->
+  <div class="menuLateral">
+    <a onclick="mostrar_principal()" style="color: white; cursor: pointer;">
+      <div class="logo">
+        <img id="idLogo" src="../Landing Page/img/Logo Sensorize copy.ico" alt="logo" class="logo-img">
+        <span style="color: white;">Sensorize</span>
+      </div>
+    </a>
+
+    <a href="#" class="itensDaNav" onclick="mostrar_principal()">
+      <div class="icon-home"></div>
+      Dashboard
+    </a>
+    <div class="grupotreino">
+      <a href="#" class="itensDaNav" onclick="mostrar_perfil()">
+        <div class="icon-user"></div>
+        Perfil
+      </a>
+    </div>
+
+    <div class="grupotreino" tabindex="1">
+      <a href="#" class="itensDaNav" onclick="toggleSublinks() ">
+        <div style="font-size: 2.2rem;" class="icon-weights"></div>
+        Grupo de treino
+      </a>
+      <div class="submenu" style="gap: 8px;">
+        <a onclick="mostrar_cardio()" href="#">Cárdio</a>
+        <a onclick="mostrar_superior()" href="#">Superior</a>
+        <a onclick="mostrar_inferior()" href="#">Inferior</a>
+      </div>
+    </div>
+
+    <a href="../Landing Page/index.html" class="itensDaNav">
+      <div class="icon-cancel-circle"></div>
+      Sair
+    </a>
+  </div>
+
+  <!-- DashBoard -->
+
+  <div id="tela_principal" class="div_dashboar">
+
+    <div class="alertas">
+      <h3 style="width: 100%; text-align: center; margin-bottom: 10px; margin-top: -2%; margin-left: -1%;">
+        Análise em Tempo Real do Percentual de Ocupação dos Aparelhos por<br> Grupo de Treino
+      </h3><br>
+
+      <div style="width: 100%; display: flex; justify-content: space-around;">
+
+        <div class="leg">
+          <div style="font-size: 20px; color: green;" class="icon-check"></div>
+          <span>Grupo de treino <br> Inferior</span>
+        </div>
+        <div class="leg alerta_div2">
+          <div style="font-size: 20px; color: orange;" class="icon-warning"></div>
+          <span>Grupo de treino <br> Superior</span>
+        </div>
+        <div class="leg ">
+          <div style="font-size: 20px; color: red;" class="icon-warning"></div>
+          <span style="color: red; font-weight: bolder;">Grupo de treino<br> Cárdio</span>
+        </div>
+      </div>
+      <div class="graficos">
+        <div class="alerta">
+          <canvas id="myChart3"></canvas>
+          <h4 class="inform">40,5%</h4>
+        </div>
+        <div class="alerta">
+          <canvas id="myChart4"></canvas>
+          <h4 class="inform">65,5%</h4>
+        </div>
+        <div class="alerta">
+          <canvas class="alerta_div" id="myChart5"></canvas>
+          <h4 class="inform alerta_div">86,4%</h4>
+        </div>
+      </div>
+    </div>
+
+
+    <div style="width: 100%; height: 10%; margin-top: 21%; position: absolute; align-items: center;">
+      <hr style="margin-top: 2%;">
+      <div class="filtro">
+        <h5 style="margin: 0;">
+          Histórico Analítico de Grupo de Treinos
+        </h5>
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <span>Selecione a data:</span>
+          <div>
+            <input style="width: 120px; text-align: center; border-radius: 10px;" type="date" id="dataEvento"
+              min="2022-12-31">
+          </div>
+
+          <a onclick="pesquisa()">
+            <div style="font-size: 20px; cursor: pointer;" class="icon-search"></div>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="legenda">
+      <div class="apoio">
+        <div style="display: flex; align-items: center;">
+          <div class="div_cor" style="background-color: rgb(142, 0, 0); margin-right: 5px;"></div>
+          <span>Baixa Lotação</span>
+        </div>
+
+        <div style="display: flex; align-items: center;">
+          <div class="div_cor" style="background-color: orange; margin-right: 5px;"></div>
+          <span>Moderado</span>
+        </div>
+
+        <div style="display: flex; align-items: center;">
+          <div class="div_cor" style="background-color:green; margin-right: 5px;"></div>
+          <span>Ideal</span>
+        </div>
+
+        <div style="display: flex; align-items: center;">
+          <div class="div_cor" style="background-color: red; margin-right: 5px;"></div>
+          <span>Lotado</span>
+        </div>
+
+
+
+      </div>
+
+      <div class="indicativo">
+
+      </div>
+      <div style="width: 100%; display: flex;">
+        <b style="margin-left: 17.5%;">20%</b><b style="margin-left: 13%;">40%</b><b
+          style="margin-left: 17.5%;">65%</b><b style="margin-left: 13%;">85%</b>
+      </div>
+      <div style="margin-top: 3%; display: flex; align-items: center; width: 100%; justify-content: center; gap: 10px;">
+        <p style="font-size: 20px;">Atenção!
+        </p>
+      </div>
+      <p style=" margin-top: -2%; font-size: 15px;">
+        A taxa de utilização no Grupo Cárdio ultrapassou o limite recomendado de 85%. Recomendamos que tome medidas
+        imediatas para reduzir essa taxa e evitar a superlotação.
+      </p>
+
+
+
+
+
+    </div>
+
+    <div class="amostragem">
+
+
+      <div>
+        <h3 style="width: 100%; display: flex; justify-content: center; margin: 5% 0 2% 0;">
+          Frequência Diária por Categoria de Treino
+        </h3>
+        <canvas class="estilo" id="myChart"></canvas>
+      </div>
+
+      <div>
+        <h3 style="width: 100%; display: flex; justify-content: center; margin: 5% 0 2% 0;">
+          Categoria de Treino de Maior Frequência
+        </h3>
+        <canvas class="estilo" id="myChart2"></canvas>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Perfil -->
+  <div id="tela_perfil" style="display: none;" class="div_dashboar">
+    <br>
+    <div class="divTudoPerfil">
+
+      <h3>Dados Pessoais</h3>
+
+      <div class="img">
+        <input type="file" id="inputFile" accept="image/*">
+        <img id="imagem" style="border-radius: 50px; justify-content: center; align-items: center;"
+          src="../Landing Page/img/blueAcademia">
+      </div>
+
+      <div class="divButtonPerfil">
+        <button class="buttonPerfil" onclick="trocarImagem()">Editar Foto</button>
+        <button class="buttonPerfil" onclick="editarDados()">Editar Dados</button>
+        <button class="buttonPerfil" onclick="recuperarSenha()">Redefinir Senha</button>
+      </div>
+
+      <div class="divInputsPerfil">
+        <span class="SpanPerfil">Nome da academia</span><br>
+        <input class="inputPerfil" type="text" id="nomePerfilLeitura" value="BlueFit" readonly><br><br>
+
+        <span class="SpanPerfil">Representante</span><br>
+        <input class="inputPerfil" type="text" id="repLeitura" value="Gabriel" readonly><br><br>
+
+        <span class="SpanPerfil">CNPJ</span><br>
+        <input class="inputPerfil" type="number" id="cnpjLeitura" value="0000000000000" max="14" readonly><br><br>
+
+        <span class="SpanPerfil">Telefone</span><br>
+        <input class="inputPerfilTel" type="number" id="telLeitura" value="912345678" readonly>
+
+        <span style="position: absolute; margin-top: -25px;" class="SpanPerfil">Celular</span>
+        <input class="inputPerfilTel" type="number" id="celLeitura" value="912345678" readonly><br><br>
+
+        <span class="SpanPerfil">E-mail</span><br>
+        <input class="inputPerfil" type="text" id="emailLeitura" value="bluefit@gmail.com" readonly><br><br>
+      </div>
+
+
+      <div class="divInputsPerfil2">
+        <span class="SpanPerfil">Nome da academia</span><br>
+        <input class="inputPerfil2" type="text" id="nomePerfilEditar" value="BlueFit"><br><br>
+
+        <span class="SpanPerfil">Representante</span><br>
+        <input class="inputPerfil2" type="text" id="repEditar" value="Gabriel"><br><br>
+
+        <span class="SpanPerfil">CNPJ</span><br>
+        <input class="inputPerfilCnpj2" type="number" id="cnpjEditar" value="0000000000000" max="14"><br><br>
+
+        <span class="SpanPerfil">Telefone</span><br>
+        <input class="inputPerfilTel2" type="number" id="telEditar" value="912345678">
+
+        <span style="position: absolute; margin-top: -25px;" class="SpanPerfil">Celular</span>
+        <input class="inputPerfilTel2" type="number" id="celEditar" value="912345678"><br><br>
+
+        <span class="SpanPerfil">E-mail</span><br>
+        <input class="inputPerfil2" type="text" id="emailEditar" value="bluefit@gmail.com"><br><br>
+        <button onclick="salvarDados()" id="buttonSalvar" class="buttonSalvar">Salvar</button>
+      </div>
+
+      <div class="divInputsSenha">
+        <span class="SpanPerfil">Nova Senha</span><br>
+        <input class="inputPerfil2" type="text" id="senha_id" placeholder="*****"><br><br>
+        <span class="SpanPerfil">Confirme a senha</span><br>
+        <input class="inputPerfil2" type="text" id="senha2_id" placeholder="*****"><br><br>
+        <button onclick="salvarSenha()" id="buttonSalvar" class="buttonSalvar">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('inputFile').addEventListener('change', function (event) {
+      var imagemElement = document.getElementById('imagem');
+      var file = event.target.files[0];
+
+      if (file) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+          imagemElement.src = e.target.result;
+        };
+
+        reader.readAsDataURL(file);
+      }
+    });
+
+    function trocarImagem() {
+      document.getElementById('inputFile').click();
+    }
+  </script>
+
+
+
+
+  <!-- Aparelho -->
+  <div style="display: none;" id="tela_aparelho" class="div_dashboar">
+    <div
+      style="width: 100%; flex-direction: column; display: flex; align-items: center; justify-content: center; height: 50%;">
+
+      <div class="filtro_aparelho">
+        <h3 style="margin: 0; margin-bottom: -3%; width: 100%;" id="analise_aparelho">
+        </h3>
+        <div style=" display: flex; margin-bottom: 1%;  gap: 1rem;">
+          <div>
+            <span>Selecione a data: </span>
+            <input style="cursor: pointer; width: 120px; text-align: center; border-radius: 10px;" type="date"
+              id="dataEvento2" min="2022-12-31">
+          </div>
+          <div style=" display: flex; gap: 1rem; justify-content: center;">
+            <div id="aparelho_infeior" style="display: none;">
+              <span>Selecione o aparelho: </span>
+              <select style="width: 120px; text-align: center;" id="seletor_categoria">
+                <option value="Leg Press">Leg Press</option>
+                <option value="Agachamento">Agachamento </option>
+                <option value="Cadeira Adutora">Cadeira Adutora</option>
+                <option value="cadeira Flexora">cadeira Flexora</option>
+                <option value="Panturrilha">Panturrilha</option>
+              </select>
+            </div>
+            <div id="aparelho_superior" style="display: none;">
+              <span>Selecione o aparelho: </span>
+              <select style="width: 120px; text-align: center;" id="seletor_categoria">
+                <option value="Supino">Supino</option>
+                <option value="Crucifixo">Crucifixo</option>
+                <option value="Barra Parelela">Barra Parelela</option>
+                <option value="Remada">Remada</option>
+                <option value="Pull Down">Pull Down</option>
+                <option value="Rosca">Rosca</option>
+              </select>
+            </div>
+            <div id="aparelho_cardio" style="display: none;">
+              <span>Selecione o aparelho: </span>
+              <select style="width: 120px; text-align: center;" id="seletor_categoria">
+                <option value="Esteira">Esteira</option>
+                <option value="Bicicleta">Bicicleta</option>
+                <option value="S. Escadas">S. Escadas</option>
+              </select>
+            </div>
+            <div onclick="pesquisa_aparelho()" style="font-size: 20px; cursor: pointer;" class="icon-search"></div>
+          </div>
+        </div>
+      </div>
+      <div style="width: 110%; height: 100%; display: flex; justify-content: center;">
+        <canvas id="myChart7"></canvas>
+      </div>
+
+      <hr style="width: 100%; margin-top: 27rem; position: absolute;">
+    </div>
+
+
+    <div style="margin-top: 23rem;" class="amostragem">
+      <div class="estilo_pie">
+        <canvas id="myChart6"></canvas>
+      </div>
+
+
+      <div class="kpi">
+        <h4 style="margin: 0; margin-top: -7%;">Análise detalhada dos aparelhos</h4>
+        <!-- Tabela para Categoria Inferior -->
+        <table id="table_inf" style="display: none;" border="1">
+          <tr>
+            <td>Nome do Aparelho</td>
+            <td>Quantidade de Aparelhos</td>
+            <td>Taxa de utilização média</td>
+            <td>Horário de pico</td>
+          </tr>
+          <!-- Dados Categoria Inferior -->
+          <tr>
+            <td>Leg Press</td>
+            <td>15</td>
+            <td>30%</td>
+            <td>17:00 - 18:00</td>
+          </tr>
+          <tr>
+            <td>Agachamento</td>
+            <td>10</td>
+            <td>20%</td>
+            <td>16:00 - 17:00</td>
+          </tr>
+          <tr>
+            <td>Cadeira Adutora</td>
+            <td>8</td>
+            <td>15%</td>
+            <td>18:00 - 19:00</td>
+          </tr>
+          <tr>
+            <td>Cadeira Flexora</td>
+            <td>10</td>
+            <td>20%</td>
+            <td>17:30 - 18:30</td>
+          </tr>
+          <tr>
+            <td>Panturrilha</td>
+            <td>6</td>
+            <td>15%</td>
+            <td>19:00 - 20:00</td>
+          </tr>
+          <tr>
+            <td>Total</td>
+            <td>49</td>
+            <td>100%</td>
+            <td>17:00 - 19:00</td>
+          </tr>
+        </table>
+
+        <!-- Tabela para Categoria Superior -->
+        <table id="table_sup" style="display: none;" border="1">
+          <tr>
+            <td>Nome do Aparelho</td>
+            <td>Quantidade de Aparelhos</td>
+            <td>Taxa de utilização média</td>
+            <td>Horário de pico</td>
+          </tr>
+          <!-- Dados Categoria Superior -->
+          <tr>
+            <td>Supino</td>
+            <td>10</td>
+            <td>33%</td>
+            <td>17:30 - 18:30</td>
+          </tr>
+          <tr>
+            <td>Crucifixo</td>
+            <td>10</td>
+            <td>22%</td>
+            <td>18:00 - 19:00</td>
+          </tr>
+          <tr>
+            <td>Barra Parelela</td>
+            <td>8</td>
+            <td>18%</td>
+            <td>19:00 - 20:00</td>
+          </tr>
+          <tr>
+            <td>Remada</td>
+            <td>7</td>
+            <td>15%</td>
+            <td>16:00 - 17:00</td>
+          </tr>
+          <tr>
+            <td>Pull Down</td>
+            <td>5</td>
+            <td>12%</td>
+            <td>17:00 - 18:00</td>
+          </tr>
+          <tr>
+            <td>Rosca</td>
+            <td>5</td>
+            <td>10%</td>
+            <td>20:00 - 21:00</td>
+          </tr>
+          <tr>
+            <td>Total</td>
+            <td>45</td>
+            <td>100%</td>
+            <td>17:00 - 18:30</td>
+          </tr>
+          <!-- Adicione mais linhas conforme necessário -->
+        </table>
+        <!-- Tabela para Categoria Cardio -->
+        <table id="table_card" style="display: none;" border="1">
+          <tr>
+            <td>Nome do Aparelho</td>
+            <td>Quantidade de Aparelhos</td>
+            <td>Taxa de utilização média</td>
+            <td>Horário de pico</td>
+          </tr>
+          <!-- Dados Categoria Cardio -->
+          <tr>
+            <td>Esteira</td>
+            <td>8</td>
+            <td>40%</td>
+            <td>18:30 - 19:30</td>
+          </tr>
+          <tr>
+            <td>Bicicleta</td>
+            <td>6</td>
+            <td>30%</td>
+            <td>19:00 - 20:00</td>
+          </tr>
+          <tr>
+            <td>S. Escadas</td>
+            <td>6</td>
+            <td>30%</td>
+            <td>20:30 - 21:30</td>
+          </tr>
+          <tr>
+            <td>Total</td>
+            <td>20</td>
+            <td>100%</td>
+            <td>19:00 - 20:30</td>
+          </tr>
+          <!-- Adicione mais linhas conforme necessário -->
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+
+<script>
+
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  )
+  setTimeout(() => {
+    myChart.update()
+  }, 1000);
+
+
+  const myChart2 = new Chart(
+    document.getElementById('myChart2'),
+    config2
+  )
+  myChart2.update()
+  const myChart3 = new Chart(
+    document.getElementById('myChart3'),
+    config3
+  )
+  const myChart4 = new Chart(
+    document.getElementById('myChart4'),
+    config4
+  )
+  const myChart5 = new Chart(
+    document.getElementById('myChart5'),
+    config5
+  )
+
+  const myChart6 = new Chart(
+    document.getElementById('myChart6'),
+    config6
+  )
+  const myChart7 = new Chart(
+    document.getElementById('myChart7'),
+    config7
+  )
+
+  /*   var contador = 0;
+    while (contador <= 3) {
+      var elemento = document.getElementById(`i${contador + 1}`)
+      var elementoS = document.getElementById(`s${contador + 1}`)
+      var elementoC = document.getElementById(`c${contador + 1}`)
+      elemento.innerHTML = `${dado_inferior[contador]}`;
+      elementoS.innerHTML = `${dado_superior[contador]}`;
+      elementoC.innerHTML = `${dado_cardio[contador]}`;
+      if (contador == 3) {
+        c5.innerHTML = Number(soma_cardio).toFixed(2)
+        s5.innerHTML = Number(soma_superior).toFixed(2)
+        i5.innerHTML = Number(soma_inferior).toFixed(2)
+      }
+      contador++
+    } */
+
+  var dataAtual = new Date();
+  dataAtual.setDate(dataAtual.getDate() - 1);
+  var dataFormatada = dataAtual.toISOString().split('T')[0];
+
+  dataEvento.value = dataFormatada;
+  dataEvento2.value = dataFormatada;
+  function pesquisa() {
+    location.reload();
+  }
+
+
+  function pesquisa_aparelho() {
+    atualizarGrafico(myChart7, gerarDadosAleatorios(9, 2, 0.5))
+  }
+
+  var divInputsPerfil = document.querySelector('.divInputsPerfil');
+  var divInputsPerfil2 = document.querySelector('.divInputsPerfil2');
+  var divInputsSenha = document.querySelector('.divInputsSenha');
+
+  function editarDados() {
+    if (divInputsPerfil.style.display === 'none') {
+      divInputsPerfil.style.display = 'block';
+      divInputsPerfil2.style.display = 'none';
+      divInputsSenha.style.display = 'none';
+    } else {
+      divInputsPerfil.style.display = 'none';
+      divInputsSenha.style.display = 'none';
+      divInputsPerfil2.style.display = 'block';
+    }
+
+  }
+
+  function recuperarSenha() {
+    if (divInputsSenha.style.display === 'none') {
+      divInputsPerfil.style.display = 'none';
+      divInputsSenha.style.display = 'block';
+      divInputsPerfil2.style.display = 'none';
+    } else {
+      divInputsPerfil.style.display = 'block';
+      divInputsPerfil2.style.display = 'none';
+      divInputsSenha.style.display = 'none';
+    }
+  }
+
+  function salvarSenha() {
+    divInputsSenha.style.display = 'none'
+    divInputsPerfil2.style.display = 'block'
+    alert("Sua senha foi atualizada com sucesso!")
+  }
+
+  function salvarDados() {
+    var nome = nomePerfilEditar.value;
+    var representante = repEditar.value;
+    var cnpj = cnpjEditar.value;
+    var telefone = telEditar.value;
+    var celular = celEditar.value;
+    var email = emailEditar.value;
+
+
+    if (divInputsPerfil2.style.display === 'none') {
+      divInputsPerfil2.style.display = 'block';
+      divInputsPerfil.style.display = 'none';
+
+    } else {
+      divInputsPerfil2.style.display = 'none';
+      divInputsPerfil.style.display = 'block';
+      nomePerfilLeitura.value = `${nome}`;
+      repLeitura.value = `${representante}`;
+      cnpjLeitura.value = `${cnpj}`;
+      telLeitura.value = `${telefone}`;
+      celLeitura.value = `${celular}`;
+      emailLeitura.value = `${email}`;
+    }
+  }
+
+
+</script>
