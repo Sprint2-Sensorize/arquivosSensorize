@@ -14,6 +14,8 @@ CREATE TABLE academia(
 INSERT INTO academia (Nome_academia, Cnpj, inicio_contrato, Status_contrato, fim_contrato)VALUES
     ('Coliseu Fit', '00.312.222/1234-56,', '2023-01-15', 'Ativo', '2024-01-15');
     
+
+    
  select * from academia;
  
 -- -------------------------------------------------------------------CRIANDO TABELA ENDEREÇO------------------------------------------------------------------------------
