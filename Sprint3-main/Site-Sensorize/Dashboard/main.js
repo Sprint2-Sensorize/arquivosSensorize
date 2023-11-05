@@ -83,6 +83,9 @@ function atualizarGrafico(chart, newData) {
 function toggleSublinks() {
   const submenu = document.querySelector('.submenu')
   submenu.style.display = submenu.style.display === 'flex' ? 'none' : 'flex'
+  document.getElementById('link_cardio').style.color = 'white'
+  document.getElementById('link_inferior').style.color = 'white'
+  document.getElementById('link_superior').style.color = 'white'
 }
 
 function gerarDadosAleatorios(tamanho, comeco, fim) {
