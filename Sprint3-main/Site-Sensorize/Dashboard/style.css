@@ -80,6 +80,11 @@ nav {
   align-items: center;
   margin: 0;
   cursor: pointer;
+  transition: 300ms;
+}
+
+.itensDaNav:hover{
+  color: #f3b75d;
 }
 
 .menuLateral {
