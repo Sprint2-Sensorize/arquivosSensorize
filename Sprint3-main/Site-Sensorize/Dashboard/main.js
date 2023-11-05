@@ -7,11 +7,16 @@ function mostrar_perfil() {
   tela_perfil.style.display = 'flex'
   const submenu = document.querySelector('.submenu')
   submenu.style.display = 'none'
+  document.getElementById('link_perfil').style.borderBottom = 'solid 2px orange'
+  document.getElementById('link_dashboard').style.borderBottom = 'none'
+  document.getElementById('link_aparelhos').style.borderBottom = 'none'
+
 }
 function mostrar_aparelhos() {
   tela_aparelho.style.display = 'flex'
   tela_principal.style.display = 'none'
   tela_perfil.style.display = 'none'
+
 }
 function mostrar_principal() {
   document.getElementById('link_cardio').style.color = 'white'
@@ -22,6 +27,9 @@ function mostrar_principal() {
   tela_perfil.style.display = 'none'
   const submenu = document.querySelector('.submenu')
   submenu.style.display = 'none'
+  document.getElementById('link_dashboard').style.borderBottom = 'solid 2px orange'
+  document.getElementById('link_perfil').style.borderBottom = 'none'
+  document.getElementById('link_aparelhos').style.borderBottom = 'none'
 }
 function mostrar_superior() {
   table_inf.style.display = 'none'
@@ -90,9 +98,20 @@ function atualizarGrafico(chart, newData) {
 }
 
 /* submenu function */
+
 function toggleSublinks() {
-  const submenu = document.querySelector('.submenu')
-  submenu.style.display = submenu.style.display === 'flex' ? 'none' : 'flex'
+  const borda = document.getElementById('link_aparelhos');
+  const submenu = document.querySelector('.submenu');
+  document.getElementById('link_perfil').style.borderBottom = 'none'
+  document.getElementById('link_dashboard').style.borderBottom = 'none'
+
+  if (submenu.style.display === 'none' || submenu.style.display === '') {
+    submenu.style.display = 'flex';
+    borda.style.borderBottom = '2px solid orange'; // Corrected border style
+  } else {
+    submenu.style.display = 'none';
+    borda.style.borderBottom = 'none'; // Corrected border style
+  }
 }
 
 function gerarDadosAleatorios(tamanho, comeco, fim) {
