@@ -23,6 +23,9 @@ function mostrar_superior() {
   aparelho_infeior.style.display = 'none'
   aparelho_cardio.style.display = 'none'
   atualizarGrafico(myChart7, gerarDadosAleatorios(8, 2, 0.5))
+  document.getElementById('link_cardio').style.color = 'white'
+  document.getElementById('link_inferior').style.color = 'white'
+  document.getElementById('link_superior').style.color = 'blue'
   myChart7.data.datasets[0].backgroundColor = 'purple'
   myChart7.data.datasets[0].borderColor = 'purple'
   myChart6.data.datasets[0].offset = [30, 0, 0]
@@ -40,6 +43,9 @@ function mostrar_inferior() {
   aparelho_cardio.style.display = 'none'
   aparelho_superior.style.display = 'none'
   atualizarGrafico(myChart7, gerarDadosAleatorios(8, 2, 0.5))
+  document.getElementById('link_cardio').style.color = 'white'
+  document.getElementById('link_inferior').style.color = 'blue'
+  document.getElementById('link_superior').style.color = 'white'
   myChart7.data.datasets[0].backgroundColor = 'blue'
   myChart7.data.datasets[0].borderColor = 'blue'
   myChart6.data.datasets[0].offset = [0, 30, 0]
@@ -57,6 +63,9 @@ function mostrar_cardio() {
   aparelho_superior.style.display = 'none'
   aparelho_infeior.style.display = 'none'
   atualizarGrafico(myChart7, gerarDadosAleatorios(8, 2, 0.5))
+  document.getElementById('link_cardio').style.color = 'blue'
+  document.getElementById('link_inferior').style.color = 'white'
+  document.getElementById('link_superior').style.color = 'white'
   myChart7.data.datasets[0].backgroundColor = 'gray'
   myChart7.data.datasets[0].borderColor = 'gray'
   myChart6.data.datasets[0].offset = [0, 0, 30]
