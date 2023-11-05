@@ -1,7 +1,12 @@
 function mostrar_perfil() {
+  document.getElementById('link_cardio').style.color = 'white'
+  document.getElementById('link_inferior').style.color = 'white'
+  document.getElementById('link_superior').style.color = 'white'
   tela_aparelho.style.display = 'none'
   tela_principal.style.display = 'none'
   tela_perfil.style.display = 'flex'
+  const submenu = document.querySelector('.submenu')
+  submenu.style.display = 'none'
 }
 function mostrar_aparelhos() {
   tela_aparelho.style.display = 'flex'
@@ -9,9 +14,14 @@ function mostrar_aparelhos() {
   tela_perfil.style.display = 'none'
 }
 function mostrar_principal() {
+  document.getElementById('link_cardio').style.color = 'white'
+  document.getElementById('link_inferior').style.color = 'white'
+  document.getElementById('link_superior').style.color = 'white'
   tela_aparelho.style.display = 'none'
   tela_principal.style.display = 'flex'
   tela_perfil.style.display = 'none'
+  const submenu = document.querySelector('.submenu')
+  submenu.style.display = 'none'
 }
 function mostrar_superior() {
   table_inf.style.display = 'none'
@@ -83,7 +93,6 @@ function atualizarGrafico(chart, newData) {
 function toggleSublinks() {
   const submenu = document.querySelector('.submenu')
   submenu.style.display = submenu.style.display === 'flex' ? 'none' : 'flex'
-
 }
 
 function gerarDadosAleatorios(tamanho, comeco, fim) {
