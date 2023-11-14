@@ -284,3 +284,23 @@ function girarCard(card) {
     tituloCaixa.style.display = 'flex'
   }
 }
+
+let count = 1;
+document.getElementById("radio1").checked = true
+var contador = 0
+
+setInterval(function () {
+    nextImage();
+}, 3000)
+
+function nextImage() {
+    contador++
+    count++;
+    if (count > 4) {
+        count = 1;
+    }
+    
+    
+    document.getElementById("radio" + count).checked = true;
+
+}
