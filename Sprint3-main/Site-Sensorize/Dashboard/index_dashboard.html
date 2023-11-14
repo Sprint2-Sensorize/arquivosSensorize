@@ -49,7 +49,7 @@
 
     <div class="grupotreino" tabindex="1">
       <a id="link_aparelhos" href="#" class="itensDaNav" onclick="toggleSublinks() ">
-        <div id="grupo_de_treino" style="font-size: 2.2rem;" class="icon-weights"></div>
+        <div id="grupo_de_treino" style=" font-size: 2.2rem;" class="icon-weights"></div>
         Grupo de treino
       </a>
       <div class="submenu" style="gap: 8px;">
@@ -235,6 +235,9 @@
 
         <span class="SpanPerfil">E-mail</span><br>
         <input class="inputPerfil" type="text" id="emailLeitura" value="bluefit@gmail.com" readonly><br><br>
+
+        <!-- <span class="SpanPerfil">Senha atual</span><br>
+        <input class="inputPerfil" type="text" id="senhaAtualLeitura" value="*****" readonly><br><br> -->
       </div>
 
 
@@ -256,10 +259,15 @@
 
         <span class="SpanPerfil">E-mail</span><br>
         <input class="inputPerfil2" type="text" id="emailEditar" value="bluefit@gmail.com"><br><br>
+
+        <!-- <span class="SpanPerfil">Senha atual</span><br>
+        <input class="inputPerfil" type="text" id="senhaAtualEditar" value="*****" readonly><br><br> -->
         <button onclick="salvarDados()" id="buttonSalvar" class="buttonSalvar">Salvar</button>
       </div>
 
       <div class="divInputsSenha">
+        <span class="SpanPerfil">Senha atual</span><br>
+        <input class="inputPerfil2" type="text" id="senhaAtual_id" placeholder="*****"><br><br>
         <span class="SpanPerfil">Nova Senha</span><br>
         <input class="inputPerfil2" type="text" id="senha_id" placeholder="*****"><br><br>
         <span class="SpanPerfil">Confirme a senha</span><br>
