@@ -370,12 +370,11 @@ hr {
 }
 
 /* CARROSSEL */
-.container2 {
+/* .container2 { */
   /* margin-top: 100px; */
-  padding: 0;
-  width: 150%;
-  height: 300vh;
+  /* padding: 0;
   display: flex;
+  width: 100%;
   justify-content: center;
   align-items: center;
   overflow-x: hidden;
@@ -383,17 +382,15 @@ hr {
 }
 
 .slider{
-  margin: 0 auto;
-  width: 40vw;
-  height: 500%;
-  overflow: hidden;
+  width: 800px;
+  height: 420px;
+  overflow-x: hidden;
 }
 
 .slider .slides{
-  width: 500%;
-  height: 80vh;
+  width: 400%;
+  height: 45vh;
   display: flex;
- 
 }
 
 .slider .slides input{
@@ -406,9 +403,7 @@ hr {
   transition: 2s;
 }
 
-.slider .slides .slide img{
-  width: 60vw;
-}
+
 
 .manual-navigation{
  
@@ -417,6 +412,7 @@ hr {
   margin-top: -40px;
   display: flex;
   justify-content: center;
+  
 }
 
 .manual-btn{
@@ -493,7 +489,7 @@ hr {
 
 #radio4:checked ~ .navigation-auto .auto-btn4{
   background-color: #FFF;
-}
+} */
 
 /* EMPRESA */
 .divEmpresaMaior {
