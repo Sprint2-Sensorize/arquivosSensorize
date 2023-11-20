@@ -113,19 +113,10 @@ function viacep() {
 }
 
 function cadastrar() {
-  var cnpj = inp_cpj.value.length
   var email = inp_email.value.endsWith(`.com`)
   var senha = inp_senha.value
   var confirmacao = inp_confimacao.value
   var valid = 0
-  console.log(email)
-  if (cnpj >= 14 && cnpj <= 19) {
-    inp_cpj.style.borderColor = '#000000'
-  } else {
-    inp_cpj.style.borderColor = '#ff0000'
-    inp_cpj.style.borderWidth = '2px'
-    valid = 1
-  }
   if (email && inp_email.value.indexOf('@') > 0) {
     inp_email.style.borderColor = '#000000'
   } else {
@@ -189,22 +180,20 @@ function girarCard(card) {
   }
 }
 
-let count = 1;
-document.getElementById("radio1").checked = true
+let count = 1
+document.getElementById('radio1').checked = true
 var contador = 0
 
 setInterval(function () {
-    nextImage();
+  nextImage()
 }, 3000)
 
 function nextImage() {
-    contador++
-    count++;
-    if (count > 4) {
-        count = 1;
-    }
-    
-    
-    document.getElementById("radio" + count).checked = true;
+  contador++
+  count++
+  if (count > 4) {
+    count = 1
+  }
 
+  document.getElementById('radio' + count).checked = true
 }
