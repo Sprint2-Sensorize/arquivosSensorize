@@ -1,0 +1,505 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,700;1,100&family=Roboto+Slab:wght@100;500;700&display=swap');
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffae34;
+  border-radius: 10px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto Slab', serif;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/* CSS NAVBAR E LOGO */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+  background-color: #000000;
+  position: fixed;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  width: 100%;
+  transition: 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.nave {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 5%;
+  width: 90%;
+  height: 100%;
+}
+.nave h1 {
+  margin: 0;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.nav-itens {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-itens > li > a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.nav-itens > li > a:hover {
+  color: #ffae34;
+}
+
+.logo-img {
+  width: 40px;
+  height: auto;
+  vertical-align: middle;
+  /* vertical no centro. */
+}
+
+.itensDaNav {
+  color: white;
+  display: flex;
+  text-decoration: none;
+  gap: 10px;
+  font-size: 1.5rem;
+  align-items: center;
+  margin: 0;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.itensDaNav:hover{
+  color: #f3b75d;
+}
+
+.menuLateral {
+  background-color: black;
+  height: 100vh;
+  width: 20vw;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* sub menu */
+.submenu {
+  display: none;
+  position: absolute;
+  margin-top: 11%;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.grupotreino {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 2s;
+}
+
+.submenu > a {
+  color: white;
+  display: flex;
+  text-decoration: none;
+  font-size: 1rem;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.div_dashboar {
+  border-radius: 20px;
+  background-color: white;
+  display: flex;
+  height: 100vh;
+  width: 80vw;
+  margin-left: 20vw;
+  position: absolute;
+}
+
+.kpi {
+  text-align: center;
+  margin: 3% 2%;
+  height: 20vh;
+  width: 50vw;
+  border-radius: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+th,
+td {
+  padding: 5px;
+  text-align: center;
+  width: 200px;
+}
+
+.filtro {
+  gap: 1rem;
+  flex-direction: column;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filtro_aparelho {
+  flex-direction: column;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.filtro_aparelho span {
+  font-size: 12px;
+  font-weight: bold;
+  font-family: 'Roboto Slab', serif;
+}
+.filtro span {
+  display: flex;
+  text-align: end;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: 'Roboto Slab', serif;
+}
+
+.amostragem {
+  gap: 2rem;
+  display: flex;
+  margin-top: 28%;
+  position: absolute;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  height: 48%;
+}
+
+.estilo {
+  width: 35vw;
+  height: 40vh;
+  border: 2px solid #77a8c9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.estilo_pie {
+  margin-top: 3%;
+  width: 20vw;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+}
+
+.estilo2 {
+  width: 60vw;
+  height: 45vh;
+  border: 2px solid #77a8c9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.alerta {
+  width: 10vw;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-top: 2%;
+}
+.alertas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 70%;
+  height: 40%;
+  gap: 5%;
+  text-align: center;
+}
+
+.inform {
+  position: absolute;
+  margin-top: 6%;
+  font-size: 20px;
+}
+
+.graficos {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: -5%;
+}
+
+.busca {
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: rgb(0, 27, 205);
+  padding: 0.4rem;
+  font-family: 'Roboto Slab', serif;
+  margin-top: 1.3rem;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+
+.busca:hover {
+  background-color: rgb(0, 17, 129);
+}
+
+/* Dashboard - perfil */
+h3 {
+  margin-left: 55px;
+  height: 30px;
+  width: 25%;
+}
+
+.img {
+  display: flex;
+  width: 12%;
+  height: 25%;
+  justify-content: center; /* Centraliza horizontalmente */
+  /*align-items: center;*/
+  border-radius: 40px;
+  margin-left: 475px;
+  margin-top: -20px;
+}
+
+.divTudoPerfil {
+  align-items: center;
+  justify-content: center;
+}
+
+.divInputsPerfil {
+  font-size: 15px;
+  width: 100%;
+  height: 40%;
+  margin-left: 18%;
+}
+
+.SpanPerfil {
+  color: gray;
+  font-size: 20px;
+}
+
+.inputPerfil {
+  font-size: 20px;
+  width: 90%;
+  outline: none;
+  border-radius: 0;
+  background-color: white;
+  border: none;
+  border-bottom: 2px solid black;
+}
+
+.inputPerfil2 {
+  font-size: 20px;
+  width: 90%;
+  border-radius: 0;
+  background-color: white;
+  border-bottom: 2px solid black;
+  border-radius: 5px;
+}
+
+.inputPerfilTel {
+  font-size: 20px;
+  width: 44.5%;
+  outline: none;
+  border-radius: 0;
+  background-color: white;
+  border: none;
+  border-bottom: 2px solid black;
+}
+.inputPerfilCnpj2 {
+  font-size: 20px;
+  width: 90%;
+  border-radius: 0;
+  background-color: white;
+  border-bottom: 2px solid black;
+  border-radius: 5px;
+}
+
+.inputPerfilTel2 {
+  font-size: 20px;
+  width: 44.5%;
+  border-radius: 0;
+  background-color: white;
+  border-radius: 5px;
+  border-bottom: 2px solid black;
+}
+
+.divButtonPerfil {
+  display: flex;
+  align-content: space-between;
+  /*justify-content: center;*/
+  margin-left: 350px;
+  margin-top: 15px;
+}
+
+.buttonPerfil {
+  border: 0px;
+  background: white;
+  text-decoration: underline;
+  color: blue;
+  font-size: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  align-content: space-between;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.divInputsPerfil2 {
+  display: none;
+  font-size: 15px;
+  width: 100%;
+  height: 40%;
+  margin-left: 18%;
+}
+
+.divInputsSenha {
+  display: none;
+  font-size: 15px;
+  width: 100%;
+  height: 40%;
+  margin-left: 18%;
+}
+
+.buttonSalvar {
+  background-color: #fdb13f;
+  color: #2b2828;
+  padding: 15px 15px;
+  border: none;
+  border-radius: 20px;
+  font-size: 15px;
+  cursor: pointer;
+  width: 10%;
+  font-weight: bold;
+  margin-left: 35%;
+  /*justify-content: center;*/
+}
+
+.buttonSalvar:hover {
+  background-color: #ff9900;
+}
+
+.indicativo {
+  width: 100%;
+  height: 20px; /* Altura da barra de indicação */
+  border-radius: 5px;
+  margin-top: 10px;
+  background: linear-gradient(
+    to right,
+    rgb(142, 0, 0) 20%,
+    20%,
+    rgb(255, 178, 36) 40%,
+    40%,
+    green 65%,
+    65%,
+    rgb(255, 178, 36) 85%,
+    85%,
+    red 100%
+  );
+}
+
+.legenda {
+  text-align: center;
+  margin: 3% 2.6%;
+  height: 30%;
+  width: 35%;
+}
+
+.legenda span {
+  font-size: 11px;
+}
+.div_cor {
+  width: 15px;
+  height: 10px;
+}
+
+.apoio {
+  margin-top: -6%;
+  margin-bottom: 12%;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.leg span {
+  font-size: 12px;
+}
+
+.leg {
+  margin-bottom: -2%;
+  margin-top: -3%;
+}
+
+.alerta_div {
+  animation-name: piscarv;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+}
+
+.alerta_div2 {
+  animation-name: piscarv2;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes piscarv {
+  0% {
+    color: red;
+    opacity: 0.2;
+  }
+  100% {
+    color: red;
+    opacity: 1;
+  }
+}
+
+@keyframes piscarv2 {
+  0% {
+    color: orange;
+    opacity: 0.2;
+  }
+  100% {
+    color: orange;
+    opacity: 1;
+  }
+}
+
+#myChart7 {
+  border: 2px solid #77a8c9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

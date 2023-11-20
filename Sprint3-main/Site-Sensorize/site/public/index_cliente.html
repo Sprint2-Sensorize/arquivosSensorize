@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sensorize</title>
+  <link rel="icon" href="./assets/img/Sensorize copy.ico" type="image/png">
+  <link rel="stylesheet" href="./css/style_cliente.css">
+  <script src="./js/main.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="esquerda">
+      <img src="./assets/img/cadastreAcad-removebg-preview (1) 2.png" alt="">
+    </div>
+    <div class="direito">
+      <img class="logo" src="./assets/img/logo.png" alt="">
+      <h1>Cadastre-se</h1>
+      <div class="cadastro">
+        <div class="input-cliente">
+          <h3>Dados da Academia</h3>
+          <span style="margin-right: 200px;">Nome da Academia</span>
+          <input type="text" id="inp_nome" placeholder="Ex: Treino Fit">
+          <span style="margin-left: -300px;">E-mail</span>
+          <input type="text" id="inp_email" placeholder="Ex: treinofit@gmail.com">
+          <span style="margin-right: 240px;">Representante</span>
+          <input type="text" id="inp_representante" placeholder="Ex: Fernando Lima">
+          <div>
+            <span style="margin-left: -175px; ">CNPJ</span>
+            <span style="margin-left: 175px; position: absolute;">Telefone</span>
+          </div>
+          <div class="desing">
+            <input style="width: 210px;" type="text" id="inp_cpj" placeholder="Ex: 12.345.678/0002-00">
+            <input style="width: 130px;" type="text" id="inp_telefone" placeholder="Ex: (11)99999-9999">
+          </div>
+
+          <div>
+            <span style="margin-left: -175px; ">Senha</span>
+            <span style="margin-left: 130px; position: absolute;">Confirme a senha</span>
+          </div>
+          <div class="desing">
+            <input style="width: 170px;" type="password" id="inp_senha" placeholder="Ex: aBcd123@">
+            <input style="width: 170px;" type="password" id="inp_confimacao" placeholder="Ex: aBcd123@">
+          </div>
+        </div>
+      </div>
+      <div style="flex-direction: row; margin-left: auto; margin-right: auto;">
+        <button class="botao" onclick="cadastrar()">
+          Continuar
+        </button>
+
+        <a href="./index_login.html">
+          <button class="botao">
+            Voltar
+          </button>
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>
