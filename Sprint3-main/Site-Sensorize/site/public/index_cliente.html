@@ -91,27 +91,33 @@
 
           // Enviando o valor da nova input
           fetch("/usuarios/cadastrar", {
-            method: "PUT", // Mantido como PUT para atualização
+            method: "PUT",
             headers: {
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
               nomeServer: representante,
-              emailServer: inp_email.value,
+              emailServer: email,
               senhaServer: senha,
               tokenServer: token,
             }),
           })
             .then(function (resposta) {
-              console.log("resposta: ", resposta);
+              return resposta.json(); // Parse o corpo da resposta como JSON
+            })
+            .then(function (data) {
+              console.log("Resposta:", data);
 
-              if (resposta.ok) {
+              if (data.affectedRows === 0) {
+                // Aqui você pode adicionar lógica para invalidar o acesso
+                alert("Acesso invalido")
+              } else {
+                // Aqui você pode adicionar lógica para quando a atualização foi bem-sucedida
+                console.log("Acesso liberado!");
                 setTimeout(() => {
                   // window.location = "login.html";
                   alert("Acesso liberado!");
                 }, 2000);
-              } else {
-                throw new Error("Houve um erro ao tentar realizar a atualização!");
               }
             })
             .catch(function (erro) {
@@ -119,6 +125,7 @@
             });
 
           return false;
+
 
 
         }
