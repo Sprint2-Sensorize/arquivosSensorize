@@ -144,7 +144,7 @@ function cadastrar() {
     senha.indexOf('%') > 0
   ) {
     if (valid == 0) {
-      window.location.href = '../Dados Endereço/index_endereco.html'
+      window.location.href = 'index_endereco.html'
       inp_senha.style.borderColor = '#000000'
       inp_confimacao.style.borderColor = '#000000'
     }
@@ -159,7 +159,7 @@ function login() {
   var senha = inp_senha.value
 
   if (login == 'adm@gmail.com' && senha == `@adm123`) {
-    window.location.href = '../Dashboard/index_dashboard.html'
+    window.location.href = 'index_dashboard.html'
   } else {
     alert('Email e/ou senha estão incorretos! Tente novamente')
   }
@@ -171,7 +171,7 @@ function cadastro_endereco() {
   if (numero == '') {
     inp_numero_endereco.style.borderColor = '#ff0000'
   } else {
-    window.location.href = '../Tela de Login/Login.html'
+    window.location.href = 'index_login.html'
   }
 }
 

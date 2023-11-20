@@ -491,6 +491,37 @@ hr {
   background-color: #FFF;
 } */
 
+.pCliente{
+  margin-top: 100px;
+  color: white;
+  text-align: center;
+  font-family: 'Roboto Slab', serif;
+  font-size: 20px;
+}
+
+.divTudoImg{
+  display: flex;
+  flex-direction: column;
+}
+
+.divImg1{
+  padding: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.imgCliente{
+  height: 240px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.imgCliente:hover{
+  transform: scale(1.1);
+  transition: all 0.3s;
+}
+
 /* EMPRESA */
 .divEmpresaMaior {
   height: 99vh;
