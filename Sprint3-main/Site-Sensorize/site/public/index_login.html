@@ -15,8 +15,10 @@
       <img src="./assets/img/imgLogin-removebg-preview_1-transformed.png" alt="">
     </div>
     <div class="direito">
+
       <img class="logo" src="./assets/img/logo.png" alt="">
       <h1>Login</h1>
+      <div id="acesso" class="liberado"></div>
       <div class="cadastro">
         <div class="input-cliente">
           <span style="margin-right: 320px;">Email</span>
@@ -37,7 +39,9 @@
           </button>
         </a><br><br>
         <p style="font-size: 15px; text-align: center;">
-        Não possui um login?<a class="apoio" href="index_cliente.html">Cadastre-se</a></p>
+          Não possui um login?<a class="apoio" href="index_cliente.html">Cadastre-se</a></p>
+        <img id="gif" style="width: 50px; position: absolute; margin-top: -12%; margin-left: 5.5%; display: none;"
+          src="./assets/img/aguarde-orange.gif" alt="">
       </div>
     </div>
   </div>
@@ -58,63 +62,77 @@
 
   function entrar() {
 
-        var emailVar = inp_login.value;
-        var senhaVar = inp_senha.value;
+    var emailVar = inp_login.value;
+    var senhaVar = inp_senha.value;
 
-        if (emailVar == "" || senhaVar == "") {
-           return false;
-        }
-        else {
-            setInterval(5000)
-        }
-
-        console.log("FORM LOGIN: ", emailVar);
-        console.log("FORM SENHA: ", senhaVar);
-
-        fetch("/usuarios/autenticar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                emailServer: emailVar,
-                senhaServer: senhaVar
-            })
-        }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
-
-            if (resposta.ok) {
-                console.log(resposta);
-
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
-                    
-                    setTimeout(function () {
-                      alert("acesso liberado")
-                       window.location = "index_dashboard.html";
-                    }, 1000); // apenas para exibir o loading
-
-                });
-
-            } else {
-
-                console.log("Houve um erro ao tentar realizar o login!");
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-             
-                });
-            }
-
-        }).catch(function (erro) {
-            console.log(erro);
-        })
-
-        return false;
+    if (emailVar == "" || senhaVar == "") {
+      inp_login.classList.add('escala-animation');
+      inp_senha.classList.add('escala-animation');
+      acesso.style.display = 'flex'
+      acesso.innerHTML = 'Preecha todos o campos!'
+      acesso.style.backgroundColor = '#ff5959b9'
+      return false;
     }
+    else {
+      gif.style.display = 'block'
+      setInterval(5000)
+    }
+
+    console.log("FORM LOGIN: ", emailVar);
+    console.log("FORM SENHA: ", senhaVar);
+
+    fetch("/usuarios/autenticar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        emailServer: emailVar,
+        senhaServer: senhaVar
+      })
+    }).then(function (resposta) {
+      console.log("ESTOU NO THEN DO entrar()!")
+
+      if (resposta.ok) {
+        console.log(resposta);
+
+        resposta.json().then(json => {
+          console.log(json);
+          console.log(JSON.stringify(json));
+          sessionStorage.EMAIL_USUARIO = json.email;
+          sessionStorage.NOME_USUARIO = json.nome;
+          sessionStorage.ID_USUARIO = json.id;
+
+          setTimeout(() => {
+            acesso.style.backgroundColor = '#93ff59b9'
+            acesso.innerHTML = 'Acesso Liberado!!'
+            acesso.style.display = 'flex'
+          }, 1000);
+          setTimeout(function () {
+
+            window.location = "index_dashboard.html";
+          }, 2500);
+
+        });
+
+      } else {
+
+        console.log("Houve um erro ao tentar realizar o login!");
+        gif.style.display = 'none'
+        acesso.style.display = 'flex'
+        acesso.innerHTML = 'Email ou senha incorretos!'
+        acesso.style.backgroundColor = '#ff5959b9'
+        resposta.text().then(texto => {
+          console.error(texto);
+
+        });
+      }
+
+    }).catch(function (erro) {
+      console.log(erro);
+    })
+
+    return false;
+  }
 
 </script>

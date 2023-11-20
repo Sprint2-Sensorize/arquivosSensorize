@@ -18,6 +18,7 @@
     <div class="direito">
       <img class="logo" src="./assets/img/logo.png" alt="">
       <h1>Cadastre-se</h1>
+      <div id="acesso" class="liberado"></div>
       <div class="cadastro">
         <div class="input-cliente">
           <h3>Dados da Academia</h3>
@@ -46,10 +47,9 @@
             Voltar
           </button>
         </a>
-        <img id="gif" style="width: 100px; position: absolute; margin-top: 2%;margin-left: -10.5%; display: none;"
+        <img id="gif" style="width: 100px; position: absolute; margin-top: 2%; margin-left: 4%; display: none;"
           src="./assets/img/aguarde-orange.gif" alt="">
       </div>
-
     </div>
   </div>
 </body>
@@ -59,6 +59,11 @@
 <script>
 
   function cadastrar() {
+    inp_email.style.borderColor = '#000000'
+    inp_token.style.borderColor = '#000000';
+    inp_senha.style.borderColor = '#000000'
+    inp_confimacao.style.borderColor = '#000000'
+
     var email = inp_email.value.endsWith(`.com`)
     var senha = inp_senha.value
     var confirmacao = inp_confimacao.value
@@ -70,13 +75,19 @@
       if (email && inp_email.value.indexOf('@') > 0) {
         inp_email.style.borderColor = '#000000'
       } else {
+        inp_email.classList.add('escala-animation');
         inp_email.style.borderColor = '#ff0000'
-        alert('Email invalido!')
+        acesso.style.display = 'flex'
+        acesso.innerHTML = 'Email inválido!'
+        acesso.style.backgroundColor = '#ff5959b9'
         valid = 1
       }
       if (senha != confirmacao) {
-        alert(`Senhas diferentes`)
+        acesso.style.display = 'flex'
+        acesso.innerHTML = 'Senhas diferentes'
+        acesso.style.backgroundColor = '#ff5959b9'
         inp_confimacao.style.borderColor = '#ff0000'
+        inp_confimacao.classList.add('escala-animation');
         valid = 1
       } else if (
         senha.indexOf('@') > 0 ||
@@ -109,14 +120,25 @@
               console.log("Resposta:", data);
 
               if (data.affectedRows === 0) {
+                setTimeout(() => {
+                  inp_token.style.borderColor = 'red';
+                  inp_token.classList.add('escala-animation');
+                  gif.style.display = 'none'
+                  acesso.style.display = 'flex'
+                  acesso.innerHTML = 'Token de Acesso Inválido'
+                  acesso.style.backgroundColor = '#ff5959b9'
+                }, 2000);
 
               } else {
-                // Aqui você pode adicionar lógica para quando a atualização foi bem-sucedida
+                setTimeout(() => {
+                  acesso.style.backgroundColor = '#93ff59b9'
+                  acesso.innerHTML = 'Cadastro realizado com<br> Sucesso!'
+                  acesso.style.display = 'flex'
+                }, 1000);
                 console.log("Acesso liberado!");
                 setTimeout(() => {
-                  // window.location = "login.html";
-                  alert("Acesso liberado!");
-                }, 2000);
+                  window.location = "index_login.html";
+                }, 3000);
               }
             })
             .catch(function (erro) {
@@ -124,18 +146,23 @@
             });
 
           return false;
-
-
-
         }
 
       } else {
+        inp_confimacao.classList.add('escala-animation');
+        inp_senha.classList.add('escala-animation');
         inp_senha.style.borderColor = '#ff0000'
         inp_confimacao.style.borderColor = '#ff0000'
-        alert(`É nescessario que a senha tenha @,!,#,%`)
+        acesso.style.display = 'flex'
+        acesso.innerHTML = 'É nescessário que a senha tenha caractéres especiáis'
+        acesso.style.backgroundColor = '#ff5959b9'
       }
     } else {
-      alert("Insira um token de acesso!")
+      inp_token.style.borderColor = 'red';
+      inp_token.classList.add('escala-animation');
+      acesso.style.display = 'flex'
+      acesso.innerHTML = 'Insira um token de acesso!'
+      acesso.style.backgroundColor = '#ff5959b9'
     }
   }
 
