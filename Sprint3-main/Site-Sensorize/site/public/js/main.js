@@ -81,7 +81,7 @@ function voltar() {
   input_mensalidade_clientes.value = ''
 }
 
-function viacep() {
+/* function viacep() {
   var cep = inp_cep_endereco.value
 
   if (cep.length >= 8) {
@@ -110,7 +110,7 @@ function viacep() {
     inp_cep_endereco.style.borderColor = '#ff0000'
     alert(`CEP Invalido!`)
   }
-}
+} */
 
 function cadastrar() {
   var email = inp_email.value.endsWith(`.com`)
@@ -135,9 +135,9 @@ function cadastrar() {
     senha.indexOf('%') > 0
   ) {
     if (valid == 0) {
-      window.location.href = 'index_endereco.html'
-      inp_senha.style.borderColor = '#000000'
-      inp_confimacao.style.borderColor = '#000000'
+      //Banco de dados
+
+      window.location.href = ''
     }
   } else {
     inp_senha.style.borderColor = '#ff0000'
