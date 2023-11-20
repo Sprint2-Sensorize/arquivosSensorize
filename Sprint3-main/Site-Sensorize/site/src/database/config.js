@@ -22,7 +22,7 @@ var mySqlConfig = {
   host: 'localhost',
   database: 'sensorize1',
   user: 'root',
-  password: '24053845'
+  password: 'jhow'
 }
 
 function executar(instrucao) {
