@@ -7,7 +7,7 @@
   <title>Sensorize</title>
   <link rel="icon" href="./assets/img/Sensorize copy.ico" type="image/png">
   <link rel="stylesheet" href="./css/style_cliente.css">
-  <script src="./js/main.js"></script>
+  
 </head>
 
 <body>
@@ -21,6 +21,8 @@
       <div class="cadastro">
         <div class="input-cliente">
           <h3>Dados da Academia</h3>
+          <span style="margin-left: -235px;">Token de Acesso</span>
+          <input type="text" id="inp_token" placeholder="110930">
           <span style="margin-left: -300px;">E-mail</span>
           <input type="text" id="inp_email" placeholder="Ex: treinofit@gmail.com">
           <span style="margin-right: 240px;">Representante</span>
@@ -53,3 +55,88 @@
 </body>
 
 </html>
+
+<script>
+
+function cadastrar() {
+  var email = inp_email.value.endsWith(`.com`)
+  var senha = inp_senha.value
+  var confirmacao = inp_confimacao.value
+  var valid = 0
+  var token = inp_token.value
+  var representante = inp_representante.value
+
+  if (token != "") {
+  if (email && inp_email.value.indexOf('@') > 0) {
+    inp_email.style.borderColor = '#000000'
+  } else {
+    inp_email.style.borderColor = '#ff0000'
+    alert('Email invalido!')
+    valid = 1
+  }
+  if (senha != confirmacao) {
+    alert(`Senhas diferentes`)
+    inp_confimacao.style.borderColor = '#ff0000'
+    valid = 1
+  } else if (
+    senha.indexOf('@') > 0 ||
+    senha.indexOf('#') > 0 ||
+    senha.indexOf('!') > 0 ||
+    senha.indexOf('%') > 0
+  ) {
+    if (valid == 0) {
+      //Banco de dados
+
+      setInterval(5000);
+    
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: representante,
+        emailServer: email,
+        senhaServer: senha,
+        tokenServer: token
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+         
+
+          setTimeout(() => {
+            // window.location = "login.html";
+            alert("Acesso liberado!")
+          }, "2000");
+
+          
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        
+      });
+
+    return false;
+
+    }
+
+  } else {
+    inp_senha.style.borderColor = '#ff0000'
+    inp_confimacao.style.borderColor = '#ff0000'
+    alert(`É nescessario que a senha tenha @,!,#,%`)
+  }
+} else {
+  alert("Insira um token de acesso!")
+}
+}
+
+</script>

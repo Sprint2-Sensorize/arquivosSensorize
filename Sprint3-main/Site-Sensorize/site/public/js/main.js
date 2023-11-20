@@ -113,8 +113,8 @@ function voltar() {
 } */
 
 function cadastrar() {
-  var email = inp_email.value.endsWith(`.com`)
-  var senha = inp_senha.value
+  var email = email_input.value.endsWith(`.com`)
+  var senha = senha_input.value
   var confirmacao = inp_confimacao.value
   var valid = 0
   if (email && inp_email.value.indexOf('@') > 0) {
