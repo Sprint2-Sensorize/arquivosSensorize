@@ -4,24 +4,79 @@ const mysql = require('mysql2')
 
 const SERIAL_BAUD_RATE = 9600
 const SERVIDOR_PORTA = 3000
-const HABILITAR_OPERACAO_INSERIR = false
+const HABILITAR_OPERACAO_INSERIR = true
 
-const serial = async (
-  /*   valoresDht11Umidade,
-  valoresDht11Temperatura,
-  valoresLuminosidade,
-  valoresLm35Temperatura, */
-  valoresChave
-) => {
-  const poolBancoDados = mysql
-    .createPool({
-      host: 'localhost',
-      port: 3306,
-      user: 'root',
-      password: 'jhow',
-      database: 'sensorize'
-    })
-    .promise()
+const serial = async valoresChave => {
+  const poolBancoDados = mysql.createPool({
+    host: 'localhost',
+    port: 3306,
+    user: 'root',
+    password: 'jhow',
+    database: 'sensorize'
+  })
+
+  var sensorData = []
+  var sensorTemp = []
+
+  const simulateSensorData = chave => {
+    const novoDado = []
+
+    for (let i = 1; i < 5; i++) {
+      // Se i for 2, substitua o valor aleatório por chave
+      const value = Math.random() * 2
+      const fk = 1000 + i
+      sensorTemp[i] = sensorTemp[i] || { fkSensor: 0, TempoOcp: 0 }
+
+      if (parseInt(value) == 1) {
+        sensorTemp[i].fkSensor = fk
+        sensorTemp[i].TempoOcp += 1
+        if (
+          sensorData.length > 0 &&
+          sensorData[sensorData.length - 1].value == 1
+        ) {
+          sensorTemp[4].fkSensor = 1005
+          sensorTemp[4].TempoOcp += 1
+        }
+      }
+      novoDado.push({
+        fkSensor: parseInt(fk),
+        value: parseInt(value)
+      })
+    }
+    novoDado.push(sensorData[sensorData.length - 1])
+    return novoDado
+  }
+
+  const updateDatabase = async () => {
+    if (HABILITAR_OPERACAO_INSERIR) {
+      // Itera sobre os dados do sensor e insere cada conjunto no banco de dados
+      for (const data of sensorData) {
+        try {
+          await poolBancoDados.execute(
+            `Update historico_temp set registro_ocp = ? where fk_sensor = ?;`,
+            [data.value, data.fkSensor]
+          )
+        } catch (error) {
+          console.error('Erro ao inserir dados no banco de dados:', error)
+        }
+      }
+    }
+  }
+
+  const fetchData = () => {
+    setInterval(() => {
+      // Gera novos dados simulados e armazena em sensorData
+      const chave = valoresChave.shift() // Remova do início do vetor
+      sensorData = simulateSensorData()
+      console.log('Dados do sensor:', sensorData)
+      console.log(sensorTemp)
+
+      // Continue com o processamento dos dados simulados ou faça o que for necessário
+      updateDatabase()
+    }, 1000)
+  }
+
+  // Descomente esta seção para integrar a leitura do Arduino
 
   const portas = await serialport.SerialPort.list()
   const portaArduino = portas.find(
@@ -43,37 +98,20 @@ const serial = async (
     .pipe(new serialport.ReadlineParser({ delimiter: '\r\n' }))
     .on('data', async data => {
       const valores = data.split(',')
-      /*      const dht11Umidade = parseFloat(valores[0])
-      const dht11Temperatura = parseFloat(valores[1])
-      const luminosidade = parseFloat(valores[2])
-      const lm35Temperatura = parseFloat(valores[3]) */
       const chave = parseInt(valores)
-
-      /*      valoresDht11Umidade.push(dht11Umidade)
-      valoresDht11Temperatura.push(dht11Temperatura)
-      valoresLuminosidade.push(luminosidade)
-      valoresLm35Temperatura.push(lm35Temperatura) */
-      valoresChave.push(chave)
-
-      if (HABILITAR_OPERACAO_INSERIR) {
-        await poolBancoDados.execute(
-          'INSERT INTO historico2 (chave) VALUES (?)',
-          [chave]
-        )
-      }
+      sensorData.push({
+        fkSensor: 1005,
+        value: chave
+      })
     })
-  arduino.on('error', mensagem => {
-    console.error(`Erro no arduino (Mensagem: ${mensagem}`)
-  })
+
+  console.log
+
+  // Inicie a primeira execução
+  fetchData()
 }
 
-const servidor = (
-  /*   valoresDht11Umidade,
-  valoresDht11Temperatura,
-  valoresLuminosidade,
-  valoresLm35Temperatura, */
-  valoresChave
-) => {
+const servidor = valoresChave => {
   const app = express()
   app.use((request, response, next) => {
     response.header('Access-Control-Allow-Origin', '*')
@@ -83,44 +121,18 @@ const servidor = (
     )
     next()
   })
+
   app.listen(SERVIDOR_PORTA, () => {
     console.log(`API executada com sucesso na porta ${SERVIDOR_PORTA}`)
   })
-  /*   app.get('/sensores/dht11/umidade', (_, response) => {
-    return response.json(valoresDht11Umidade)
-  })
-  app.get('/sensores/dht11/temperatura', (_, response) => {
-    return response.json(valoresDht11Temperatura)
-  })
-  app.get('/sensores/luminosidade', (_, response) => {
-    return response.json(valoresLuminosidade)
-  })
-  app.get('/sensores/lm35/temperatura', (_, response) => {
-    return response.json(valoresLm35Temperatura)
-  }) */
+
   app.get('/sensores/chave', (_, response) => {
     return response.json(valoresChave)
   })
 }
 
 ;(async () => {
-  /*   const valoresDht11Umidade = []
-  const valoresDht11Temperatura = []
-  const valoresLuminosidade = []
-  const valoresLm35Temperatura = [] */
   const valoresChave = []
-  await serial(
-    /*     valoresDht11Umidade,
-    valoresDht11Temperatura,
-    valoresLuminosidade,
-    valoresLm35Temperatura, */
-    valoresChave
-  )
-  servidor(
-    /*     valoresDht11Umidade,
-    valoresDht11Temperatura,
-    valoresLuminosidade,
-    valoresLm35Temperatura, */
-    valoresChave
-  )
+  await serial(valoresChave)
+  servidor(valoresChave)
 })()
