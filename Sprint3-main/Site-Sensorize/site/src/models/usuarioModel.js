@@ -7,7 +7,8 @@ function autenticar(email, senha) {
     senha
   )
   var instrucao = `
-  select r.representante_id as representante_id, a.academia_id as usuario_id,  r.nome_representante as nome, r.email_acesso as email, a.nome_academia as academia, a.cnpj, t.fixo, t.celular from
+  select r.representante_id as representante_id, a.academia_id as usuario_id,  r.nome_representante as nome, r.email_acesso as
+   email, a.nome_academia as academia, a.cnpj, t.fixo, t.celular from
 	representante as r join academia as a
 							on r.representante_id = a.fk_representante
 						join telefone as t

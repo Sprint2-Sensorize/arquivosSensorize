@@ -244,18 +244,18 @@ for (var i = 0; aparelhos.length > i; i++) {
   }
 }
 
-/* for (var i = 0; ap_sup.length > i; i++) {
+ for (var i = 0; ap_sup.length > i; i++) {
   var op_sup = document.getElementById('sup' + i)
-  op_sup.innerHTML = ap_sup[i]
+  // op_sup.innerHTML = ap_sup[i]
 }
 for (var i = 0; ap_inf.length > i; i++) {
   var op_inf = document.getElementById('inf' + i)
-  op_inf.innerHTML = ap_inf[i]
+  // op_inf.innerHTML = ap_inf[i]
 }
 for (var i = 0; ap_card.length > i; i++) {
   var op_card = document.getElementById('card' + i)
-  op_card.innerHTML = ap_card[i]
-} */
+  // op_card.innerHTML = ap_card[i]
+} 
 
 const labels = ['06h as 10h', '10h as 14h', '14h as 18h', '18h as 22h']
 
