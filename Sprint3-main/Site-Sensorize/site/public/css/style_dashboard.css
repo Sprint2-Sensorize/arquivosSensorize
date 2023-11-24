@@ -83,7 +83,7 @@ nav {
   transition: 300ms;
 }
 
-.itensDaNav:hover{
+.itensDaNav:hover {
   color: #f3b75d;
 }
 
@@ -94,7 +94,7 @@ nav {
   position: absolute;
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: 80px;
   align-items: center;
   justify-content: center;
 }

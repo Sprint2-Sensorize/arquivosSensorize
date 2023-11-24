@@ -7,7 +7,12 @@ function autenticar(email, senha) {
     senha
   )
   var instrucao = `
-        SELECT representante_id as id, nome_representante as nome, email_acesso as email FROM representante WHERE email_acesso = '${email}' AND senha_acesso = '${senha}';
+  select r.representante_id as representante_id, a.academia_id as usuario_id,  r.nome_representante as nome, r.email_acesso as email, a.nome_academia as academia, a.cnpj, t.fixo, t.celular from
+	representante as r join academia as a
+							on r.representante_id = a.fk_representante
+						join telefone as t
+							on t.fk_academia = a.academia_id
+            WHERE email_acesso = '${email}' AND senha_acesso = '${senha}';
     `
   console.log('Executando a instrução SQL: \n' + instrucao)
   return database.executar(instrucao)

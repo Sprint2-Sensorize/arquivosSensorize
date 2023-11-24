@@ -29,10 +29,11 @@
 
   <!-- menu lateral -->
   <div class="menuLateral">
+
     <a onclick="mostrar_principal()" style="color: white; cursor: pointer;">
       <div class="logo">
         <img id="idLogo" src="./assets/img/Logo Sensorize copy.ico" alt="logo" class="logo-img">
-        <span style="color: white;">Sensorize</span>
+        <span style="color: white;">Sensorize<br><span style="font-size: 15px;" id="usuario">Bem Vindo: </span></span>
       </div>
     </a>
 
@@ -59,7 +60,7 @@
       </div>
     </div>
 
-    <a href="./index.html" class="itensDaNav">
+    <a style="margin-left: -15px;" id="sair" href="./index.html" class="itensDaNav">
       <div class="icon-cancel-circle"></div>
       Sair
     </a>
@@ -219,19 +220,19 @@
 
       <div class="divInputsPerfil">
         <span class="SpanPerfil">Nome da academia</span><br>
-        <input class="inputPerfil" type="text" id="nomePerfilLeitura" value="BlueFit" readonly><br><br>
+        <input class="inputPerfil" type="text" id="nomePerfilLeitura" value="" readonly><br><br>
 
         <span class="SpanPerfil">Representante</span><br>
-        <input class="inputPerfil" type="text" id="repLeitura" value="Gabriel" readonly><br><br>
+        <input class="inputPerfil" type="text" id="repLeitura" value="" readonly><br><br>
 
         <span class="SpanPerfil">CNPJ</span><br>
-        <input class="inputPerfil" type="number" id="cnpjLeitura" value="0000000000000" max="14" readonly><br><br>
+        <input class="inputPerfil" type="text" id="cnpjLeitura" value="" readonly><br><br>
 
         <span class="SpanPerfil">Telefone</span><br>
-        <input class="inputPerfilTel" type="number" id="telLeitura" value="912345678" readonly>
+        <input class="inputPerfilTel" type="number" id="telLeitura" value="" readonly>
 
         <span style="position: absolute; margin-top: -25px;" class="SpanPerfil">Celular</span>
-        <input class="inputPerfilTel" type="number" id="celLeitura" value="912345678" readonly><br><br>
+        <input class="inputPerfilTel" type="number" id="celLeitura" value="" readonly><br><br>
 
         <span class="SpanPerfil">E-mail</span><br>
         <input class="inputPerfil" type="text" id="emailLeitura" value="bluefit@gmail.com" readonly><br><br>
@@ -319,30 +320,37 @@
             <div id="aparelho_infeior" style="display: none;">
               <span>Selecione o aparelho: </span>
               <select style="width: 120px; text-align: center;" id="seletor_categoria">
-                <option value="Leg Press">Leg Press</option>
-                <option value="Agachamento">Agachamento </option>
-                <option value="Cadeira Adutora">Cadeira Adutora</option>
-                <option value="cadeira Flexora">cadeira Flexora</option>
-                <option value="Panturrilha">Panturrilha</option>
+                <option id="inf0" value=""></option>
+                <option id="inf1" value=""></option>
+                <option id="inf2" value=""></option>
+                <option id="inf3" value=""></option>
+                <option id="inf4" value=""></option>
+                <option id="inf5" value=""></option>
+                <option id="inf6" value=""></option>
               </select>
             </div>
             <div id="aparelho_superior" style="display: none;">
               <span>Selecione o aparelho: </span>
               <select style="width: 120px; text-align: center;" id="seletor_categoria">
-                <option value="Supino">Supino</option>
-                <option value="Crucifixo">Crucifixo</option>
-                <option value="Barra Parelela">Barra Parelela</option>
-                <option value="Remada">Remada</option>
-                <option value="Pull Down">Pull Down</option>
-                <option value="Rosca">Rosca</option>
+                <option id="sup0" value="">Olaaa</option>
+                <option id="sup1" value=""></option>
+                <option id="sup2" value=""></option>
+                <option id="sup3" value=""></option>
+                <option id="sup4" value=""></option>
+                <option id="sup5" value=""></option>
+                <option id="sup6" value=""></option>
               </select>
             </div>
             <div id="aparelho_cardio" style="display: none;">
               <span>Selecione o aparelho: </span>
               <select style="width: 120px; text-align: center;" id="seletor_categoria">
-                <option value="Esteira">Esteira</option>
-                <option value="Bicicleta">Bicicleta</option>
-                <option value="S. Escadas">S. Escadas</option>
+                <option id="card0" value=""></option>
+                <option id="card1" value=""></option>
+                <option id="card2" value=""></option>
+                <option id="card3" value=""></option>
+                <option id="card4" value=""></option>
+                <option id="card5" value=""></option>
+                <option id="card6" value=""></option>
               </select>
             </div>
             <div onclick="pesquisa_aparelho()" style="font-size: 20px; cursor: pointer;" class="icon-search"></div>
@@ -510,6 +518,24 @@
 
 <script>
 
+  var nome = sessionStorage.NOME_USUARIO;
+  var academia = sessionStorage.NOME_ACADEMIA;
+  var cnpj = sessionStorage.CNPJ_ACADEMIA;
+  var tel_fixo = sessionStorage.TEL_FIXO;
+  var tel_cel = sessionStorage.TEL_CEL;
+  var email = sessionStorage.EMAIL_USUARIO;
+
+  usuario.innerHTML += nome
+  nomePerfilLeitura.value = academia
+  repLeitura.value = nome;
+  cnpjLeitura.value = cnpj;
+  telLeitura.value = tel_fixo
+  celLeitura.value = tel_cel
+  emailLeitura.value = email
+
+
+
+
   const myChart = new Chart(
     document.getElementById('myChart'),
     config
@@ -637,43 +663,43 @@
     }
   }
 
-  var paginacao = {};
-  var tempo = {};
-  function obterDados(grafico, endpoint) {
-    var http = new XMLHttpRequest();
-    http.open('GET', 'http://localhost:3000/sensores/' + endpoint, false);
-    http.send(null);
-    var valores = JSON.parse(http.responseText);
-    if (paginacao[endpoint] == null) {
-      paginacao[endpoint] = 0;
-    }
-    if (tempo[endpoint] == null) {
-      tempo[endpoint] = 0;
-    }
-    // Exibir à partir do último elemento exibido anteriormente
-    var ultimaPaginacao = paginacao[endpoint];
-    paginacao[endpoint] = valores.length;
-    var valores = valores.slice(ultimaPaginacao);
-    valores.forEach((valor) => {
-      //Máximo de 60 itens exibidos no gráfico
-      if (grafico.data.labels.length == 10 && grafico.data.datasets[0].data.length == 10) {
-        grafico.data.labels.shift();
-        grafico.data.datasets[0].data.shift();
-      }
+  /*  var paginacao = {};
+   var tempo = {};
+   function obterDados(grafico, endpoint) {
+     var http = new XMLHttpRequest();
+     http.open('GET', 'http://localhost:3000/sensores/' + endpoint, false);
+     http.send(null);
+     var valores = JSON.parse(http.responseText);
+     if (paginacao[endpoint] == null) {
+       paginacao[endpoint] = 0;
+     }
+     if (tempo[endpoint] == null) {
+       tempo[endpoint] = 0;
+     }
+     // Exibir à partir do último elemento exibido anteriormente
+     var ultimaPaginacao = paginacao[endpoint];
+     paginacao[endpoint] = valores.length;
+     var valores = valores.slice(ultimaPaginacao);
+     valores.forEach((valor) => {
+       //Máximo de 60 itens exibidos no gráfico
+       if (grafico.data.labels.length == 10 && grafico.data.datasets[0].data.length == 10) {
+         grafico.data.labels.shift();
+         grafico.data.datasets[0].data.shift();
+       }
 
-      grafico.data.labels.push(tempo[endpoint]++);
-      grafico.data.datasets[0].data.push(parseFloat(valor));
-      grafico.update();
-    })
-  }
+       grafico.data.labels.push(tempo[endpoint]++);
+       grafico.data.datasets[0].data.push(parseFloat(valor));
+       grafico.update();
+     })
+   }
 
-  setInterval(() => {
-    /*   obterDados(dht11Umidade, 'dht11/umidade');
-      obterDados(dht11Temperatura, 'dht11/temperatura'); */
-    /*             obterDados(luminosidade, 'luminosidade');
-    obterDados(lm35Temperatura, 'lm35/temperatura'); */
-    obterDados(chave, 'chave');
-  }, 1000);
+   setInterval(() => {
+     /*   obterDados(dht11Umidade, 'dht11/umidade');
+       obterDados(dht11Temperatura, 'dht11/temperatura'); */
+  /*             obterDados(luminosidade, 'luminosidade');
+  obterDados(lm35Temperatura, 'lm35/temperatura'); */
+  // obterDados(chave, 'chave');
+  // }, 1000);
 
 
 </script>

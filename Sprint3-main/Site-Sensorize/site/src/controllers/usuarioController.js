@@ -1,43 +1,59 @@
 var usuarioModel = require('../models/usuarioModel')
-var aquarioModel = require('../models/aquarioModel')
+var aparelhoModel = require('../models/aparelhoModel')
 
-function autenticar(req, res) {
-  var email = req.body.emailServer
-  var senha = req.body.senhaServer
+async function autenticar(req, res) {
+  try {
+    const email = req.body.emailServer
+    const senha = req.body.senhaServer
 
-  if (email == undefined) {
-    res.status(400).send('Seu email está undefined!')
-  } else if (senha == undefined) {
-    res.status(400).send('Sua senha está indefinida!')
-  } else {
-    usuarioModel
-      .autenticar(email, senha)
-      .then(function (resultadoAutenticar) {
-        console.log(`\nResultados encontrados: ${resultadoAutenticar.length}`)
-        console.log(`Resultados: ${JSON.stringify(resultadoAutenticar)}`) // transforma JSON em String
+    if (!email) {
+      return res.status(400).send('Seu email está undefined!')
+    } else if (!senha) {
+      return res.status(400).send('Sua senha está indefinida!')
+    }
 
-        if (resultadoAutenticar.length == 1) {
-          console.log(resultadoAutenticar)
-          res.json({
-            id: resultadoAutenticar[0].id,
-            email: resultadoAutenticar[0].email,
-            nome: resultadoAutenticar[0].nome,
-            senha: resultadoAutenticar[0].senha
-          })
-        } else if (resultadoAutenticar.length == 0) {
-          res.status(403).send('Email e/ou senha inválido(s)')
-        } else {
-          res.status(403).send('Mais de um usuário com o mesmo login e senha!')
-        }
-      })
-      .catch(function (erro) {
-        console.log(erro)
-        console.log(
-          '\nHouve um erro ao realizar o login! Erro: ',
-          erro.sqlMessage
-        )
-        res.status(500).json(erro.sqlMessage)
-      })
+    const resultadoAutenticar = await usuarioModel.autenticar(email, senha)
+
+    console.log(
+      `\nResultados encontrados: ${
+        resultadoAutenticar ? resultadoAutenticar.length : 0
+      }`
+    )
+    console.log(`Resultados: ${JSON.stringify(resultadoAutenticar)}`) // transforma JSON em String
+
+    if (resultadoAutenticar && resultadoAutenticar.length === 1) {
+      console.log(resultadoAutenticar)
+
+      const usuarioId = resultadoAutenticar[0].usuario_id
+
+      // Executa ambas as consultas em paralelo
+      const [resultadoAparelho] = await Promise.all([
+        aparelhoModel.buscarAparelho(usuarioId)
+      ])
+
+      if (resultadoAparelho.length >= 0) {
+        res.json({
+          id: usuarioId,
+          email: resultadoAutenticar[0].email,
+          nome: resultadoAutenticar[0].nome,
+          nome_academia: resultadoAutenticar[0].academia,
+          cnpj_academia: resultadoAutenticar[0].cnpj,
+          tel_fixo: resultadoAutenticar[0].fixo,
+          tel_cel: resultadoAutenticar[0].celular,
+          aparelhos: resultadoAparelho
+        })
+      } else {
+        res.status(403).send('Usuário não possui aparelho associado')
+      }
+    } else if (!resultadoAutenticar || resultadoAutenticar.length === 0) {
+      res.status(403).send('Email e/ou senha inválido(s)')
+    } else {
+      res.status(403).send('Mais de um usuário com o mesmo login e senha!')
+    }
+  } catch (erro) {
+    console.log(erro)
+    console.log('\nHouve um erro ao realizar o login! Erro: ', erro.sqlMessage)
+    res.status(500).json(erro.sqlMessage)
   }
 }
 
