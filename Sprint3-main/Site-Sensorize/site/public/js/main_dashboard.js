@@ -217,46 +217,6 @@ if (dado7[0] < 30) {
   cor3 = 'red'
 } */
 
-var aparelhos = JSON.parse(sessionStorage.APARELHO_ACADEMIA)
-
-var ap_sup = []
-var tmp_sup = []
-var dt_hr_sup = []
-var ap_inf = []
-var tmp_inf = []
-var ap_card = []
-var tmp_card = []
-var dt_hr_card = []
-
-for (var i = 0; aparelhos.length > i; i++) {
-  if (aparelhos[i].grupo_treino == 'Superior') {
-    ap_sup.push(aparelhos[i].nome_aparelho)
-    tmp_sup.push(aparelhos[i].tempo)
-    dt_hr_sup.push(aparelhos[i].data_hora)
-  } else if (aparelhos[i].grupo_treino == 'Inferior') {
-    ap_inf.push(aparelhos[i].nome_aparelho)
-    tmp_inf.push(aparelhos[i].tempo)
-    dt_hr_inf.push(aparelhos[i].data_hora)
-  } else {
-    ap_card.push(aparelhos[i].nome_aparelho)
-    tmp_card.push(aparelhos[i].tempo)
-    dt_hr_card.push(aparelhos[i].data_hora)
-  }
-}
-
- for (var i = 0; ap_sup.length > i; i++) {
-  var op_sup = document.getElementById('sup' + i)
-  // op_sup.innerHTML = ap_sup[i]
-}
-for (var i = 0; ap_inf.length > i; i++) {
-  var op_inf = document.getElementById('inf' + i)
-  // op_inf.innerHTML = ap_inf[i]
-}
-for (var i = 0; ap_card.length > i; i++) {
-  var op_card = document.getElementById('card' + i)
-  // op_card.innerHTML = ap_card[i]
-} 
-
 const labels = ['06h as 10h', '10h as 14h', '14h as 18h', '18h as 22h']
 
 const data = {
