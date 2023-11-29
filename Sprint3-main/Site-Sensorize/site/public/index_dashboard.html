@@ -91,17 +91,17 @@
         </div>
       </div>
       <div class="graficos">
-        <div class="alerta">
+        <div id="g_inf" class="alerta">
           <canvas id="myChart3"></canvas>
-          <h4 class="inform">40,5%</h4>
+          <h4 id="inf_inferior" class="inform">40,5%</h4>
         </div>
-        <div class="alerta">
+        <div id="g_sup" class="alerta">
           <canvas id="myChart4"></canvas>
-          <h4 class="inform">65,5%</h4>
+          <h4 id="inf_superior" class="inform">65,5%</h4>
         </div>
-        <div class="alerta">
+        <div id="g_card" class="alerta">
           <canvas class="alerta_div" id="myChart5"></canvas>
-          <h4 class="inform alerta_div">86,4%</h4>
+          <h4 id="inf_cardio" class="inform alerta_div">86,4%</h4>
         </div>
       </div>
     </div>
@@ -212,11 +212,11 @@
           src="./assets/img/blueAcademia">
       </div>
 
-      <div class="divButtonPerfil">
+      <!--   <div class="divButtonPerfil">
         <button class="buttonPerfil" onclick="trocarImagem()">Editar Foto</button>
         <button class="buttonPerfil" onclick="editarDados()">Editar Dados</button>
         <button class="buttonPerfil" onclick="recuperarSenha()">Redefinir Senha</button>
-      </div>
+      </div> -->
 
       <div class="divInputsPerfil">
         <span class="SpanPerfil">Nome da academia</span><br>
@@ -299,9 +299,6 @@
     }
   </script>
 
-
-
-
   <!-- Aparelho -->
   <div style="display: none;" id="tela_aparelho" class="div_dashboar">
     <div
@@ -327,18 +324,22 @@
                 <option id="inf4" value=""></option>
                 <option id="inf5" value=""></option>
                 <option id="inf6" value=""></option>
+                <option id="inf7" value=""></option>
+                <option id="inf8" value=""></option>
               </select>
             </div>
             <div id="aparelho_superior" style="display: none;">
               <span>Selecione o aparelho: </span>
               <select style="width: 120px; text-align: center;" id="seletor_categoria">
-                <option id="sup0" value="">Olaaa</option>
+                <option id="sup0" value=""></option>
                 <option id="sup1" value=""></option>
                 <option id="sup2" value=""></option>
                 <option id="sup3" value=""></option>
                 <option id="sup4" value=""></option>
                 <option id="sup5" value=""></option>
                 <option id="sup6" value=""></option>
+                <option id="sup7" value=""></option>
+                <option id="sup8" value=""></option>
               </select>
             </div>
             <div id="aparelho_cardio" style="display: none;">
@@ -351,6 +352,8 @@
                 <option id="card4" value=""></option>
                 <option id="card5" value=""></option>
                 <option id="card6" value=""></option>
+                <option id="card7" value=""></option>
+                <option id="card8" value=""></option>
               </select>
             </div>
             <div onclick="pesquisa_aparelho()" style="font-size: 20px; cursor: pointer;" class="icon-search"></div>
@@ -525,6 +528,8 @@
   var tel_cel = sessionStorage.TEL_CEL;
   var email = sessionStorage.EMAIL_USUARIO;
 
+
+
   usuario.innerHTML += nome
   nomePerfilLeitura.value = academia
   repLeitura.value = nome;
@@ -550,10 +555,18 @@
     document.getElementById('myChart4'),
     config4
   )
+
+
+  const canvasElement = document.getElementById('myChart5');
   const myChart5 = new Chart(
     document.getElementById('myChart5'),
     config5
   )
+
+  g_card = document.getElementById('g_card');
+  setInterval(() => {
+    atualizarGrafico('Cárdio', myChart5, canvasElement, 3, 5, 3, 5, 7, 9, 10);
+  }, 500);
 
   const myChart6 = new Chart(
     document.getElementById('myChart6'),
@@ -687,10 +700,10 @@
     var var_ap_sup = document.getElementById('sup' + i)
     var_ap_sup.innerHTML = ap_sup[i]
   }
-  for (var i = 0; ap_inf.length > i; i++) {
-    var op_inf = document.getElementById('inf' + i)
-    op_inf.innerHTML = ap_inf[i]
-  }
+  /*   for (var i = 0; ap_inf.length > i; i++) {
+      var op_inf = document.getElementById('inf' + i)
+      op_inf.innerHTML = ap_inf[i]
+    } */
   for (var i = 0; ap_card.length > i; i++) {
     var op_card = document.getElementById('card' + i)
     op_card.innerHTML = ap_card[i]

@@ -371,7 +371,6 @@ const data5 = {
   datasets: [
     {
       label: 'My First Dataset',
-      data: [86.4, 24.6],
       backgroundColor: ['red', '#ded9d9f0'],
       borderWidth: 0,
       hoverOffset: 4
@@ -473,4 +472,71 @@ const config7 = {
       }
     }
   }
+}
+
+function atualizarGrafico(
+  grupo,
+  myChart,
+  canva,
+  limite1,
+  limite0,
+  n1,
+  n2,
+  n3,
+  n4,
+  n5
+) {
+  fetch(`/medidas/tempo-real/${grupo}`, { cache: 'no-store' })
+    .then(function (response) {
+      if (response.ok) {
+        response.json().then(function (novoDado) {
+          const medidasTempoReal_1 = []
+          const medidasTempoReal_0 = []
+          for (var i = 0; i < limite0; i++) {
+            medidasTempoReal_0.push(0)
+          }
+          for (var i = 0; i < limite1; i++) {
+            medidasTempoReal_1.push(1)
+          }
+          for (var i = 0; i < novoDado.length; i++) {
+            if (novoDado[i].registro_ocp == 0) {
+              medidasTempoReal_0.push(0)
+            } else {
+              medidasTempoReal_1.push(1)
+            }
+          }
+
+          if (medidasTempoReal_1.length < n1) {
+            myChart.data.datasets[0].backgroundColor = ['#8e0000', '#ded9d9f0']
+          } else if (medidasTempoReal_1.length <= n2) {
+            myChart.data.datasets[0].backgroundColor = ['orange', '#ded9d9f0']
+            canva.classList.remove('alerta_div')
+          } else if (medidasTempoReal_1.length <= n3) {
+            myChart.data.datasets[0].backgroundColor = ['green', '#ded9d9f0']
+            canva.classList.remove('alerta_div')
+          } else if (medidasTempoReal_1.length <= n4) {
+            myChart.data.datasets[0].backgroundColor = ['orange', '#ded9d9f0']
+            canva.classList.remove('alerta_div')
+          } else if (medidasTempoReal_1.length > n5) {
+            myChart.data.datasets[0].backgroundColor = ['red', '#ded9d9f0']
+            canva.classList.add('alerta_div')
+          }
+
+          const vetorContagem = [
+            medidasTempoReal_1.length,
+            medidasTempoReal_0.length
+          ]
+
+          myChart.data.datasets[0].data = vetorContagem
+          myChart.update()
+        })
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API')
+      }
+    })
+    .catch(function (error) {
+      console.error(
+        `Erro na obtenção de dados para o gráfico: ${error.message}`
+      )
+    })
 }
