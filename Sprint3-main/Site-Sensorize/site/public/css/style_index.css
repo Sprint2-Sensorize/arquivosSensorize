@@ -496,7 +496,7 @@ hr {
   color: white;
   text-align: center;
   font-family: 'Roboto Slab', serif;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .divTudoImg{
@@ -509,12 +509,15 @@ hr {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 22px;
 }
 
 .imgCliente{
+  width: 40%;
   height: 240px;
   border-radius: 20px;
   cursor: pointer;
+
 }
 
 .imgCliente:hover{
