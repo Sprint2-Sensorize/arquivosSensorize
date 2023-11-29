@@ -4,13 +4,17 @@
   "description": "",
   "main": "five.js",
   "scripts": {
-    "start": "node five.js"
+    "start": "node five.js",
+    "dev": "nodemon --exec node app.js"
   },
   "author": "SPTECH_2022 by MariseMiranda",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.3",
+    "mon": "^0.0.8",
     "mysql2": "^2.3.3",
+    "node": "^21.2.0",
+    "nodemon": "^3.0.1",
     "serialport": "^10.4.0"
   }
 }
