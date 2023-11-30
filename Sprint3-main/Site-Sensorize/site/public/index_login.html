@@ -7,6 +7,7 @@
   <link rel="icon" href="./assets/img/Logo Sensorize copy.ico" type="image/png">
   <title>Sensorize</title>
   <link rel="stylesheet" href="./css/style_login.css">
+  <link rel="stylesheet" href="./assets/Ico/style.css">
 </head>
 
 <body>
@@ -15,6 +16,9 @@
       <img src="./assets/img/imgLogin-removebg-preview_1-transformed.png" alt="">
     </div>
     <div class="direito">
+
+      <div onclick="abrirForm()" style="position: absolute; z-index: 999;font-size: 50px; cursor: pointer; display: flex; flex-direction: row; gap: 0.5rem; margin-left: 1rem;" class="icon-support_agent"><p style="font-size: 17px;">Suporte</p></div>
+
 
       <img class="logo" src="./assets/img/logo.png" alt="">
       <h1>Login</h1>
@@ -45,7 +49,8 @@
       </div>
     </div>
   </div>
-  <div class="total_form">
+  <div id="total_formID" class="total_form">
+    <div style="z-index: 999; font-size: 30px; margin-left: 680px; margin-bottom: 560px; position: absolute; cursor: pointer;" onclick="fecharForm()" class="icon-cancel-circle"></div>
     <div class="form">
       <iframe width='560' height='580' src='https://app.pipefy.com/public/form/iP-uix1a?embedded=true'
         frameborder='0'></iframe>
@@ -144,6 +149,13 @@
     })
 
     return false;
+  }
+
+  function abrirForm(){
+    document.getElementById('total_formID').style.display = 'flex'
+  }
+  function fecharForm(){
+    document.getElementById('total_formID').style.display = 'none'
   }
 
 </script>
