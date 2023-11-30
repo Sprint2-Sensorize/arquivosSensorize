@@ -503,3 +503,22 @@ h3 {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.form {
+  height: 50%;
+  width: 30%;
+  margin-top: -10%;
+}
+
+.total_form {
+  flex-direction: column;
+  height: 101%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: rgba(143, 143, 143, 0.63);
+  position: absolute;
+  justify-content: center;
+  z-index: 999;
+  margin-top: -48.65%;
+}

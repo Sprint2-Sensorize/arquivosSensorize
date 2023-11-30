@@ -7,6 +7,7 @@
   <title>Sensorize</title>
   <link rel="icon" href="./assets/img/Logo Sensorize copy.ico" type="image/png">
   <link rel="stylesheet" href="./css/style_cliente.css">
+  <link rel="stylesheet" href="./assets/Ico/style.css">
 
 </head>
 
@@ -49,13 +50,20 @@
         </a>
         <img id="gif" style="width: 100px; position: absolute; margin-top: 2%; margin-left: 4%; display: none;"
           src="./assets/img/aguarde-orange.gif" alt="">
+          
       </div>
+      <div onclick="abrirForm()" style="position: absolute; font-size: 50px; cursor: pointer; display: flex; flex-direction: row; gap: 0.5rem; position: absolute; margin-left: 1rem;" class="icon-support_agent"><p style="font-size: 17px;">Suporte</p></div>
+    </div>
+  </div>
+  <div id="total_formID" class="total_form">
+    <div style="z-index: 999; font-size: 30px; margin-left: 680px; margin-bottom: 560px; position: absolute; cursor: pointer;" onclick="fecharForm()" class="icon-cancel-circle"></div>
+    <div class="form">
+      <iframe width='560' height='580' src='https://app.pipefy.com/public/form/iP-uix1a?embedded=true'
+        frameborder='0'></iframe>
     </div>
   </div>
 </body>
-
 </html>
-
 <script>
 
   function cadastrar() {
@@ -164,6 +172,14 @@
       acesso.innerHTML = 'Insira um token de acesso!'
       acesso.style.backgroundColor = '#ff5959b9'
     }
+  }
+
+  function abrirForm(){
+    document.getElementById('total_formID').style.display = 'flex'
+  }
+
+  function fecharForm(){
+    document.getElementById('total_formID').style.display = 'none'
   }
 
 </script>

@@ -8,11 +8,14 @@
   <link rel="icon" href="./assets/img/Logo Sensorize copy.ico" type="image/png">
   <link rel="stylesheet" href="./css/style_dashboard.css">
   <link rel="stylesheet" href="../assets/Icones/style.css">
+  <link rel="stylesheet" href="./assets/Ico/style.css">
   <script src="./js/main_dashboard.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body style="background-color: black;">
+  
+
 
   <!--   <nav id="nav">
     <div class="nave">
@@ -58,12 +61,14 @@
         <a id="link_superior" onclick="mostrar_superior()" href="#">Superior</a>
         <a id="link_inferior" onclick="mostrar_inferior()" href="#">Inferior</a>
       </div>
+    
     </div>
 
     <a style="margin-left: -15px;" id="sair" href="./index.html" class="itensDaNav">
       <div class="icon-cancel-circle"></div>
       Sair
     </a>
+    <div onclick="abrirForm()" style="margin-left: -1rem; z-index: 999;font-size: 40px; cursor: pointer; display: flex; flex-direction: row; gap: 0.5rem; color: white;" class="icon-support_agent"><p style="font-size: 15px; font-weight: bold;">Suporte</p></div>
   </div>
 
   <!-- DashBoard -->
@@ -103,6 +108,7 @@
           <canvas class="alerta_div" id="myChart5"></canvas>
           <h4 id="inf_cardio" class="inform alerta_div">86,4%</h4>
         </div>
+        
       </div>
     </div>
 
@@ -196,6 +202,13 @@
       </div>
 
     </div>
+    <div id="total_formID" class="total_form">
+      <div style="z-index: 999; font-size: 30px; margin-left: 680px; margin-bottom: 560px; position: absolute; cursor: pointer;" onclick="fecharForm()" class="icon-cancel-circle"></div>
+      <div class="form">
+        <iframe width='560' height='580' src='https://app.pipefy.com/public/form/iP-uix1a?embedded=true'
+          frameborder='0'></iframe>
+      </div>
+    </div>
   </div>
 
 
@@ -277,6 +290,8 @@
       </div>
     </div>
   </div>
+
+  
 
   <script>
     document.getElementById('inputFile').addEventListener('change', function (event) {
@@ -718,6 +733,14 @@ while (contador <= 3) {
     op_card.innerHTML = ap_card[i]
   }
 
+  function abrirForm(){
+    document.getElementById('total_formID').style.display = 'flex'
+  }
+  function fecharForm(){
+    document.getElementById('total_formID').style.display = 'none'
+  }
+
+  
   /*  var paginacao = {};
    var tempo = {};
    function obterDados(grafico, endpoint) {
