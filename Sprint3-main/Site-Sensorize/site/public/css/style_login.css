@@ -3,6 +3,26 @@
 body {
   margin: 0;
   font-family: 'Roboto Slab', serif;
+  overflow-y: hidden;
+}
+
+.form {
+  height: 50%;
+  width: 30%;
+  margin-top: -10%;
+}
+
+.total_form {
+  flex-direction: column;
+  height: 101%;
+  width: 100%;
+  display: none;
+  align-items: center;
+  background-color: rgba(143, 143, 143, 0.63);
+  position: absolute;
+  justify-content: center;
+  z-index: 999;
+  margin-top: -48.65%;
 }
 
 .container {
