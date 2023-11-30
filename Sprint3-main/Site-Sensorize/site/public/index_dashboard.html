@@ -564,9 +564,7 @@
   )
 
   g_card = document.getElementById('g_card');
-  setInterval(() => {
-    atualizarGrafico('Cárdio', myChart5, canvasElement, 3, 5, 3, 5, 7, 9, 10);
-  }, 500);
+
 
   const myChart6 = new Chart(
     document.getElementById('myChart6'),
@@ -577,21 +575,32 @@
     config7
   )
 
+  setInterval(() => {
+    atualizarGrafico('Cárdio', myChart5, canvasElement, 0, 0, 1, 2, 3, 5, 6);
+  }, 500);
+  /*  g_card = document.getElementById('g_card'); */
+  setInterval(() => {
+    atualizarGrafico('Inferior', myChart4, canvasElement, 3, 2, 1, 2, 3, 5, 7);
+  }, 500);
+  /*  g_card = document.getElementById('g_card'); */
+  setInterval(() => {
+    atualizarGrafico('Superior', myChart3, canvasElement, 1, 2, 2, 4, 5, 8, 9);
+  }, 500);
   /*   var contador = 0;
-    while (contador <= 3) {
-      var elemento = document.getElementById(`i${contador + 1}`)
-      var elementoS = document.getElementById(`s${contador + 1}`)
-      var elementoC = document.getElementById(`c${contador + 1}`)
-      elemento.innerHTML = `${dado_inferior[contador]}`;
-      elementoS.innerHTML = `${dado_superior[contador]}`;
-      elementoC.innerHTML = `${dado_cardio[contador]}`;
-      if (contador == 3) {
-        c5.innerHTML = Number(soma_cardio).toFixed(2)
-        s5.innerHTML = Number(soma_superior).toFixed(2)
-        i5.innerHTML = Number(soma_inferior).toFixed(2)
-      }
-      contador++
-    } */
+while (contador <= 3) {
+  var elemento = document.getElementById(`i${contador + 1}`)
+  var elementoS = document.getElementById(`s${contador + 1}`)
+  var elementoC = document.getElementById(`c${contador + 1}`)
+  elemento.innerHTML = `${dado_inferior[contador]}`;
+  elementoS.innerHTML = `${dado_superior[contador]}`;
+  elementoC.innerHTML = `${dado_cardio[contador]}`;
+  if (contador == 3) {
+    c5.innerHTML = Number(soma_cardio).toFixed(2)
+    s5.innerHTML = Number(soma_superior).toFixed(2)
+    i5.innerHTML = Number(soma_inferior).toFixed(2)
+  }
+  contador++
+} */
 
   var dataAtual = new Date();
   dataAtual.setDate(dataAtual.getDate() - 1);
