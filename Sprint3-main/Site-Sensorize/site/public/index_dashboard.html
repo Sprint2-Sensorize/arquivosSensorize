@@ -14,7 +14,7 @@
 </head>
 
 <body style="background-color: black;">
-  
+
 
 
   <!--   <nav id="nav">
@@ -31,6 +31,16 @@
   </nav> -->
 
   <!-- menu lateral -->
+  <div id="total_formID" class="total_form">
+    <div
+      style="z-index: 999; font-size: 30px; margin-left: 680px; margin-bottom: 560px; position: absolute; cursor: pointer;"
+      onclick="fecharForm()" class="icon-cancel-circle"></div>
+    <div class="form">
+      <iframe width='560' height='580' src='https://app.pipefy.com/public/form/iP-uix1a?embedded=true'
+        frameborder='0'></iframe>
+    </div>
+  </div>
+
   <div class="menuLateral">
 
     <a onclick="mostrar_principal()" style="color: white; cursor: pointer;">
@@ -61,19 +71,24 @@
         <a id="link_superior" onclick="mostrar_superior()" href="#">Superior</a>
         <a id="link_inferior" onclick="mostrar_inferior()" href="#">Inferior</a>
       </div>
-    
+
     </div>
 
     <a style="margin-left: -15px;" id="sair" href="./index.html" class="itensDaNav">
       <div class="icon-cancel-circle"></div>
       Sair
     </a>
-    <div onclick="abrirForm()" style="margin-left: -1rem; z-index: 999;font-size: 40px; cursor: pointer; display: flex; flex-direction: row; gap: 0.5rem; color: white;" class="icon-support_agent"><p style="font-size: 15px; font-weight: bold;">Suporte</p></div>
+    <div onclick="abrirForm()"
+      style="margin-left: -1rem; z-index: 999;font-size: 40px; cursor: pointer; display: flex; flex-direction: row; gap: 0.5rem; color: white;"
+      class="icon-support_agent">
+      <p style="font-size: 15px; font-weight: bold;">Suporte</p>
+    </div>
   </div>
 
   <!-- DashBoard -->
 
   <div id="tela_principal" class="div_dashboar">
+
 
     <div class="alertas">
       <h3 style="width: 100%; text-align: center; margin-bottom: 10px; margin-top: -2%; margin-left: -1%;">
@@ -83,32 +98,32 @@
       <div style="width: 100%; display: flex; justify-content: space-around;">
 
         <div class="leg">
-          <div style="font-size: 20px; color: green;" class="icon-check"></div>
+          <div class="icon-check" id="g_Inferior" style="font-size: 20px;"></div>
           <span>Grupo de treino <br> Inferior</span>
         </div>
-        <div class="leg alerta_div2">
-          <div style="font-size: 20px; color: orange;" class="icon-warning"></div>
+        <div class="leg">
+          <div class="icon-check" id="g_Superior" style="font-size: 20px;"></div>
           <span>Grupo de treino <br> Superior</span>
         </div>
         <div class="leg ">
-          <div style="font-size: 20px; color: red;" class="icon-warning"></div>
-          <span style="color: red; font-weight: bolder;">Grupo de treino<br> Cárdio</span>
+          <div class="icon-check" id="g_Cárdio" style="font-size: 20px;"></div>
+          <span>Grupo de treino<br> Cárdio</span>
         </div>
       </div>
       <div class="graficos">
         <div id="g_inf" class="alerta">
           <canvas id="myChart3"></canvas>
-          <h4 id="inf_inferior" class="inform">40,5%</h4>
+          <h4 id="inf_Inferior" class="inform"></h4>
         </div>
         <div id="g_sup" class="alerta">
           <canvas id="myChart4"></canvas>
-          <h4 id="inf_superior" class="inform">65,5%</h4>
+          <h4 id="inf_Superior" class="inform"></h4>
         </div>
         <div id="g_card" class="alerta">
-          <canvas class="alerta_div" id="myChart5"></canvas>
-          <h4 id="inf_cardio" class="inform alerta_div">86,4%</h4>
+          <canvas class="" id="myChart5"></canvas>
+          <h4 id="inf_Cárdio" class="inform"></h4>
         </div>
-        
+
       </div>
     </div>
 
@@ -169,18 +184,13 @@
         <b style="margin-left: 17.5%;">20%</b><b style="margin-left: 13%;">40%</b><b
           style="margin-left: 17.5%;">65%</b><b style="margin-left: 13%;">85%</b>
       </div>
-      <div style="margin-top: 3%; display: flex; align-items: center; width: 100%; justify-content: center; gap: 10px;">
-        <p style="font-size: 20px;">Atenção!
-        </p>
+      <div id="atencao" style="margin-top: 3%; align-items: center; width: 100%; justify-content: center; gap: 10px;">
+        <p style="font-size: 20px;">Atenção!</p>
       </div>
-      <p style=" margin-top: -2%; font-size: 15px;">
-        A taxa de utilização no Grupo Cárdio ultrapassou o limite recomendado de 85%. Recomendamos que tome medidas
-        imediatas para reduzir essa taxa e evitar a superlotação.
+      <p id="alerta_critico" style=" margin-top: -2%; font-size: 15px;">
+        Caso alguns dos grupos ultrapasse o limite de 85%. Recomendamos que tome medidas
+        imediatas para reduzir essa taxa evitando superlotação.
       </p>
-
-
-
-
 
     </div>
 
@@ -202,13 +212,7 @@
       </div>
 
     </div>
-    <div id="total_formID" class="total_form">
-      <div style="z-index: 999; font-size: 30px; margin-left: 680px; margin-bottom: 560px; position: absolute; cursor: pointer;" onclick="fecharForm()" class="icon-cancel-circle"></div>
-      <div class="form">
-        <iframe width='560' height='580' src='https://app.pipefy.com/public/form/iP-uix1a?embedded=true'
-          frameborder='0'></iframe>
-      </div>
-    </div>
+
   </div>
 
 
@@ -291,7 +295,7 @@
     </div>
   </div>
 
-  
+
 
   <script>
     document.getElementById('inputFile').addEventListener('change', function (event) {
@@ -591,15 +595,15 @@
   )
 
   setInterval(() => {
-    atualizarGrafico('Cárdio', myChart5, canvasElement, 0, 0, 1, 2, 3, 5, 6);
+    atualizarGrafico('Cárdio', myChart5, 10, 0, 3, 5, 10, 15, 17);
   }, 500);
   /*  g_card = document.getElementById('g_card'); */
   setInterval(() => {
-    atualizarGrafico('Inferior', myChart4, canvasElement, 3, 2, 1, 2, 3, 5, 7);
+    atualizarGrafico('Superior', myChart4, 3, 1, 1, 2, 3, 5, 7);
   }, 500);
   /*  g_card = document.getElementById('g_card'); */
   setInterval(() => {
-    atualizarGrafico('Superior', myChart3, canvasElement, 1, 2, 2, 4, 5, 8, 9);
+    atualizarGrafico('Inferior', myChart3, 1, 1, 1, 2, 4, 6, 8);
   }, 500);
   /*   var contador = 0;
 while (contador <= 3) {
@@ -733,14 +737,14 @@ while (contador <= 3) {
     op_card.innerHTML = ap_card[i]
   }
 
-  function abrirForm(){
+  function abrirForm() {
     document.getElementById('total_formID').style.display = 'flex'
   }
-  function fecharForm(){
+  function fecharForm() {
     document.getElementById('total_formID').style.display = 'none'
   }
 
-  
+
   /*  var paginacao = {};
    var tempo = {};
    function obterDados(grafico, endpoint) {

@@ -45,8 +45,21 @@ function buscarMedidasEmTempoReal(grupo) {
   console.log('Executando a instrução SQL: \n' + instrucaoSql)
   return database.executar(instrucaoSql)
 }
+function buscarHist(data) {
+  instrucaoSql = `
+      SELECT registro_ocp
+      FROM tipo_aparelho
+      JOIN aparelho AS a ON a.fk_tipo_aparelho = tipo_id
+      JOIN sensores AS s ON a.fk_sensor = sensor_id
+      JOIN historico_temp AS h ON h.fk_sensor = sensor_id
+      WHERE grupo_treino = '${data}';
+    `
+  console.log('Executando a instrução SQL: \n' + instrucaoSql)
+  return database.executar(instrucaoSql)
+}
 
 module.exports = {
   buscarUltimasMedidas,
-  buscarMedidasEmTempoReal
+  buscarMedidasEmTempoReal,
+  buscarHist
 }

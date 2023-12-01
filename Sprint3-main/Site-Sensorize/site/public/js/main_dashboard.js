@@ -317,7 +317,6 @@ const data3 = {
   datasets: [
     {
       label: 'My First Dataset',
-      data: [40.5, 59.5],
       backgroundColor: ['green', '#ded9d9f0'],
       borderWidth: 0,
       hoverOffset: 4
@@ -344,7 +343,6 @@ const data4 = {
   datasets: [
     {
       label: 'My First Dataset',
-      data: [65.5, 34.5],
       backgroundColor: ['orange', '#ded9d9f0'],
       borderWidth: 0,
       hoverOffset: 4
@@ -477,7 +475,6 @@ const config7 = {
 function atualizarGrafico(
   grupo,
   myChart,
-  canva,
   limite1,
   limite0,
   n1,
@@ -506,26 +503,55 @@ function atualizarGrafico(
             }
           }
 
+          var gp = document.getElementById(`inf_${grupo}`)
+          var icon_g = document.getElementById(`g_${grupo}`)
+
+          var canvas = myChart.canvas
           if (medidasTempoReal_1.length < n1) {
             myChart.data.datasets[0].backgroundColor = ['#8e0000', '#ded9d9f0']
+            icon_g.classList.remove('icon-check')
+            icon_g.classList.add('icon-warning')
           } else if (medidasTempoReal_1.length <= n2) {
             myChart.data.datasets[0].backgroundColor = ['orange', '#ded9d9f0']
-            canva.classList.remove('alerta_div')
+            canvas.classList.remove('alerta_div')
+            gp.classList.remove('alerta_div')
+            icon_g.classList.remove('icon-check')
+            icon_g.classList.add('icon-warning')
           } else if (medidasTempoReal_1.length <= n3) {
             myChart.data.datasets[0].backgroundColor = ['green', '#ded9d9f0']
-            canva.classList.remove('alerta_div')
+            canvas.classList.remove('alerta_div')
+            gp.classList.remove('alerta_div')
+            icon_g.classList.remove('icon-warning')
+            icon_g.classList.remove('alerta_div2')
+            icon_g.classList.add('icon-check')
           } else if (medidasTempoReal_1.length <= n4) {
             myChart.data.datasets[0].backgroundColor = ['orange', '#ded9d9f0']
-            canva.classList.remove('alerta_div')
-          } else if (medidasTempoReal_1.length > n5) {
+            canvas.classList.remove('alerta_div')
+            gp.classList.remove('alerta_div')
+            icon_g.classList.remove('icon-check')
+            icon_g.classList.add('icon-warning')
+            icon_g.classList.add('alerta_div2')
+          } else if (medidasTempoReal_1.length >= n5) {
             myChart.data.datasets[0].backgroundColor = ['red', '#ded9d9f0']
-            canva.classList.add('alerta_div')
+            icon_g.classList.remove('alerta_div2')
+            icon_g.classList.remove('icon-check')
+            gp.classList.add('alerta_div')
+            canvas.classList.add('alerta_div')
+            icon_g.classList.add('icon-warning')
+            icon_g.classList.add('alerta_div')
           }
 
           const vetorContagem = [
             medidasTempoReal_1.length,
             medidasTempoReal_0.length
           ]
+
+          var porcentagem =
+            (medidasTempoReal_1.length /
+              (medidasTempoReal_1.length + medidasTempoReal_0.length)) *
+            100
+
+          gp.innerHTML = porcentagem.toFixed(0) + '%'
 
           myChart.data.datasets[0].data = vetorContagem
           myChart.update()
@@ -534,6 +560,15 @@ function atualizarGrafico(
         console.error('Nenhum dado encontrado ou erro na API')
       }
     })
+    .catch(function (error) {
+      console.error(
+        `Erro na obtenção de dados para o gráfico: ${error.message}`
+      )
+    })
+}
+function historico(myChart, data) {
+  fetch(`/medidas/tempo-real/${data}`, { cache: 'no-store' })
+    .then(function (response) {})
     .catch(function (error) {
       console.error(
         `Erro na obtenção de dados para o gráfico: ${error.message}`

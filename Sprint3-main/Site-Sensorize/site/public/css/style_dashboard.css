@@ -28,6 +28,14 @@ nav {
   z-index: 2;
 }
 
+.icon-check {
+  color: green;
+}
+
+.icon-warning {
+  color: orange;
+}
+
 .nave {
   display: flex;
   align-items: center;
@@ -514,11 +522,10 @@ h3 {
   flex-direction: column;
   height: 101%;
   width: 100%;
-  display: flex;
+  display: none;
   align-items: center;
   background-color: rgba(143, 143, 143, 0.63);
   position: absolute;
   justify-content: center;
   z-index: 999;
-  margin-top: -48.65%;
 }

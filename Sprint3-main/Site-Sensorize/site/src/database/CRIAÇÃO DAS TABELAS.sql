@@ -303,7 +303,7 @@ select * from representante;
 select * from academia;
 select * from telefone;
 select * from historico_temp;
-
+use sensorize;
 
 select registro_ocp from 
 tipo_aparelho join aparelho as a
