@@ -11,12 +11,14 @@
   <link rel="stylesheet" href="./assets/Ico/style.css">
   <script src="./js/main_dashboard.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+
+
+
 </head>
 
 <body style="background-color: black;">
-
-
-
   <!--   <nav id="nav">
     <div class="nave">
       <div class="logo">
@@ -565,7 +567,6 @@
     document.getElementById('myChart2'),
     config2
   )
-  myChart2.update()
   const myChart3 = new Chart(
     document.getElementById('myChart3'),
     config3
@@ -575,16 +576,12 @@
     config4
   )
 
-
   const canvasElement = document.getElementById('myChart5');
   const myChart5 = new Chart(
     document.getElementById('myChart5'),
     config5
   )
-
   g_card = document.getElementById('g_card');
-
-
   const myChart6 = new Chart(
     document.getElementById('myChart6'),
     config6
@@ -627,10 +624,10 @@ while (contador <= 3) {
 
   dataEvento.value = dataFormatada;
   dataEvento2.value = dataFormatada;
-  function pesquisa() {
-    location.reload();
-  }
 
+  function pesquisa() {
+    historico(myChart, myChart2, dataEvento.value)
+  }
 
   function pesquisa_aparelho() {
     atualizarGrafico(myChart7, gerarDadosAleatorios(9, 2, 0.5))

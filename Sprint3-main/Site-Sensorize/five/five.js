@@ -12,10 +12,10 @@ const HABILITAR_OPERACAO_INSERIR = true
 const serial = async valoresChave => {
   // Configuração do pool do banco de dados MySQL
   const poolBancoDados = mysql.createPool({
-    host: 'localhost',
+    host: '10.18.32.71',
     port: 3306,
-    user: 'root',
-    password: 'jhow',
+    user: 'bolinha100',
+    password: '123',
     database: 'sensorize'
   })
 
@@ -43,6 +43,14 @@ const serial = async valoresChave => {
         value: parseInt(value)
       })
     }
+    /*    novoDado.push({
+      fkSensor: 1006,
+      value: 1
+    })
+    novoDado.push({
+      fkSensor: 1007,
+      value: 0
+    }) */
     novoDado.push(sensorData[sensorData.length - 1])
     novoDado.push(sensorData[sensorData.length - 2])
     return novoDado

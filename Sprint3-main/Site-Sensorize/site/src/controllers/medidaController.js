@@ -57,10 +57,15 @@ function buscarHist(req, res) {
   medidaModel
     .buscarHist(data)
     .then(function (resultado) {
-      if (resultado.length > 0) {
-        res.status(200).json(resultado)
-      } else {
+      if (
+        resultado[0].length == 0 &&
+        resultado[1].length == 0 &&
+        resultado[2].length == 0 &&
+        resultado[3].length == 0
+      ) {
         res.status(204).send('Nenhum resultado encontrado!')
+      } else if (resultado.length > 0) {
+        res.status(200).json(resultado)
       }
     })
     .catch(function (erro) {

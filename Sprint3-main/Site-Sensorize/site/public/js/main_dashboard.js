@@ -126,72 +126,6 @@ function gerarDadosAleatorios(tamanho, comeco, fim) {
   return dados
 }
 
-var dado_inferior = gerarDadosAleatorios(4, 15, 2.5)
-var dado_superior = gerarDadosAleatorios(4, 15, 2.5)
-var dado_cardio = gerarDadosAleatorios(4, 15, 2.5)
-var soma_inferior = 0
-var soma_superior = 0
-var soma_cardio = 0
-var comp = []
-
-for (var contador = 0; contador < 4; contador++) {
-  soma_inferior += dado_inferior[contador]
-  soma_superior += dado_superior[contador]
-  soma_cardio += dado_cardio[contador]
-}
-
-comp = [soma_inferior, soma_superior, soma_cardio]
-var maiorValor = Math.max(...comp)
-var menorValor = Math.min(...comp)
-
-var primeiroNumero = gerarDadosAleatorios(1, 20, 60)[0]
-var segundoNumero = 100 - primeiroNumero
-
-var dado5 = [primeiroNumero, segundoNumero]
-var dado6 = [primeiroNumero, segundoNumero]
-var dado7 = [primeiroNumero, segundoNumero]
-
-var categoria = ''
-var cor = ''
-
-// VALIDANDO A SOMA DO MAOIR RESULTADO PARA COLOCAR NO GRAFICO A DIREITA
-var dado4 = []
-if (maiorValor == soma_inferior) {
-  var primeiroNumero = gerarDadosAleatorios(1, 60, 90)[0]
-  var segundoNumero = 100 - primeiroNumero
-  dado5 = [primeiroNumero, segundoNumero]
-  categoria = 'Inferior'
-  cor = 'purple'
-  dado4 = dado_inferior.slice()
-} else if (maiorValor == soma_superior) {
-  var primeiroNumero = gerarDadosAleatorios(1, 60, 90)[0]
-  var segundoNumero = 100 - primeiroNumero
-  dado6 = [primeiroNumero, segundoNumero]
-  categoria = 'Superior'
-  cor = 'blue'
-  dado4 = dado_superior.slice()
-} else if (maiorValor == soma_cardio) {
-  var primeiroNumero = gerarDadosAleatorios(1, 60, 90)[0]
-  var segundoNumero = 100 - primeiroNumero
-  dado7 = [primeiroNumero, segundoNumero]
-  categoria = 'Cárdio'
-  cor = 'gray'
-  dado4 = dado_cardio.slice()
-}
-if (menorValor == soma_inferior) {
-  var primeiroNumero = gerarDadosAleatorios(1, 8, 20)[0]
-  var segundoNumero = 100 - primeiroNumero
-  dado5 = [primeiroNumero, segundoNumero]
-} else if (menorValor == soma_superior) {
-  var primeiroNumero = gerarDadosAleatorios(1, 8, 20)[0]
-  var segundoNumero = 100 - primeiroNumero
-  dado6 = [primeiroNumero, segundoNumero]
-} else if (menorValor == soma_cardio) {
-  var primeiroNumero = gerarDadosAleatorios(1, 8, 20)[0]
-  var segundoNumero = 100 - primeiroNumero
-  dado7 = [primeiroNumero, segundoNumero]
-}
-
 /* var cor1 = ''
 var cor2 = ''
 var cor3 = ''
@@ -226,22 +160,19 @@ const data = {
       label: 'Inferior',
       backgroundColor: 'purple',
       borderColor: 'black',
-      borderWidth: 2,
-      data: dado_inferior
+      borderWidth: 2
     },
     {
       label: 'Superior',
       backgroundColor: 'blue',
       borderColor: 'black',
-      borderWidth: 2,
-      data: dado_superior
+      borderWidth: 2
     },
     {
       label: 'Cárdio',
       backgroundColor: 'gray',
       borderColor: 'black',
-      borderWidth: 2,
-      data: dado_cardio
+      borderWidth: 2
     }
   ]
 }
@@ -277,10 +208,7 @@ const data2 = {
   labels: labels,
   datasets: [
     {
-      label: categoria,
-      backgroundColor: cor,
-      borderColor: cor,
-      data: dado4
+      label: 'Aparelho'
     }
   ]
 }
@@ -436,10 +364,7 @@ const data7 = {
   labels: labels2,
   datasets: [
     {
-      label: 'Aparelho',
-      backgroundColor: cor,
-      borderColor: cor,
-      data: gerarDadosAleatorios(9, 2, 0.5)
+      label: 'Aparelho'
     }
   ]
 }
@@ -566,12 +491,95 @@ function atualizarGrafico(
       )
     })
 }
-function historico(myChart, data) {
-  fetch(`/medidas/tempo-real/${data}`, { cache: 'no-store' })
-    .then(function (response) {})
+function historico(myChart, myChart2, data) {
+  fetch(`/medidas/historico/${data}`, { cache: 'no-store' })
+    .then(function (response) {
+      // Verifique se a resposta foi bem-sucedida
+      if (!response.ok) {
+        throw new Error(
+          `Erro na obtenção de dados para o gráfico: ${response.statusText}`
+        )
+      }
+      if (response.status == 204) {
+        alert('')
+      }
+      return response.json()
+    })
+    .then(function (dados) {
+      if (dados && dados.length > 0) {
+        var dado_inferior = []
+        var dado_superior = []
+        var dado_cardio = []
+        for (var i = 0; dados.length > i; i++) {
+          dado_inferior.push(dados[i][2].historico)
+          dado_superior.push(dados[i][1].historico)
+          dado_cardio.push(dados[i][0].historico)
+        }
+        var soma_inferior = 0
+        var soma_superior = 0
+        var soma_cardio = 0
+        var comp = []
+
+        for (var contador = 0; contador < 4; contador++) {
+          soma_inferior += dado_inferior[contador]
+          soma_superior += dado_superior[contador]
+          soma_cardio += dado_cardio[contador]
+        }
+
+        comp = [soma_inferior, soma_superior, soma_cardio]
+        var maiorValor = Math.max(...comp)
+
+        var categoria = ''
+        var cor = ''
+
+        // VALIDANDO A SOMA DO MAOIR RESULTADO PARA COLOCAR NO GRAFICO A DIREITA
+        var dado4 = []
+
+        if (maiorValor == soma_inferior) {
+          categoria = 'Inferior'
+          cor = 'purple'
+          dado4 = dado_inferior
+        } else if (maiorValor == soma_superior) {
+          categoria = 'Superior'
+          cor = 'blue'
+          dado4 = dado_superior
+        } else if (maiorValor == soma_cardio) {
+          categoria = 'Cárdio'
+          cor = 'gray'
+          dado4 = dado_cardio
+        }
+        var dado4_horas = dado4.map(segundosParaTempo)
+        var dado_inferior_horas = dado_inferior.map(segundosParaTempo)
+        var dado_superior_horas = dado_superior.map(segundosParaTempo)
+        var dado_cardio_horas = dado_cardio.map(segundosParaTempo)
+
+        myChart.data.datasets[0].data = dado_inferior_horas
+        myChart.data.datasets[1].data = dado_superior_horas
+        myChart.data.datasets[2].data = dado_cardio_horas
+        myChart2.data.datasets[0].data = dado4_horas
+        myChart2.data.datasets[0].label = categoria
+        myChart2.data.datasets[0].backgroundColor = cor
+        myChart2.data.datasets[0].borderColor = cor
+
+        myChart.update()
+        myChart2.update()
+      }
+      console.log('Dados recebidos:', dados)
+    })
     .catch(function (error) {
       console.error(
         `Erro na obtenção de dados para o gráfico: ${error.message}`
       )
     })
+}
+
+function segundosParaTempo(segundos) {
+  const horas = Math.floor(segundos / 3600)
+  const minutos = Math.floor((segundos % 3600) / 60)
+
+  const formatoTempo = [
+    String(horas).padStart(2, '0'),
+    String(minutos).padStart(2, '0')
+  ].join('.')
+  return formatoTempo
 }
