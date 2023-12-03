@@ -58,3 +58,14 @@
 .icon-search:before {
   content: "\e904";
 }
+
+
+.icon-support_agent{
+  transition: 0.7s;
+}
+
+.icon-support_agent:hover{
+color: #ffae34;
+}
+
+
