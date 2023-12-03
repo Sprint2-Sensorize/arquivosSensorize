@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?gi10vt');
-  src:  url('fonts/icomoon.eot?gi10vt#iefix') format('embedded-opentype'),
+  src: url('fonts/icomoon.eot?gi10vt');
+  src: url('fonts/icomoon.eot?gi10vt#iefix') format('embedded-opentype'),
     url('fonts/icomoon.ttf?gi10vt') format('truetype'),
     url('fonts/icomoon.woff?gi10vt') format('woff'),
     url('fonts/icomoon.svg?gi10vt#icomoon') format('svg');
@@ -10,7 +10,8 @@
   font-display: block;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^='icon-'],
+[class*=' icon-'] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: never;
@@ -26,46 +27,43 @@
 }
 
 .icon-support_agent:before {
-  content: "\e909";
+  content: '\e909';
 }
 .icon-warning:before {
-  content: "\e906";
+  content: '\e906';
 }
 .icon-whatsapp:before {
-  content: "\e908";
+  content: '\e908';
 }
 .icon-check:before {
-  content: "\e907";
+  content: '\e907';
 }
 .icon-user:before {
-  content: "\e901";
+  content: '\e901';
 }
 .icon-cancel-circle:before {
-  content: "\e902";
+  content: '\e902';
 }
 .icon-home:before {
-  content: "\e903";
+  content: '\e903';
 }
 .icon-house:before {
-  content: "\e903";
+  content: '\e903';
 }
 .icon-caution:before {
-  content: "\e905";
+  content: '\e905';
 }
 .icon-weights:before {
-  content: "\e900";
+  content: '\e900';
 }
 .icon-search:before {
-  content: "\e904";
+  content: '\e904';
 }
 
-
-.icon-support_agent{
-  transition: 0.7s;
+.icon-support_agent {
+  transition: 0.5s;
 }
 
-.icon-support_agent:hover{
-color: #ffae34;
+.icon-support_agent:hover {
+  color: #ffae34;
 }
-
-

@@ -511,9 +511,21 @@ function historico(myChart, myChart2, data) {
         var dado_superior = []
         var dado_cardio = []
         for (var i = 0; dados.length > i; i++) {
-          dado_inferior.push(dados[i][2].historico)
-          dado_superior.push(dados[i][1].historico)
-          dado_cardio.push(dados[i][0].historico)
+          if (dados[i].length > 0) {
+            if (dados[i][1] != undefined) {
+              dado_cardio.push(dados[i][1].historico)
+            }
+          }
+          if (dados[i].length > 0) {
+            if (dados[i][2] != undefined) {
+              dado_superior.push(dados[i][2].historico)
+            }
+          }
+          if (dados[i].length > 0) {
+            if (dados[i][0] != undefined) {
+              dado_inferior.push(dados[i][0].historico)
+            }
+          }
         }
         var soma_inferior = 0
         var soma_superior = 0
