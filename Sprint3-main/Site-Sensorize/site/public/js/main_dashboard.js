@@ -501,7 +501,7 @@ function historico(myChart, myChart2, data) {
         )
       }
       if (response.status == 204) {
-        alert('')
+        alert('Não há dados nesta data')
       }
       return response.json()
     })
