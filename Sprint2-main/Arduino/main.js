@@ -43,19 +43,28 @@ const serial = async (
     .pipe(new serialport.ReadlineParser({ delimiter: '\r\n' }))
     .on('data', async data => {
       const valores = data.split(',')
-      /*      const dht11Umidade = parseFloat(valores[0])
+      /*const dht11Umidade = parseFloat(valores[0])
       const dht11Temperatura = parseFloat(valores[1])
       const luminosidade = parseFloat(valores[2])
-      const lm35Temperatura = parseFloat(valores[3]) */
-      const chave = parseInt(valores)
+      const lm35Temperatura = parseFloat(valores[3])*/
 
-      /*      valoresDht11Umidade.push(dht11Umidade)
+      const chave = parseInt(valores[0])
+      const chave2 = parseInt(valores[1])
+      const chave3 = parseInt(valores[2])
+      const chave4 = parseInt(valores[3])
+      const chave5 = parseInt(valores[4])
+
+      /*valoresDht11Umidade.push(dht11Umidade)
       valoresDht11Temperatura.push(dht11Temperatura)
       valoresLuminosidade.push(luminosidade)
       valoresLm35Temperatura.push(lm35Temperatura) */
       valoresChave.push(chave)
 
       if (HABILITAR_OPERACAO_INSERIR) {
+        await poolBancoDados.execute(
+          'INSERT INTO historico2 (chave) VALUES (?)',
+          [chave]
+        )
         await poolBancoDados.execute(
           'INSERT INTO historico2 (chave) VALUES (?)',
           [chave]
@@ -68,10 +77,10 @@ const serial = async (
 }
 
 const servidor = (
-  /*   valoresDht11Umidade,
+  /*valoresDht11Umidade,
   valoresDht11Temperatura,
   valoresLuminosidade,
-  valoresLm35Temperatura, */
+  valoresLm35Temperatura,*/
   valoresChave
 ) => {
   const app = express()
@@ -117,7 +126,7 @@ const servidor = (
     valoresChave
   )
   servidor(
-    /*     valoresDht11Umidade,
+    /*valoresDht11Umidade,
     valoresDht11Temperatura,
     valoresLuminosidade,
     valoresLm35Temperatura, */
