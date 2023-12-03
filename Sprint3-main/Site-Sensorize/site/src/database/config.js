@@ -21,8 +21,8 @@ var sql = require('mssql')
 var mySqlConfig = {
   host: 'localhost',
   database: 'sensorize',
-  user: 'root',
-  password: '24053845'
+  user: 'dono',
+  password: 'adm'
 }
 
 function executar(instrucao) {

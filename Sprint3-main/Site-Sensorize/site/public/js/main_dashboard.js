@@ -1,15 +1,15 @@
 function mostrar_perfil() {
-  document.getElementById('link_cardio').style.color = 'white'
+  /*   document.getElementById('link_cardio').style.color = 'white'
   document.getElementById('link_inferior').style.color = 'white'
-  document.getElementById('link_superior').style.color = 'white'
-  tela_aparelho.style.display = 'none'
+  document.getElementById('link_superior').style.color = 'white' */
+  /*   tela_aparelho.style.display = 'none' */
   tela_principal.style.display = 'none'
   tela_perfil.style.display = 'flex'
-  const submenu = document.querySelector('.submenu')
-  submenu.style.display = 'none'
+  /*   const submenu = document.querySelector('.submenu')
+  submenu.style.display = 'none' */
   document.getElementById('link_perfil').style.borderBottom = 'solid 2px orange'
   document.getElementById('link_dashboard').style.borderBottom = 'none'
-  document.getElementById('link_aparelhos').style.borderBottom = 'none'
+  /*   document.getElementById('link_aparelhos').style.borderBottom = 'none' */
 }
 function mostrar_aparelhos() {
   tela_aparelho.style.display = 'flex'
@@ -17,18 +17,18 @@ function mostrar_aparelhos() {
   tela_perfil.style.display = 'none'
 }
 function mostrar_principal() {
-  document.getElementById('link_cardio').style.color = 'white'
+  /*   document.getElementById('link_cardio').style.color = 'white'
   document.getElementById('link_inferior').style.color = 'white'
-  document.getElementById('link_superior').style.color = 'white'
-  tela_aparelho.style.display = 'none'
+  document.getElementById('link_superior').style.color = 'white' */
+  /*   tela_aparelho.style.display = 'none' */
   tela_principal.style.display = 'flex'
   tela_perfil.style.display = 'none'
-  const submenu = document.querySelector('.submenu')
-  submenu.style.display = 'none'
+  /*   const submenu = document.querySelector('.submenu')
+  submenu.style.display = 'none' */
   document.getElementById('link_dashboard').style.borderBottom =
     'solid 2px orange'
   document.getElementById('link_perfil').style.borderBottom = 'none'
-  document.getElementById('link_aparelhos').style.borderBottom = 'none'
+  /*   document.getElementById('link_aparelhos').style.borderBottom = 'none' */
 }
 function mostrar_superior() {
   table_inf.style.display = 'none'
@@ -107,11 +107,11 @@ function toggleSublinks() {
   if (submenu.style.display === 'none' || submenu.style.display === '') {
     submenu.style.display = 'flex'
     borda.style.borderBottom = '2px solid orange'
-    sair.style.marginTop = '20px'
+    help.style.marginTop = '20px'
   } else {
     submenu.style.display = 'none'
     borda.style.borderBottom = 'none'
-    sair.style.marginTop = '-20px'
+    help.style.marginTop = '-20px'
   }
 }
 
