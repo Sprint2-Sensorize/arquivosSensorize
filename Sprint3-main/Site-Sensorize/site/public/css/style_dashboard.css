@@ -371,11 +371,12 @@ h3 {
   display: flex;
   /* align-content: space-between; */
   justify-content: center;
-  margin-left: 85px;
+  margin-left: 125px;
   margin-top: 15px;
+  font-size: 13px;
 }
 
-.divButtonPerfil button{
+.divButtonPerfil button {
   background-color: #ffae34;
   margin: 10px;
   border-radius: 20px;
@@ -537,5 +538,3 @@ h3 {
   justify-content: center;
   z-index: 999;
 }
-
-

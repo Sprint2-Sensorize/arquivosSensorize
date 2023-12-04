@@ -12,10 +12,10 @@ const HABILITAR_OPERACAO_INSERIR = true
 const serial = async valoresChave => {
   // Configuração do pool do banco de dados MySQL
   const poolBancoDados = mysql.createPool({
-    host: '10.18.32.71',
+    host: 'localhost',
     port: 3306,
-    user: 'bolinha100',
-    password: '123',
+    user: 'dono',
+    password: 'adm',
     database: 'sensorize'
   })
 
@@ -43,16 +43,47 @@ const serial = async valoresChave => {
         value: parseInt(value)
       })
     }
-    /*    novoDado.push({
+    for (var i = 0; i < 3; i++) {
+      const value = 1
+      const fk = 1000 + i
+    }
+    for (var i = 0; i < 3; i++) {
+      const value = 1
+      const fk = 1000 + i
+    }
+
+    /*     novoDado.push({
       fkSensor: 1006,
-      value: 1
+      value: 0
     })
     novoDado.push({
       fkSensor: 1007,
       value: 0
     }) */
+    /*     novoDado.push({
+      fkSensor: 1011,
+      value: 0
+    })
+    novoDado.push({
+      fkSensor: 1012,
+      value: 0
+    })
+    novoDado.push({
+      fkSensor: 1016,
+      value: 0
+    })
+    novoDado.push({
+      fkSensor: 1015,
+      value: 0
+    }) */
     novoDado.push(sensorData[sensorData.length - 1])
     novoDado.push(sensorData[sensorData.length - 2])
+    novoDado.push(sensorData[sensorData.length - 3])
+    novoDado.push(sensorData[sensorData.length - 4])
+    novoDado.push(sensorData[sensorData.length - 5])
+    novoDado.push(sensorData[sensorData.length - 6])
+    novoDado.push(sensorData[sensorData.length - 7])
+    novoDado.push(sensorData[sensorData.length - 8])
     return novoDado
   }
 
@@ -91,9 +122,9 @@ const serial = async valoresChave => {
   }
 
   // Atualiza o banco de dados temporário a cada 60 segundos
-  setInterval(() => {
+  /*   setInterval(() => {
     updateDatabase2()
-  }, 60000)
+  }, 60000) */
 
   // Reseta os tempos temporários do sensor a cada 60.001 segundos
   setInterval(() => {
@@ -156,12 +187,35 @@ const serial = async valoresChave => {
         fkSensor: 1007,
         value: chave
       })
+      sensorData.push({
+        fkSensor: 1008,
+        value: chave
+      })
+      /*     sensorData.push({
+        fkSensor: 1009,
+        value: chave
+      }) */
+      sensorData.push({
+        fkSensor: 1013,
+        value: chave
+      })
+      sensorData.push({
+        fkSensor: 1014,
+        value: chave
+      })
+      sensorData.push({
+        fkSensor: 1015,
+        value: chave
+      })
+      sensorData.push({
+        fkSensor: 1016,
+        value: chave
+      })
 
       if (chave == 1) {
         sensorTemp[0].TempoOcp += 1
       }
     })
-
   // Fim da seção de leitura do Arduino
 
   console.log

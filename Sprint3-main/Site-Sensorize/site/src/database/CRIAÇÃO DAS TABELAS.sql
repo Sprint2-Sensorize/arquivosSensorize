@@ -286,7 +286,8 @@ insert into historico_temp values
 (null,0,1012),
 (null,0,1013),
 (null,0,1014),
-(null,0,1015);
+(null,0,1015),
+(null,0,1016);
 
 Update historico_temp set registro_ocp = 1 where fk_sensor = 1002;
 
@@ -330,6 +331,8 @@ select * from academia;
 select * from telefone;
 select * from historico_temp;
 use sensorize;
+
+-- delete from historico where id_historico between 1372 and 2061;
 
 select registro_ocp from
 tipo_aparelho join aparelho as a
