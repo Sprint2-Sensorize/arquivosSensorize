@@ -369,10 +369,18 @@ h3 {
 
 .divButtonPerfil {
   display: flex;
-  align-content: space-between;
-  /*justify-content: center;*/
-  margin-left: 350px;
+  /* align-content: space-between; */
+  justify-content: center;
+  margin-left: 85px;
   margin-top: 15px;
+}
+
+.divButtonPerfil button{
+  background-color: #ffae34;
+  margin: 10px;
+  border-radius: 20px;
+  padding: 7px;
+  cursor: pointer;
 }
 
 .buttonPerfil {
